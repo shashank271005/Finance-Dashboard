@@ -1,0 +1,48 @@
+.app-layout {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background: var(--main-bg);
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.dashboard-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.dashboard-body::-webkit-scrollbar {
+  width: 4px;
+}
+
+.dashboard-body::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.dashboard-body::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+.middle-row {
+  display: flex;
+  gap: 14px;
+  align-items: stretch;
+}
+
+.bottom-row {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}

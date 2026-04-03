@@ -1,0 +1,98 @@
+.spending-card {
+  background: var(--card-bg);
+  border-radius: var(--radius-lg);
+  padding: 18px 20px;
+  box-shadow: var(--shadow-md);
+  width: 240px;
+  min-width: 240px;
+  border: 1px solid rgba(255,255,255,0.8);
+  display: flex;
+  flex-direction: column;
+}
+
+.spending-header {
+  margin-bottom: 10px;
+}
+
+.spending-title {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.2px;
+}
+
+.spending-sub {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+.donut-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 4px 0 14px;
+}
+
+.donut-center {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  pointer-events: none;
+}
+
+.donut-pct {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.8px;
+  line-height: 1;
+}
+
+.donut-label {
+  font-size: 8px;
+  font-weight: 700;
+  color: var(--text-muted);
+  letter-spacing: 1px;
+  margin-top: 2px;
+}
+
+.donut-seg {
+  transition: opacity 0.18s;
+  cursor: pointer;
+}
+
+.donut-seg:hover { opacity: 0.82; }
+
+.spending-legend {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.legend-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.legend-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.legend-name {
+  font-size: 12px;
+  color: var(--text-secondary);
+  flex: 1;
+}
+
+.legend-amount {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-primary);
+}

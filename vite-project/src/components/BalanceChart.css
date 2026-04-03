@@ -1,0 +1,121 @@
+.balance-chart-card {
+  background: var(--card-bg);
+  border-radius: var(--radius-lg);
+  padding: 18px 20px;
+  box-shadow: var(--shadow-md);
+  flex: 1;
+  border: 1px solid rgba(255,255,255,0.8);
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.chart-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.chart-title {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.2px;
+}
+
+.chart-sub {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+.chart-tabs {
+  display: flex;
+  background: #f1f5f9;
+  border-radius: 8px;
+  padding: 2px;
+  gap: 1px;
+}
+
+.chart-tab {
+  padding: 4px 11px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 500;
+  background: transparent;
+  color: var(--text-secondary);
+  transition: all 0.18s;
+}
+
+.chart-tab.active {
+  background: var(--primary);
+  color: white;
+  box-shadow: 0 2px 6px rgba(45,63,224,0.28);
+}
+
+.chart-area {
+  flex: 1;
+}
+
+/* Wrapper gives position context for the overlaid dot */
+.chart-svg-wrap {
+  position: relative;
+  width: 100%;
+}
+
+/* True CSS circle — never distorted by SVG scaling */
+.chart-dot {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: white;
+  border: 2.5px solid #2D3FE0;
+  box-shadow:
+    0 0 0 4px rgba(45, 63, 224, 0.12),
+    0 2px 8px rgba(45, 63, 224, 0.25);
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Value tooltip above the peak dot */
+.chart-tooltip {
+  position: absolute;
+  transform: translateX(-50%);
+  background: #2D3FE0;
+  color: white;
+  font-size: 10.5px;
+  font-weight: 700;
+  padding: 3px 9px;
+  border-radius: 6px;
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 3;
+  letter-spacing: -0.2px;
+  box-shadow: 0 2px 8px rgba(45,63,224,0.35);
+}
+
+/* Small arrow below tooltip */
+.chart-tooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 4px solid transparent;
+  border-top-color: #2D3FE0;
+}
+
+.chart-x-labels {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 16px 0;
+}
+
+.x-label {
+  font-size: 10px;
+  font-weight: 500;
+  color: var(--text-muted);
+  letter-spacing: 0.4px;
+}
