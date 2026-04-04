@@ -1,0 +1,350 @@
+/* ─── Root — full-page fluid background ──────── */
+.login-root {
+  display: flex;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Full-screen white→transparent gradient overlay */
+.login-root::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, #ffffff 32%, rgba(255, 255, 255, 0) 62%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* ─── Full-page background video ─────────────── */
+.login-bg-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* ─── Left Panel — floats over the background ── */
+.login-left {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 48px 44px 48px 72px;
+  background: transparent;
+  overflow-y: auto;
+}
+
+.login-left::-webkit-scrollbar { width: 0; }
+
+.login-form-container {
+  width: 100%;
+  max-width: 360px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ─── Logo ───────────────────────────────────── */
+.login-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+
+.login-logo-text {
+  font-size: 22px;
+  font-weight: 700;
+  color: #0f172a;
+  letter-spacing: -0.4px;
+}
+
+/* ─── Heading ────────────────────────────────── */
+.login-heading {
+  font-size: 26px;
+  font-weight: 700;
+  color: #0f172a;
+  letter-spacing: -0.6px;
+  line-height: 1.2;
+  margin-bottom: 6px;
+}
+
+.login-sub {
+  font-size: 13.5px;
+  color: #64748b;
+  margin-bottom: 28px;
+}
+
+/* ─── Toggle ─────────────────────────────────── */
+.login-toggle {
+  display: flex;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 40px;
+  padding: 4px;
+  margin-bottom: 24px;
+  background: rgba(248, 250, 252, 0.85);
+  gap: 2px;
+}
+
+.toggle-btn {
+  flex: 1;
+  padding: 10px 0;
+  border-radius: 36px;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: #64748b;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+.toggle-btn-active {
+  background: #2563EB;
+  color: #fff;
+  font-weight: 600;
+  box-shadow: 0 2px 10px rgba(37,99,235,0.32);
+}
+
+/* ─── Form ───────────────────────────────────── */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.form-row-two {
+  display: flex;
+  gap: 10px;
+}
+
+.form-row-two .input-wrap { flex: 1; }
+
+.input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-wrap-icon .form-input { padding-right: 42px; }
+
+.form-input {
+  width: 100%;
+  padding: 13px 16px;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 30px;
+  font-size: 13.5px;
+  color: #0f172a;
+  background: rgba(255, 255, 255, 0.92);
+  transition: border-color 0.18s, box-shadow 0.18s;
+  font-family: inherit;
+}
+
+.form-input::placeholder { color: #94a3b8; }
+
+.form-input:focus {
+  border-color: #2563EB;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+  outline: none;
+  background: #fff;
+}
+
+.input-icon {
+  position: absolute;
+  right: 16px;
+  display: flex;
+  align-items: center;
+  pointer-events: none;
+}
+
+.input-icon-btn {
+  position: absolute;
+  right: 13px;
+  background: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 4px;
+}
+
+/* ─── Remember Me Row ────────────────────────── */
+.remember-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: -2px;
+}
+
+/* ─── Checkbox ───────────────────────────────── */
+.checkbox-row {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.custom-checkbox {
+  width: 17px;
+  height: 17px;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 4px;
+  flex-shrink: 0;
+  background: rgba(255,255,255,0.9);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.custom-checkbox.checked {
+  background: #2563EB;
+  border-color: #2563EB;
+}
+
+.custom-checkbox.checked::after {
+  content: '';
+  display: block;
+  width: 5px;
+  height: 9px;
+  border: 2px solid white;
+  border-left: none;
+  border-top: none;
+  transform: rotate(45deg) translate(-1px, -1px);
+}
+
+.checkbox-label {
+  font-size: 13px;
+  color: #475569;
+}
+
+/* ─── Privacy Policy Link ────────────────────── */
+.policy-link {
+  background: transparent;
+  border: none;
+  padding: 0;
+  font-size: 13px;
+  font-weight: 600;
+  color: #2563EB;
+  cursor: pointer;
+  text-decoration: underline;
+  text-decoration-color: rgba(37,99,235,0.4);
+  text-underline-offset: 2px;
+  transition: color 0.15s;
+  font-family: inherit;
+}
+
+.policy-link:hover { color: #1d4ed8; }
+
+/* ─── Forgot ─────────────────────────────────── */
+.forgot-btn {
+  background: transparent;
+  border: none;
+  font-size: 13px;
+  color: #2563EB;
+  cursor: pointer;
+  font-weight: 500;
+  font-family: inherit;
+}
+
+.forgot-btn:hover { text-decoration: underline; }
+
+/* ─── Submit Button ──────────────────────────── */
+.submit-btn {
+  width: 100%;
+  padding: 14px 0;
+  border-radius: 40px;
+  background: linear-gradient(135deg, #2563EB 0%, #1d4ed8 100%);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.1px;
+  border: none;
+  cursor: pointer;
+  margin-top: 4px;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 16px rgba(37,99,235,0.3);
+  font-family: inherit;
+}
+
+.submit-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 22px rgba(37,99,235,0.42);
+}
+
+.submit-btn:active { transform: translateY(0); }
+
+/* ─── OR Divider ─────────────────────────────── */
+.or-divider {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 20px 0 18px;
+}
+
+.or-line {
+  flex: 1;
+  height: 1px;
+  background: #e2e8f0;
+}
+
+.or-text {
+  font-size: 11px;
+  font-weight: 600;
+  color: #94a3b8;
+  letter-spacing: 1.2px;
+}
+
+/* ─── Social Buttons — stacked ───────────────── */
+.social-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.social-full {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 13px 16px;
+  border-radius: 40px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.18s ease;
+  font-family: inherit;
+}
+
+.social-apple {
+  background: #0f172a;
+  border: none;
+  color: #fff;
+}
+
+.social-apple:hover {
+  background: #1e293b;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.22);
+}
+
+.social-google {
+  background: rgba(255,255,255,0.88);
+  border: 1.5px solid #e2e8f0;
+  color: #0f172a;
+}
+
+.social-google:hover {
+  background: #fff;
+  border-color: #94a3b8;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+}

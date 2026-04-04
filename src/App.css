@@ -6,6 +6,15 @@
   background: var(--main-bg);
 }
 
+@keyframes fadeInDashboard {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.app-fade-in {
+  animation: fadeInDashboard 0.45s ease forwards;
+}
+
 .main-content {
   flex: 1;
   display: flex;
@@ -46,3 +55,4 @@
   gap: 14px;
   align-items: flex-start;
 }
+

@@ -1,0 +1,290 @@
+/* ─── Backdrop ───────────────────────────────── */
+.pp-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(0, 10, 40, 0.45);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  opacity: 0;
+  transition: opacity 0.28s ease;
+}
+
+.pp-backdrop.pp-visible {
+  opacity: 1;
+}
+
+/* The blue fluid background shows through the backdrop - we add a faint copy */
+.pp-backdrop::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: url('/blue_fluid_bg.png') center / cover no-repeat;
+  opacity: 0.55;
+  z-index: -1;
+}
+
+/* ─── Modal ──────────────────────────────────── */
+.pp-modal {
+  background: #fff;
+  border-radius: 22px;
+  width: 100%;
+  max-width: 860px;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.28);
+  overflow: hidden;
+  transform: translateY(24px) scale(0.97);
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.28s ease;
+  opacity: 0;
+}
+
+.pp-modal.pp-modal-visible {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+}
+
+/* ─── Header ─────────────────────────────────── */
+.pp-header {
+  padding: 30px 36px 20px;
+}
+
+.pp-header-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.pp-title {
+  font-size: 26px;
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: -0.6px;
+}
+
+.pp-intro {
+  font-size: 12.5px;
+  color: #64748b;
+  line-height: 1.6;
+  max-width: 700px;
+}
+
+.pp-divider {
+  height: 1px;
+  background: #e2e8f0;
+  margin: 0 36px;
+}
+
+/* ─── Body ───────────────────────────────────── */
+.pp-body {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+}
+
+/* ─── Sidebar ────────────────────────────────── */
+.pp-sidebar {
+  width: 230px;
+  min-width: 220px;
+  padding: 20px 16px 24px;
+  border-right: 1px solid #e2e8f0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.pp-nav {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.pp-nav-item {
+  text-align: left;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #475569;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  line-height: 1.4;
+  font-family: var(--font, 'Inter', sans-serif);
+}
+
+.pp-nav-item:hover {
+  background: #f1f5f9;
+  color: #0f172a;
+}
+
+.pp-nav-active {
+  font-weight: 700 !important;
+  color: #0f172a !important;
+  background: transparent !important;
+}
+
+.pp-nav-agreed {
+  color: #94a3b8;
+}
+
+.pp-nav-agreed.pp-nav-active {
+  color: #0f172a !important;
+}
+
+.pp-agree-all-btn {
+  margin-top: 20px;
+  padding: 11px 0;
+  border-radius: 30px;
+  background: linear-gradient(135deg, #2563EB 0%, #1d4ed8 100%);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  transition: all 0.18s ease;
+  box-shadow: 0 3px 12px rgba(37,99,235,0.32);
+  font-family: var(--font, 'Inter', sans-serif);
+}
+
+.pp-agree-all-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 18px rgba(37,99,235,0.4);
+}
+
+/* ─── Content Panel ──────────────────────────── */
+.pp-content {
+  flex: 1;
+  padding: 24px 30px 24px 28px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  animation: ppSlideFade 0.25s ease forwards;
+}
+
+@keyframes ppSlideFade {
+  from { opacity: 0; transform: translateX(10px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+.pp-content::-webkit-scrollbar { width: 4px; }
+.pp-content::-webkit-scrollbar-track { background: transparent; }
+.pp-content::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+
+.pp-section-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #2563EB;
+  letter-spacing: -0.2px;
+  margin-bottom: 14px;
+}
+
+/* ─── Section Body Text ──────────────────────── */
+.pp-section-body {
+  flex: 1;
+  font-size: 13px;
+  color: #334155;
+  line-height: 1.65;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.pp-section-body p {
+  margin: 0;
+}
+
+.pp-section-body ul {
+  padding-left: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.pp-section-body li {
+  padding-left: 14px;
+  position: relative;
+  line-height: 1.6;
+  font-size: 12.5px;
+  color: #475569;
+}
+
+.pp-section-body li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: #94a3b8;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.pp-section-body strong {
+  color: #0f172a;
+  font-weight: 600;
+}
+
+.pp-rationale {
+  font-size: 12px !important;
+  color: #64748b !important;
+  font-style: italic;
+  line-height: 1.6;
+  padding-top: 4px;
+}
+
+/* ─── Content Actions ────────────────────────── */
+.pp-content-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid #f1f5f9;
+}
+
+.pp-decline-btn {
+  padding: 9px 22px;
+  border-radius: 30px;
+  border: 1.5px solid #e2e8f0;
+  background: #fff;
+  color: #64748b;
+  font-size: 12.5px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  font-family: var(--font, 'Inter', sans-serif);
+}
+
+.pp-decline-btn:hover {
+  border-color: #94a3b8;
+  color: #334155;
+}
+
+.pp-agree-btn {
+  padding: 9px 32px;
+  border-radius: 30px;
+  background: linear-gradient(135deg, #2563EB 0%, #1d4ed8 100%);
+  color: #fff;
+  font-size: 12.5px;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  transition: all 0.18s ease;
+  box-shadow: 0 3px 10px rgba(37,99,235,0.3);
+  font-family: var(--font, 'Inter', sans-serif);
+}
+
+.pp-agree-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 16px rgba(37,99,235,0.4);
+}
