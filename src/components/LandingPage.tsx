@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import './LandingPage.css';
 import GridDistortion from './GridDistortion';
 
@@ -15,6 +16,8 @@ const FinexisLogo = () => (
 );
 
 const LandingPage: React.FC<LandingPageProps> = ({ onStart }) => {
+    const [footerMouse, setFooterMouse] = useState({ x: 0, y: 0 });
+
     return (
         <div className="landing-root">
             {/* ── Interactive Grid Distortion Background ── */}
@@ -22,9 +25,9 @@ const LandingPage: React.FC<LandingPageProps> = ({ onStart }) => {
                 <GridDistortion
                     imageSrc="/grid-distortion-1775395913439.png"
                     grid={20}
-                    mouse={0.1}
-                    strength={0.12}
-                    relaxation={0.9}
+                    mouse={0.2}
+                    strength={0.15}
+                    relaxation={0.92}
                 />
             </div>
 
@@ -339,19 +342,18 @@ const LandingPage: React.FC<LandingPageProps> = ({ onStart }) => {
                         const { left, top, width, height } = e.currentTarget.getBoundingClientRect();
                         const x = (e.clientX - left) / width - 0.5;
                         const y = (e.clientY - top) / height - 0.5;
-                        e.currentTarget.style.setProperty('--mx', `${x * 20}px`);
-                        e.currentTarget.style.setProperty('--my', `${y * 10}px`);
+                        setFooterMouse({ x: x * 30, y: y * 15 });
                     }}
-                    onMouseLeave={(e) => {
-                        e.currentTarget.style.setProperty('--mx', '0px');
-                        e.currentTarget.style.setProperty('--my', '0px');
-                    }}
+                    onMouseLeave={() => setFooterMouse({ x: 0, y: 0 })}
                 >
                     <h1 className="footer-big-text">Finexis<span className="footer-tm">TM</span></h1>
                     <img 
                         src="/footer-fg.png" 
                         alt="Finexis Legacy" 
                         className="footer-people-img"
+                        style={{
+                            transform: `translate(${footerMouse.x}px, ${footerMouse.y}px) scale(1.02)`
+                        }}
                     />
                 </div>
             </footer>
