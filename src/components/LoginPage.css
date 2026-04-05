@@ -349,3 +349,25 @@
   border-color: #94a3b8;
   box-shadow: 0 2px 8px rgba(0,0,0,0.07);
 }
+
+/* ─── Back to Login Link ─────────────────── */
+.back-link {
+  display: block;
+  width: auto;
+  margin: 16px auto 0;
+  background: transparent;
+  border: none;
+  font-size: 14px;
+  font-weight: 500;
+  color: #64748b;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+  text-decoration: none;
+}
+
+.back-link:hover {
+  color: #3B4CF0;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}

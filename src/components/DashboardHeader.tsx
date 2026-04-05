@@ -51,9 +51,6 @@ const DashboardHeader: React.FC = () => {
           <div className="header-icon-actions">
             <button className="icon-btn-dh"><SettingsIcon /></button>
             <button className="icon-btn-dh"><BellIcon /></button>
-            <div className="avatar-wrap-dh">
-              <img src="https://i.pravatar.cc/100?img=11" alt="Profile" className="user-avatar-dh" />
-            </div>
           </div>
         </div>
       </div>

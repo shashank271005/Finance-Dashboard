@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Sidebar from './components/Sidebar';
 import DashboardHome from './components/DashboardHome';
 import TransactionsPage from './components/TransactionsPage';
+import InsightsPage from './components/InsightsPage';
 import LoginPage from './components/LoginPage';
 import './App.css';
 
@@ -19,7 +20,7 @@ const App: React.FC = () => {
       <div className="main-content">
         {activeTab === 'dashboard' && <DashboardHome />}
         {activeTab === 'transactions' && <TransactionsPage />}
-        {/* Other tabs can be added here */}
+        {activeTab === 'insights' && <InsightsPage />}
       </div>
     </div>
   );

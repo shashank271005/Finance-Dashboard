@@ -55,7 +55,7 @@ interface LoginPageProps {
 }
 
 const LoginPage: React.FC<LoginPageProps> = ({ onLogin }) => {
-  const [mode, setMode] = useState<'signin' | 'signup'>('signin');
+  const [mode, setMode] = useState<'signin' | 'signup' | 'forgot' | 'reset'>('signin');
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirm, setShowConfirm] = useState(false);
   const [rememberMe, setRememberMe] = useState(false);
@@ -72,6 +72,14 @@ const LoginPage: React.FC<LoginPageProps> = ({ onLogin }) => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    if (mode === 'forgot') {
+      setMode('reset');
+      return;
+    }
+    if (mode === 'reset') {
+      setMode('signin');
+      return;
+    }
     onLogin();
   };
 
@@ -96,25 +104,47 @@ const LoginPage: React.FC<LoginPageProps> = ({ onLogin }) => {
             <span className="login-logo-text">Finexis</span>
           </div>
 
-          {/* Welcome */}
-          <h1 className="login-heading">Welcome Back. Let's start!</h1>
-          <p className="login-sub">Where Your Money Makes Sense.</p>
+          {/* Welcome Screens (Sign In / Sign Up) */}
+          {(mode === 'signin' || mode === 'signup') && (
+            <>
+              <h1 className="login-heading">Welcome Back. Let's start!</h1>
+              <p className="login-sub">Where Your Money Makes Sense.</p>
+            </>
+          )}
 
-          {/* Mode Toggle */}
-          <div className="login-toggle">
-            <button
-              className={`toggle-btn ${mode === 'signin' ? 'toggle-btn-active' : ''}`}
-              onClick={() => setMode('signin')}
-            >
-              Sign In
-            </button>
-            <button
-              className={`toggle-btn ${mode === 'signup' ? 'toggle-btn-active' : ''}`}
-              onClick={() => setMode('signup')}
-            >
-              Sign Up
-            </button>
-          </div>
+          {/* Forgot Password Heading */}
+          {mode === 'forgot' && (
+            <>
+              <h1 className="login-heading">Forgot Password?</h1>
+              <p className="login-sub">Do not worry, we will send you the reset instructions.</p>
+            </>
+          )}
+
+          {/* Reset Password Heading */}
+          {mode === 'reset' && (
+            <>
+              <h1 className="login-heading">Set new password</h1>
+              <p className="login-sub">Set a new password for your account.</p>
+            </>
+          )}
+
+          {/* Mode Toggle (Only for Sign In / Sign Up) */}
+          {(mode === 'signin' || mode === 'signup') && (
+            <div className="login-toggle">
+              <button
+                className={`toggle-btn ${mode === 'signin' ? 'toggle-btn-active' : ''}`}
+                onClick={() => setMode('signin')}
+              >
+                Sign In
+              </button>
+              <button
+                className={`toggle-btn ${mode === 'signup' ? 'toggle-btn-active' : ''}`}
+                onClick={() => setMode('signup')}
+              >
+                Sign Up
+              </button>
+            </div>
+          )}
 
           {/* Form */}
           <form className="login-form" onSubmit={handleSubmit}>
@@ -186,34 +216,81 @@ const LoginPage: React.FC<LoginPageProps> = ({ onLogin }) => {
                     onClick={() => setRememberMe(v => !v)} />
                   <span className="checkbox-label">Remember me</span>
                 </label>
-                <button type="button" className="forgot-btn">Forgot password?</button>
+                <button type="button" className="forgot-btn" onClick={() => setMode('forgot')}>Forgot password?</button>
               </div>
             )}
 
-            {/* Submit */}
-            <button type="submit" className="submit-btn">
-              {mode === 'signup' ? 'Sign Up' : 'Login'}
+            {/* Forgot Password Input */}
+            {mode === 'forgot' && (
+              <div className="input-wrap input-wrap-icon">
+                <input name="email" type="email" value={form.email} onChange={handleChange}
+                  placeholder="Enter your email" className="form-input" />
+                <span className="input-icon"><MailIcon /></span>
+              </div>
+            )}
+
+            {/* Reset Password Inputs */}
+            {mode === 'reset' && (
+              <>
+                <div className="input-wrap input-wrap-icon">
+                  <input name="password" type={showPassword ? 'text' : 'password'}
+                    value={form.password} onChange={handleChange}
+                    placeholder="Enter password" className="form-input" />
+                  <button type="button" className="input-icon-btn"
+                    onClick={() => setShowPassword(v => !v)}>
+                    {showPassword ? <EyeOffIcon /> : <EyeIcon />}
+                  </button>
+                </div>
+                <div className="input-wrap input-wrap-icon">
+                  <input name="confirm" type={showConfirm ? 'text' : 'password'}
+                    value={form.confirm} onChange={handleChange}
+                    placeholder="Confirm password" className="form-input" />
+                  <button type="button" className="input-icon-btn"
+                    onClick={() => setShowConfirm(v => !v)}>
+                    {showConfirm ? <EyeOffIcon /> : <EyeIcon />}
+                  </button>
+                </div>
+              </>
+            )}
+
+            {/* Submit Button */}
+            <button type="submit" className="submit-btn" style={{ marginTop: (mode === 'forgot' || mode === 'reset') ? '24px' : '0' }}>
+              {mode === 'signup' && 'Sign Up'}
+              {mode === 'signin' && 'Login'}
+              {mode === 'forgot' && 'Send reset link'}
+              {mode === 'reset' && 'Reset Password'}
             </button>
+
+            {/* Back to Login Link */}
+            {(mode === 'forgot' || mode === 'reset') && (
+              <button type="button" className="back-link" onClick={() => setMode('signin')}>
+                Back to Login
+              </button>
+            )}
           </form>
 
-          {/* Divider */}
-          <div className="or-divider">
-            <span className="or-line" />
-            <span className="or-text">OR</span>
-            <span className="or-line" />
-          </div>
+          {/* Divider (Only for Sign In / Sign Up) */}
+          {(mode === 'signin' || mode === 'signup') && (
+            <div className="or-divider">
+              <span className="or-line" />
+              <span className="or-text">OR</span>
+              <span className="or-line" />
+            </div>
+          )}
 
-          {/* Social — stacked full width */}
-          <div className="social-stack">
-            <button className="social-full social-apple" onClick={onLogin}>
-              <AppleIcon />
-              <span>Log in with Apple</span>
-            </button>
-            <button className="social-full social-google" onClick={onLogin}>
-              <GoogleIcon />
-              <span>Log in with Google</span>
-            </button>
-          </div>
+          {/* Social — stacked full width (Only for Sign In / Sign Up) */}
+          {(mode === 'signin' || mode === 'signup') && (
+            <div className="social-stack">
+              <button className="social-full social-apple" onClick={onLogin}>
+                <AppleIcon />
+                <span>Log in with Apple</span>
+              </button>
+              <button className="social-full social-google" onClick={onLogin}>
+                <GoogleIcon />
+                <span>Log in with Google</span>
+              </button>
+            </div>
+          )}
 
         </div>
       </div>

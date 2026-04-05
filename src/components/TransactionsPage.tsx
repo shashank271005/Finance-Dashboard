@@ -47,20 +47,6 @@ const ArrowRightIcon = () => (
     <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
   </svg>
 );
-const EditIcon = () => (
-  <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
-    <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-    <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-  </svg>
-);
-const TrashIcon = () => (
-  <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
-    <polyline points="3 6 5 6 21 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-    <path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-    <path d="M10 11v6M14 11v6" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-  </svg>
-);
-
 /* ─── Tx icon avatars ────────────────────── */
 const AWSIcon = () => (
   <div className="tx-icon tx-icon-blue">
@@ -134,15 +120,6 @@ const AdCampaignIcon = () => (
     </svg>
   </div>
 );
-const DevIcon = () => (
-  <div className="tx-icon tx-icon-teal">
-    <svg width="15" height="15" viewBox="0 0 24 24" fill="none">
-      <polyline points="16 18 22 12 16 6" stroke="white" strokeWidth="1.8" strokeLinecap="round"/>
-      <polyline points="8 6 2 12 8 18" stroke="white" strokeWidth="1.8" strokeLinecap="round"/>
-    </svg>
-  </div>
-);
-
 /* ─── Transaction Data ───────────────────── */
 interface Transaction {
   id: string;
@@ -156,6 +133,7 @@ interface Transaction {
 }
 
 const transactions: Transaction[] = [
+  // Page 1
   { id: 't1', date: 'Oct 24, 2023', description: 'AWS Cloud Infrastructure', category: 'Technology', amount: '₹1,45,200', isPositive: false, status: 'Completed', Icon: AWSIcon },
   { id: 't2', date: 'Oct 22, 2023', description: 'Client Retainer - Alpha Corp', category: 'Income', amount: '₹3,50,000', isPositive: true, status: 'Completed', Icon: ClientIcon },
   { id: 't3', date: 'Oct 21, 2023', description: 'Catering - Quarterly Review', category: 'Food', amount: '₹19,900', isPositive: false, status: 'Pending', Icon: CateringIcon },
@@ -165,31 +143,47 @@ const transactions: Transaction[] = [
   { id: 't7', date: 'Oct 15, 2023', description: 'Business Insurance Premium', category: 'Insurance', amount: '₹42,500', isPositive: false, status: 'Pending', Icon: InsuranceIcon },
   { id: 't8', date: 'Oct 14, 2023', description: 'Consulting - Beta Ltd', category: 'Income', amount: '₹2,10,000', isPositive: true, status: 'Completed', Icon: ConsultingIcon },
   { id: 't9', date: 'Oct 12, 2023', description: 'Ad Campaign - Google Ads', category: 'Marketing', amount: '₹28,000', isPositive: false, status: 'Failed', Icon: AdCampaignIcon },
-  { id: 't10', date: 'Oct 10, 2023', description: 'Development Tools License', category: 'Technology', amount: '₹18,750', isPositive: false, status: 'Completed', Icon: DevIcon },
+  // Page 2
+  { id: 't11', date: 'Oct 10, 2023', description: 'GitHub Enterprise Subscription', category: 'Technology', amount: '₹15,000', isPositive: false, status: 'Completed', Icon: AWSIcon },
+  { id: 't12', date: 'Oct 09, 2023', description: 'Apple Developer Program', category: 'Technology', amount: '₹7,900', isPositive: false, status: 'Completed', Icon: AWSIcon },
+  { id: 't13', date: 'Oct 08, 2023', description: 'Starbucks Coffee', category: 'Food', amount: '₹450', isPositive: false, status: 'Completed', Icon: CateringIcon },
+  { id: 't14', date: 'Oct 07, 2023', description: 'Monthly Dividends', category: 'Income', amount: '₹1,25,000', isPositive: true, status: 'Completed', Icon: ClientIcon },
+  { id: 't15', date: 'Oct 06, 2023', description: 'LinkedIn Premium', category: 'Marketing', amount: '₹2,500', isPositive: false, status: 'Completed', Icon: MarketingIcon },
+  { id: 't16', date: 'Oct 05, 2023', description: 'Internet Bill', category: 'Operations', amount: '₹3,500', isPositive: false, status: 'Completed', Icon: OfficeIcon },
+  { id: 't17', date: 'Oct 04, 2023', description: 'Zomato Lunch', category: 'Food', amount: '₹1,200', isPositive: false, status: 'Completed', Icon: CateringIcon },
+  { id: 't18', date: 'Oct 03, 2023', description: 'Freelance Design Work', category: 'Income', amount: '₹85,000', isPositive: true, status: 'Completed', Icon: ClientIcon },
+  { id: 't19', date: 'Oct 02, 2023', description: 'Uber Ride', category: 'Operations', amount: '₹650', isPositive: false, status: 'Completed', Icon: OfficeIcon },
+  // Page 3
+  { id: 't21', date: 'Sep 30, 2023', description: 'Microsoft Azure Services', category: 'Technology', amount: '₹65,800', isPositive: false, status: 'Completed', Icon: AWSIcon },
+  { id: 't22', date: 'Sep 29, 2023', description: 'Team Dinner', category: 'Food', amount: '₹12,500', isPositive: false, status: 'Completed', Icon: CateringIcon },
+  { id: 't23', date: 'Sep 28, 2023', description: 'Stock Market Gains', category: 'Income', amount: '₹2,45,000', isPositive: true, status: 'Completed', Icon: ClientIcon },
+  { id: 't24', date: 'Sep 27, 2023', description: 'Canva Pro Subscription', category: 'Marketing', amount: '₹1,100', isPositive: false, status: 'Completed', Icon: MarketingIcon },
+  { id: 't25', date: 'Sep 26, 2023', description: 'Gas Bill', category: 'Operations', amount: '₹2,800', isPositive: false, status: 'Completed', Icon: OfficeIcon },
+  { id: 't26', date: 'Sep 25, 2023', description: 'Health Insurance', category: 'Insurance', amount: '₹18,500', isPositive: false, status: 'Completed', Icon: InsuranceIcon },
+  { id: 't27', date: 'Sep 24, 2023', description: 'App Store Revenue', category: 'Income', amount: '₹3,20,000', isPositive: true, status: 'Completed', Icon: ClientIcon },
+  { id: 't28', date: 'Sep 23, 2023', description: 'Amazon Web Services', category: 'Technology', amount: '₹12,400', isPositive: false, status: 'Completed', Icon: AWSIcon },
+  { id: 't29', date: 'Sep 22, 2023', description: 'Co-working Space Fee', category: 'Operations', amount: '₹25,000', isPositive: false, status: 'Completed', Icon: OfficeIcon },
 ];
 
 /* ─── Budget Gauge ──────────────────────── */
 const BudgetGauge: React.FC<{ current: number; total: number }> = ({ current, total }) => {
   const percentage = Math.min((current / total) * 100, 100);
-  const radius = 36;
-  const circumference = 2 * Math.PI * radius;
-  const offset = circumference - (percentage / 100) * circumference;
 
   return (
     <div className="budget-gauge-wrap">
       <div className="gauge-svg-container">
-        <svg width="90" height="90" viewBox="0 0 100 100">
+        <svg width="80" height="80" viewBox="0 0 100 100">
           <circle 
             className="gauge-bg" 
-            cx="50" cy="50" r={radius} 
-            strokeWidth="8" fill="transparent" 
+            cx="50" cy="50" r="38" 
+            strokeWidth="9" fill="transparent" 
           />
           <circle 
             className="gauge-fill" 
-            cx="50" cy="50" r={radius} 
-            strokeWidth="8" fill="transparent" 
-            strokeDasharray={circumference}
-            strokeDashoffset={offset}
+            cx="50" cy="50" r="38" 
+            strokeWidth="9" fill="transparent" 
+            strokeDasharray={2 * Math.PI * 38}
+            strokeDashoffset={(2 * Math.PI * 38) - (percentage / 100) * (2 * Math.PI * 38)}
             strokeLinecap="round"
             transform="rotate(-90 50 50)"
           />
@@ -249,7 +243,31 @@ const SpendingTrendChart: React.FC = () => {
 /* ─── Main Component ─────────────────────── */
 const TransactionsPage: React.FC = () => {
   const [currentPage, setCurrentPage] = useState(1);
-  const totalPages = 42;
+  const [sortOrder, setSortOrder] = useState<'newest' | 'oldest'>('newest');
+  const [selectedCategory, setSelectedCategory] = useState<string>('All');
+  const [isCategoryOpen, setIsCategoryOpen] = useState(false);
+  const itemsPerPage = 9;
+
+  // 1. Get unique categories
+  const categories = ['All', ...new Set(transactions.map(tx => tx.category))];
+
+  // 2. Sorting Logic
+  const sortedTransactions = [...transactions].sort((a, b) => {
+    const dateA = new Date(a.date).getTime();
+    const dateB = new Date(b.date).getTime();
+    return sortOrder === 'newest' ? dateB - dateA : dateA - dateB;
+  });
+
+  // 3. Filtering Logic
+  const filteredTransactions = sortedTransactions.filter(tx => 
+    selectedCategory === 'All' || tx.category === selectedCategory
+  );
+
+  const totalPages = Math.ceil(filteredTransactions.length / itemsPerPage);
+
+  // 4. Pagination Logic
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const currentTransactions = filteredTransactions.slice(startIndex, startIndex + itemsPerPage);
 
   return (
     <div className="tx-page">
@@ -258,18 +276,50 @@ const TransactionsPage: React.FC = () => {
         {/* Filter Bar */}
         <div className="tx-filters">
           <div className="filter-left">
-            <button className="filter-chip filter-chip-active">All Types</button>
+            <span className="tx-version-badge">Finexis v2.0</span>
+            <button 
+              className={`filter-chip ${selectedCategory === 'All' ? 'filter-chip-active' : ''}`}
+              onClick={() => { setSelectedCategory('All'); setCurrentPage(1); }}
+            >
+              All Types
+            </button>
             <button className="filter-chip">
               <CalendarIcon /> Last 30 days
             </button>
-            <button className="filter-chip">
-              Category <ChevronDown />
-            </button>
+            <div className="category-filter-wrap">
+              <button 
+                className={`filter-chip ${selectedCategory !== 'All' ? 'filter-chip-active' : ''}`}
+                onClick={() => setIsCategoryOpen(!isCategoryOpen)}
+              >
+                {selectedCategory === 'All' ? 'Category' : selectedCategory} <ChevronDown />
+              </button>
+              
+              {isCategoryOpen && (
+                <div className="category-dropdown glassy-card">
+                  {categories.map(cat => (
+                    <div 
+                      key={cat} 
+                      className={`dropdown-item ${selectedCategory === cat ? 'dropdown-item-active' : ''}`}
+                      onClick={() => {
+                        setSelectedCategory(cat);
+                        setCurrentPage(1);
+                        setIsCategoryOpen(false);
+                      }}
+                    >
+                      {cat}
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
           </div>
           <div className="filter-right">
             <span className="sort-label">Sort by:</span>
-            <button className="sort-btn">
-              Date (Newest) <ChevronDown />
+            <button 
+              className="sort-btn"
+              onClick={() => setSortOrder(sortOrder === 'newest' ? 'oldest' : 'newest')}
+            >
+              {sortOrder === 'newest' ? 'Date (Newest)' : 'Date (Oldest)'} <ChevronDown />
             </button>
           </div>
         </div>
@@ -284,11 +334,10 @@ const TransactionsPage: React.FC = () => {
                 <th>CATEGORY</th>
                 <th>AMOUNT</th>
                 <th>STATUS</th>
-                <th>ACTIONS</th>
               </tr>
             </thead>
             <tbody>
-              {transactions.map((tx) => (
+              {currentTransactions.map((tx) => (
                 <tr key={tx.id} className="tx-row">
                   <td className="tx-date">{tx.date}</td>
                   <td className="tx-desc">
@@ -309,12 +358,6 @@ const TransactionsPage: React.FC = () => {
                     <span className={`status-dot status-dot-${tx.status.toLowerCase()}`}></span>
                     <span className="status-text">{tx.status}</span>
                   </td>
-                  <td>
-                    <div className="tx-actions">
-                      <button className="action-btn" title="Edit"><EditIcon /></button>
-                      <button className="action-btn action-btn-danger" title="Delete"><TrashIcon /></button>
-                    </div>
-                  </td>
                 </tr>
               ))}
             </tbody>
@@ -323,7 +366,7 @@ const TransactionsPage: React.FC = () => {
           {/* Pagination */}
           <div className="tx-pagination">
             <span className="pagination-info">
-              Showing <strong>1–10</strong> of <strong>1,240</strong> transactions
+              Showing <strong>{startIndex + 1}–{Math.min(startIndex + itemsPerPage, transactions.length)}</strong> of <strong>{transactions.length}</strong> transactions
             </span>
             <div className="pagination-controls">
               <button
@@ -333,7 +376,8 @@ const TransactionsPage: React.FC = () => {
               >
                 <ChevronLeft />
               </button>
-              {[1, 2, 3].map(p => (
+              
+              {Array.from({ length: Math.min(totalPages, 3) }, (_, i) => i + 1).map(p => (
                 <button
                   key={p}
                   className={`page-btn ${currentPage === p ? 'page-btn-active' : ''}`}
@@ -342,13 +386,19 @@ const TransactionsPage: React.FC = () => {
                   {p}
                 </button>
               ))}
-              <span className="page-ellipsis">…</span>
-              <button
-                className={`page-btn ${currentPage === totalPages ? 'page-btn-active' : ''}`}
-                onClick={() => setCurrentPage(totalPages)}
-              >
-                {totalPages}
-              </button>
+
+              {totalPages > 3 && (
+                <>
+                  <span className="page-ellipsis">…</span>
+                  <button
+                    className={`page-btn ${currentPage === totalPages ? 'page-btn-active' : ''}`}
+                    onClick={() => setCurrentPage(totalPages)}
+                  >
+                    {totalPages}
+                  </button>
+                </>
+              )}
+
               <button
                 className="page-btn page-nav"
                 onClick={() => setCurrentPage(p => Math.min(totalPages, p + 1))}

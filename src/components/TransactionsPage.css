@@ -1,10 +1,10 @@
 /* ─── Page Layout ─────────────────────── */
 .tx-page {
   display: flex;
-  gap: 20px;
+  gap: 24px;
   flex: 1;
   min-height: 0;
-  padding: 0;
+  padding: 0 24px 24px 0; 
 }
 
 /* ─── Main Table Section ──────────────── */
@@ -14,6 +14,7 @@
   flex-direction: column;
   gap: 16px;
   min-width: 0;
+  padding-top: 24px; 
 }
 
 /* ─── Filter Bar ──────────────────────── */
@@ -66,24 +67,67 @@
   color: white;
 }
 
+.filter-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
 .sort-label {
   font-size: 13px;
   color: #94A3B8;
-  margin-right: 4px;
+  font-weight: 600;
 }
 
 .sort-btn {
   display: flex;
   align-items: center;
   gap: 6px;
-  padding: 6px 12px;
-  border-radius: 8px;
   background: transparent;
-  color: #3B4CF0;
-  font-size: 13px;
-  font-weight: 600;
-  cursor: pointer;
   border: none;
+  font-size: 13px;
+  font-weight: 700;
+  color: #3B4CF0;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+/* ─── Category Dropdown ───────────────── */
+.category-filter-wrap {
+  position: relative;
+}
+
+.category-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  width: 200px;
+  z-index: 100;
+  padding: 8px !important;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.dropdown-item {
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #475569;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.dropdown-item:hover {
+  background: rgba(59, 76, 240, 0.08);
+  color: #3B4CF0;
+}
+
+.dropdown-item-active {
+  background: rgba(59, 76, 240, 0.12);
+  color: #3B4CF0;
+  font-weight: 700;
 }
 
 /* ─── Table Wrapper (Glassified) ──────── */
@@ -95,12 +139,24 @@
   border-radius: 24px;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04);
   overflow: hidden;
-  flex: 1;
   display: flex;
   flex-direction: column;
+  margin-bottom: 10px; 
 }
 
 /* ─── Table ───────────────────────────── */
+.tx-version-badge {
+  font-size: 9px;
+  font-weight: 800;
+  color: #3B4CF0;
+  background: rgba(59, 76, 240, 0.1);
+  padding: 4px 8px;
+  border-radius: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-right: 8px;
+}
+
 .tx-table {
   width: 100%;
   border-collapse: collapse;
@@ -119,11 +175,10 @@
 }
 
 .tx-table th:nth-child(1) { width: 120px; }
-.tx-table th:nth-child(2) { width: auto; }
+.tx-table th:nth-child(2) { width: 420px; }
 .tx-table th:nth-child(3) { width: 140px; }
 .tx-table th:nth-child(4) { width: 140px; }
-.tx-table th:nth-child(5) { width: 130px; }
-.tx-table th:nth-child(6) { width: 100px; }
+.tx-table th:nth-child(5) { width: 140px; }
 
 .tx-table td {
   padding: 20px 24px;
@@ -314,7 +369,8 @@
   min-width: 260px;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 12px;
+  padding-top: 48px; 
 }
 
 .insight-header {
@@ -338,7 +394,7 @@
   -webkit-backdrop-filter: blur(24px);
   border: 1px solid rgba(255, 255, 255, 0.6);
   border-radius: 20px;
-  padding: 20px;
+  padding: 14px 15px;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.03);
   transition: transform 0.2s ease;
 }
@@ -367,7 +423,7 @@
 .budget-gauge-wrap {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 12px;
   margin-top: 10px;
 }
 
@@ -429,7 +485,7 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
 }
 
 .audit-notify-dot {
@@ -459,7 +515,7 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  margin-bottom: 14px;
+  margin-bottom: 10px;
 }
 
 .audit-count {
@@ -574,10 +630,11 @@
 .tax-report-banner {
   background: linear-gradient(135deg, #3B4CF0 0%, #1E3A8A 100%);
   border-radius: 24px;
-  padding: 24px;
+  padding: 18px;
   color: white;
-  margin-top: auto;
+  margin-top: 20px; 
   box-shadow: 0 12px 30px rgba(59, 76, 240, 0.25);
+  margin-bottom: 20px; 
 }
 
 .tax-report-badge {
@@ -587,7 +644,7 @@
   padding: 4px 10px;
   border-radius: 4px;
   display: inline-block;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
   letter-spacing: 0.8px;
 }
 
@@ -599,10 +656,10 @@
 }
 
 .tax-report-sub {
-  font-size: 13px;
+  font-size: 12px;
   opacity: 0.8;
-  margin-bottom: 20px;
-  line-height: 1.5;
+  margin-bottom: 16px;
+  line-height: 1.4;
 }
 
 .tax-report-actions {

@@ -22,18 +22,19 @@ const TransactionsIcon = () => (
   </svg>
 );
 
+const ChevronRightIcon = () => (
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ opacity: 0.6 }}>
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  );
+
 const InsightsIcon = () => (
   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
     <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
   </svg>
 );
 
-const PlusIcon = () => (
-  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-    <line x1="12" y1="5" x2="12" y2="19"></line>
-    <line x1="5" y1="12" x2="19" y2="12"></line>
-  </svg>
-);
+
 
 const ExpandIcon = () => (
   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -86,12 +87,28 @@ const Sidebar: React.FC<SidebarProps> = ({ activeTab, setActiveTab }) => {
           ))}
         </nav>
 
-        {/* Bottom Floating Add Action */}
+        {/* Sidebar Bottom Profile Section */}
         <div className="sidebar-bottom">
-          <button className="add-action-btn">
-            <PlusIcon />
-            {isExpanded && <span className="add-action-label">Create new task</span>}
-          </button>
+          <div className={`sidebar-profile-item ${isExpanded ? 'expanded' : ''}`}>
+             <div className="sidebar-avatar-wrap">
+                <img 
+                  src="https://api.dicebear.com/7.x/avataaars/svg?seed=Alex" 
+                  alt="Avatar" 
+                  className="sidebar-avatar-img"
+                />
+             </div>
+             {isExpanded && (
+               <>
+                <div className="sidebar-user-info">
+                    <span className="sidebar-user-name">Alex Architect</span>
+                    <span className="sidebar-user-role">Institutional Admin</span>
+                </div>
+                <button className="view-profile-cta" title="View Profile">
+                    <ChevronRightIcon />
+                </button>
+               </>
+             )}
+          </div>
         </div>
 
       </aside>
