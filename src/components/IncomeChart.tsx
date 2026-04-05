@@ -1,5 +1,5 @@
 import React from 'react';
-import { AreaChart, Area, ResponsiveContainer, Tooltip } from 'recharts';
+import { AreaChart, Area, ResponsiveContainer, Tooltip, XAxis, CartesianGrid } from 'recharts';
 import './LeftColumn.css';
 
 const data = [
@@ -12,11 +12,25 @@ const data = [
   { name: 'Sun', value: 2500 }
 ];
 
+const totalValue = data.reduce((acc, curr) => acc + curr.value, 0);
+const avgValue = Math.round(totalValue / data.length);
+
 const CustomTooltip = ({ active, payload }: any) => {
   if (active && payload && payload.length) {
+    const currentIndex = data.findIndex(d => d.name === payload[0].payload.name);
+    let trend = null;
+    if (currentIndex > 0) {
+      const prevValue = data[currentIndex - 1].value;
+      const diff = payload[0].value - prevValue;
+      trend = diff >= 0 ? `+${diff}` : `${diff}`;
+    }
+
     return (
       <div className="custom-income-tooltip">
-        <div className="tooltip-date">{payload[0].payload.name}</div>
+        <div className="tooltip-header">
+          <span className="tooltip-date">{payload[0].payload.name}</span>
+          {trend && <span className={`tooltip-trend ${trend.startsWith('+') ? 'pos' : 'neg'}`}>{trend}</span>}
+        </div>
         <div className="tooltip-amount">Rs {payload[0].value.toLocaleString()}</div>
       </div>
     );
@@ -41,7 +55,10 @@ const IncomeChart: React.FC = () => {
       </div>
       
       <div className="income-amount-row">
-        <h2>Rs 2,500</h2>
+        <div className="main-stats">
+          <h2>Rs 2,500</h2>
+          <span className="avg-text">Avg. Rs {avgValue.toLocaleString()}</span>
+        </div>
         <div className="income-badge">
           <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
             <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
@@ -51,15 +68,25 @@ const IncomeChart: React.FC = () => {
         </div>
       </div>
 
-      <div className="income-chart-wrap" style={{ width: '100%', height: '100px', marginTop: 'auto' }}>
+      <div className="income-chart-wrap" style={{ width: '100%', height: '120px', marginTop: '10px' }}>
         <ResponsiveContainer width="100%" height="100%">
-          <AreaChart data={data} margin={{ top: 10, right: 0, left: 0, bottom: 0 }}>
+          <AreaChart data={data} margin={{ top: 5, right: 20, left: 20, bottom: 20 }}>
             <defs>
               <linearGradient id="colorValue" x1="0" y1="0" x2="0" y2="1">
                 <stop offset="5%" stopColor="#3B4CF0" stopOpacity={0.4}/>
                 <stop offset="95%" stopColor="#3B4CF0" stopOpacity={0}/>
               </linearGradient>
             </defs>
+            <CartesianGrid vertical={false} strokeDasharray="3 3" stroke="rgba(255,255,255,0.1)" />
+            <XAxis 
+              dataKey="name" 
+              axisLine={false} 
+              tickLine={false} 
+              tick={{ fontSize: 10, fill: '#94A3B8' }}
+              dy={10}
+              interval={0}
+              padding={{ left: 10, right: 10 }}
+            />
             <Tooltip 
               content={<CustomTooltip />} 
               cursor={{ stroke: '#A4ABFA', strokeWidth: 1, strokeDasharray: '4 4' }} 

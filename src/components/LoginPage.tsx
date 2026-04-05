@@ -93,12 +93,12 @@ const LoginPage: React.FC<LoginPageProps> = ({ onLogin }) => {
           {/* Logo */}
           <div className="login-logo">
             <FinFlowLogo />
-            <span className="login-logo-text">FinFlow</span>
+            <span className="login-logo-text">Finexis</span>
           </div>
 
           {/* Welcome */}
           <h1 className="login-heading">Welcome Back. Let's start!</h1>
-          <p className="login-sub">Stay in control, stay ahead.</p>
+          <p className="login-sub">Where Your Money Makes Sense.</p>
 
           {/* Mode Toggle */}
           <div className="login-toggle">

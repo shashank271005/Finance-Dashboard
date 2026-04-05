@@ -168,6 +168,66 @@ const transactions: Transaction[] = [
   { id: 't10', date: 'Oct 10, 2023', description: 'Development Tools License', category: 'Technology', amount: '₹18,750', isPositive: false, status: 'Completed', Icon: DevIcon },
 ];
 
+/* ─── Budget Gauge ──────────────────────── */
+const BudgetGauge: React.FC<{ current: number; total: number }> = ({ current, total }) => {
+  const percentage = Math.min((current / total) * 100, 100);
+  const radius = 36;
+  const circumference = 2 * Math.PI * radius;
+  const offset = circumference - (percentage / 100) * circumference;
+
+  return (
+    <div className="budget-gauge-wrap">
+      <div className="gauge-svg-container">
+        <svg width="90" height="90" viewBox="0 0 100 100">
+          <circle 
+            className="gauge-bg" 
+            cx="50" cy="50" r={radius} 
+            strokeWidth="8" fill="transparent" 
+          />
+          <circle 
+            className="gauge-fill" 
+            cx="50" cy="50" r={radius} 
+            strokeWidth="8" fill="transparent" 
+            strokeDasharray={circumference}
+            strokeDashoffset={offset}
+            strokeLinecap="round"
+            transform="rotate(-90 50 50)"
+          />
+        </svg>
+        <div className="gauge-label">
+          <span className="gauge-percent">{Math.round(percentage)}%</span>
+        </div>
+      </div>
+      <div className="gauge-info">
+        <div className="gauge-amounts">
+          <span className="gauge-current">₹{current.toLocaleString()}</span>
+          <span className="gauge-total">of ₹{total.toLocaleString()}</span>
+        </div>
+        <span className="gauge-status-text">Monthly Budget Spent</span>
+      </div>
+    </div>
+  );
+};
+
+/* ─── Smart Audit Alert ──────────────────── */
+const SmartAudit: React.FC = () => {
+  return (
+    <div className="insight-card glassy-card smart-audit-card">
+      <div className="audit-header">
+        <div className="audit-notify-dot"></div>
+        <span className="insight-card-label">Smart Audit</span>
+      </div>
+      <div className="audit-content">
+        <div className="audit-item">
+          <span className="audit-count">3</span>
+          <span className="audit-text">Transactions need categories</span>
+        </div>
+        <div className="audit-action-link">Review Now <ArrowRightIcon /></div>
+      </div>
+    </div>
+  );
+};
+
 /* ─── Mini Bar Chart ─────────────────────── */
 const SpendingTrendChart: React.FC = () => {
   const bars = [55, 70, 45, 80, 60, 90, 75];
@@ -232,8 +292,10 @@ const TransactionsPage: React.FC = () => {
                 <tr key={tx.id} className="tx-row">
                   <td className="tx-date">{tx.date}</td>
                   <td className="tx-desc">
-                    <tx.Icon />
-                    <span>{tx.description}</span>
+                    <div className="tx-icon-simple"><tx.Icon /></div>
+                    <div className="tx-info">
+                      <span className="tx-title">{tx.description}</span>
+                    </div>
                   </td>
                   <td>
                     <span className="tx-category">{tx.category}</span>
@@ -243,10 +305,9 @@ const TransactionsPage: React.FC = () => {
                       {tx.isPositive ? '+' : '−'} ₹{tx.amount.replace('₹', '')}
                     </span>
                   </td>
-                  <td>
-                    <span className={`tx-status status-${tx.status.toLowerCase()}`}>
-                      {tx.status}
-                    </span>
+                  <td className="tx-status">
+                    <span className={`status-dot status-dot-${tx.status.toLowerCase()}`}></span>
+                    <span className="status-text">{tx.status}</span>
                   </td>
                   <td>
                     <div className="tx-actions">
@@ -307,26 +368,18 @@ const TransactionsPage: React.FC = () => {
           <TrendUpIcon />
         </div>
 
-        {/* Most Frequent Category */}
-        <div className="insight-card">
-          <div className="insight-card-label">MOST FREQUENT CATEGORY</div>
-          <div className="insight-card-value">Food &amp; Dining</div>
-          <div className="insight-card-sub">
-            <span className="insight-up-badge">↑ 12%</span>
-            <span className="insight-card-note"> vs last month</span>
-          </div>
+        {/* Budget Progress Gauge */}
+        <div className="insight-card glassy-card budget-card">
+          <div className="insight-card-label">Monthly Progress</div>
+          <BudgetGauge current={180500} total={250000} />
         </div>
 
-        {/* Highest Expense */}
-        <div className="insight-card">
-          <div className="insight-card-label">HIGHEST EXPENSE</div>
-          <div className="insight-card-value">₹19,900</div>
-          <div className="insight-card-note-row">Catering – Quarterly Review</div>
-        </div>
+        {/* Smart Audit Card */}
+        <SmartAudit />
 
         {/* Spending Trend Chart */}
-        <div className="insight-chart-card">
-          <div className="insight-chart-label">SPENDING TREND</div>
+        <div className="insight-card insight-chart-card glassy-card">
+          <div className="insight-card-label">Spending Trend</div>
           <SpendingTrendChart />
         </div>
 
@@ -336,7 +389,7 @@ const TransactionsPage: React.FC = () => {
 
         {/* Annual Tax Report Banner */}
         <div className="tax-report-banner">
-          <div className="tax-report-badge">PREMIUM RESOURCE</div>
+          <div className="tax-report-badge">FINEXIS PREMIUM</div>
           <div className="tax-report-title">Annual Tax Report 2023</div>
           <div className="tax-report-sub">Ready for audit and submission</div>
           <div className="tax-report-actions">
