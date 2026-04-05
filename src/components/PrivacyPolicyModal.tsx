@@ -47,7 +47,7 @@ const sections: Section[] = [
         <p className="pp-rationale">
           UX/Product Rationale: Young professionals are highly aware of data harvesting. By explicitly breaking
           down the data into "what you give us" versus "what we pull from your bank," you remove the mystery.
-          Mentioning device data explains why the app might track their clicks—framing it around improving their
+          Mentioning device data explains why the app might track their clicks—framing it around improving Their
           experience, not spying.
         </p>
       </>
@@ -219,8 +219,6 @@ interface PrivacyPolicyModalProps {
 }
 
 const PrivacyPolicyModal: React.FC<PrivacyPolicyModalProps> = ({ onClose, onAgree }) => {
-  const [activeSection, setActiveSection] = useState(1);
-  const [agreedSections, setAgreedSections] = useState<Set<number>>(new Set());
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -233,24 +231,10 @@ const PrivacyPolicyModal: React.FC<PrivacyPolicyModalProps> = ({ onClose, onAgre
     setTimeout(onClose, 280);
   };
 
-  const handleAgree = () => {
-    const updated = new Set(agreedSections).add(activeSection);
-    setAgreedSections(updated);
-    if (activeSection < sections.length) {
-      setActiveSection(s => s + 1);
-    } else {
-      // All sections walked through — agree all
-      setVisible(false);
-      setTimeout(onAgree, 280);
-    }
-  };
-
   const handleAgreeAll = () => {
     setVisible(false);
     setTimeout(onAgree, 280);
   };
-
-  const current = sections.find(s => s.id === activeSection)!;
 
   return (
     <div className={`pp-backdrop ${visible ? 'pp-visible' : ''}`} onClick={handleClose}>
@@ -274,38 +258,21 @@ const PrivacyPolicyModal: React.FC<PrivacyPolicyModalProps> = ({ onClose, onAgre
 
         {/* ── Body ── */}
         <div className="pp-body">
-          {/* Left sidebar */}
-          <aside className="pp-sidebar">
-            <nav className="pp-nav">
-              {sections.map(s => (
-                <button
-                  key={s.id}
-                  className={`pp-nav-item ${activeSection === s.id ? 'pp-nav-active' : ''} ${agreedSections.has(s.id) ? 'pp-nav-agreed' : ''}`}
-                  onClick={() => setActiveSection(s.id)}
-                >
+          {/* Scrollable Content (Single Column) */}
+          <div className="pp-content">
+            {sections.map(s => (
+              <div key={s.id} className="pp-section-group">
+                <h3 className="pp-section-title">
                   {s.id}. {s.title}
-                </button>
-              ))}
-            </nav>
+                </h3>
+                <div className="pp-section-body">{s.content}</div>
+              </div>
+            ))}
 
-            <button className="pp-agree-all-btn" onClick={handleAgreeAll}>
-              Agree to all terms
-            </button>
-          </aside>
-
-          {/* Right content */}
-          <div className="pp-content" key={activeSection}>
-            <h3 className="pp-section-title">
-              {activeSection}. {current.title}
-            </h3>
-            <div className="pp-section-body">{current.content}</div>
-
+            {/* Unified One-Button Actions */}
             <div className="pp-content-actions">
-              <button className="pp-decline-btn" onClick={handleClose}>
-                Not right now...
-              </button>
-              <button className="pp-agree-btn" onClick={handleAgree}>
-                Agree
+              <button className="pp-agree-all-long-btn" onClick={handleAgreeAll}>
+                Agree to all terms
               </button>
             </div>
           </div>
