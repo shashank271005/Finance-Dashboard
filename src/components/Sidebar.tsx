@@ -1,5 +1,6 @@
 import React from 'react';
 import './Sidebar.css';
+import profileImg from '../assets/profile_shashank.png';
 
 interface SidebarProps {
   activeTab: string;
@@ -90,21 +91,29 @@ const Sidebar: React.FC<SidebarProps> = ({ activeTab, setActiveTab, isExpanded, 
 
         {/* Sidebar Bottom Profile Section */}
         <div className="sidebar-bottom">
-          <div className={`sidebar-profile-item ${isExpanded ? 'expanded' : ''}`}>
+          <div 
+            className={`sidebar-profile-item ${isExpanded ? 'expanded' : ''} ${activeTab === 'profile' ? 'active-profile' : ''}`}
+            onClick={() => setActiveTab('profile')}
+            style={{ cursor: 'pointer' }}
+          >
              <div className="sidebar-avatar-wrap">
                 <img 
-                  src="https://api.dicebear.com/7.x/avataaars/svg?seed=Alex" 
-                  alt="Avatar" 
-                  className="sidebar-avatar-img"
+                   src={profileImg ? profileImg : "https://api.dicebear.com/7.x/avataaars/svg?seed=Alex"} 
+                   alt="Avatar" 
+                   className="sidebar-avatar-img"
                 />
              </div>
              {isExpanded && (
                <>
                 <div className="sidebar-user-info">
-                    <span className="sidebar-user-name">Alex Architect</span>
-                    <span className="sidebar-user-role">Institutional Admin</span>
+                    <span className="sidebar-user-name">Shashank Singh</span>
+                    <span className="sidebar-user-role">Student</span>
                 </div>
-                <button className="view-profile-cta" title="View Profile">
+                <button 
+                  className="view-profile-cta" 
+                  title="View Profile"
+                  onClick={(e) => { e.stopPropagation(); setActiveTab('profile'); }}
+                >
                     <ChevronRightIcon />
                 </button>
                </>

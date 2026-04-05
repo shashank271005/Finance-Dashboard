@@ -6,6 +6,7 @@ import InsightsPage from './components/InsightsPage';
 import LoginPage from './components/LoginPage';
 import OnboardingPage from './components/OnboardingPage.tsx';
 import LandingPage from './components/LandingPage';
+import ProfilePage from './components/ProfilePage';
 import './App.css';
 
 const App: React.FC = () => {
@@ -23,6 +24,12 @@ const App: React.FC = () => {
   const handleStartOnboarding = () => {
     setIsLoggedIn(true);
     setIsOnboarding(true);
+  };
+
+  const handleLogout = () => {
+    setIsLoggedIn(false);
+    setIsOnboarding(false);
+    setShowLanding(false); // Go straight to LoginPage on logout
   };
 
   if (!isLoggedIn) {
@@ -53,6 +60,7 @@ const App: React.FC = () => {
         {activeTab === 'dashboard' && <DashboardHome />}
         {activeTab === 'transactions' && <TransactionsPage />}
         {activeTab === 'insights' && <InsightsPage isSidebarExpanded={isSidebarExpanded} />}
+        {activeTab === 'profile' && <ProfilePage onLogout={handleLogout} />}
       </div>
 
       {/* ── Mobile Bottom Navigation ── */}
@@ -93,6 +101,18 @@ const App: React.FC = () => {
               </svg>
           </span>
           <span className="mob-nav-label">Insights</span>
+        </button>
+        <button 
+          className={`mob-nav-item ${activeTab === 'profile' ? 'active' : ''}`}
+          onClick={() => setActiveTab('profile')}
+        >
+          <span className="mob-nav-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+              </svg>
+          </span>
+          <span className="mob-nav-label">Profile</span>
         </button>
       </nav>
     </div>
