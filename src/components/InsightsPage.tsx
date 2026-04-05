@@ -117,7 +117,12 @@ const SpendingBubbleChart: React.FC = () => {
     );
   };
 
-const InsightsPage: React.FC = () => {
+interface InsightsPageProps {
+  isSidebarExpanded?: boolean;
+}
+
+const InsightsPage: React.FC<InsightsPageProps> = ({ isSidebarExpanded }) => {
+  const currencyPrefix = isSidebarExpanded ? '' : 'Rs ';
   return (
     <div className="insights-view app-fade-in">
       
@@ -139,7 +144,7 @@ const InsightsPage: React.FC = () => {
             <div className="more-options"><MoreIcon /></div>
           </div>
           <div className="limit-info">
-            <p>Rs 12,000 spent of Rs 36,000</p>
+            <p>{currencyPrefix}12,000 spent of {currencyPrefix}36,000</p>
             <span className="limit-percent">33.3%</span>
           </div>
           <div className="progress-bar-bg">
@@ -153,13 +158,13 @@ const InsightsPage: React.FC = () => {
             <div className="more-options"><MoreIcon /></div>
           </div>
           <p className="total-savings-label">Total savings</p>
-          <h2 className="total-savings-amount">Rs 45,500</h2>
+          <h2 className="total-savings-amount">{currencyPrefix}45,500</h2>
 
           <div className="saving-items">
             {[
-              { label: 'Emergency Fund', icon: '🛡️', amount: 'Rs 5,000', target: 'Rs 10,000', p: 50 },
-              { label: 'Vacation Fund', icon: '✈️', amount: 'Rs 5,000', target: 'Rs 10,000', p: 50 },
-              { label: 'Car Loan Payments', icon: '🚗', amount: 'Rs 5,000', target: 'Rs 10,000', p: 50 }
+              { label: 'Emergency Fund', icon: '🛡️', amount: `${currencyPrefix}5,000`, target: `${currencyPrefix}10,000`, p: 50 },
+              { label: 'Vacation Fund', icon: '✈️', amount: `${currencyPrefix}5,000`, target: `${currencyPrefix}10,000`, p: 50 },
+              { label: 'Car Loan Payments', icon: '🚗', amount: `${currencyPrefix}5,000`, target: `${currencyPrefix}10,000`, p: 50 }
             ].map((plan, i) => (
               <div key={i} className="saving-item">
                 <div className="item-main">
@@ -191,7 +196,7 @@ const InsightsPage: React.FC = () => {
             <div className="summary-icon icon-blue">₹</div>
             <div className="summary-content">
               <span className="summary-trend pos">+6.75%</span>
-              <h3 className="summary-val">Rs 20,230</h3>
+              <h3 className="summary-val">{currencyPrefix}20,230</h3>
               <p className="summary-label">Total Income</p>
             </div>
             <div className="more-options"><MoreIcon /></div>
@@ -200,7 +205,7 @@ const InsightsPage: React.FC = () => {
             <div className="summary-icon icon-red">₹</div>
             <div className="summary-content">
               <span className="summary-trend neg">−5.15%</span>
-              <h3 className="summary-val">Rs 9,260</h3>
+              <h3 className="summary-val">{currencyPrefix}9,260</h3>
               <p className="summary-label">Total Spending</p>
             </div>
             <div className="more-options"><MoreIcon /></div>
@@ -209,7 +214,7 @@ const InsightsPage: React.FC = () => {
             <div className="summary-icon icon-green">₹</div>
             <div className="summary-content">
               <span className="summary-trend pos">+2.25%</span>
-              <h3 className="summary-val">Rs 10,970</h3>
+              <h3 className="summary-val">{currencyPrefix}10,970</h3>
               <p className="summary-label">Total Savings</p>
             </div>
             <div className="more-options"><MoreIcon /></div>
@@ -243,7 +248,7 @@ const InsightsPage: React.FC = () => {
           <div className="cashflow-summary">
             <div className="cashflow-balance">
                 <p>Total Balance</p>
-                <h3>Rs 20,230</h3>
+                <h3>{currencyPrefix}20,230</h3>
             </div>
             <div className="cashflow-legend">
                 <div className="legend-item"><span className="dot dot-income"></span> Income</div>

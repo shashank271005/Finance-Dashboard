@@ -1,9 +1,9 @@
 /* ─── Layout ───────────────────────────── */
 .insights-view {
   display: grid;
-  grid-template-columns: 280px 1fr 300px;
-  gap: 24px;
-  padding: 32px;
+  grid-template-columns: minmax(200px, 280px) 1fr minmax(220px, 300px);
+  gap: 16px;
+  padding: 24px;
   height: 100%;
   overflow-y: auto;
   overflow-x: hidden;
@@ -215,16 +215,18 @@
 
 /* ─── Summary Cards (Mid) ──────────────── */
 .summary-cards {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    flex-wrap: wrap;
     gap: 16px;
 }
 
 .summary-card {
+    flex: 1;
+    min-width: 140px;
     display: flex;
     align-items: center;
     gap: 12px;
-    padding: 20px;
+    padding: 18px;
 }
 
 .summary-icon {

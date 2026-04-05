@@ -52,9 +52,10 @@ const AppleIcon = () => (
 /* ─── Component ──────────────────────────────── */
 interface LoginPageProps {
   onLogin: () => void;
+  onSignup: () => void;
 }
 
-const LoginPage: React.FC<LoginPageProps> = ({ onLogin }) => {
+const LoginPage: React.FC<LoginPageProps> = ({ onLogin, onSignup }) => {
   const [mode, setMode] = useState<'signin' | 'signup' | 'forgot' | 'reset'>('signin');
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirm, setShowConfirm] = useState(false);
@@ -80,7 +81,12 @@ const LoginPage: React.FC<LoginPageProps> = ({ onLogin }) => {
       setMode('signin');
       return;
     }
-    onLogin();
+    
+    if (mode === 'signup') {
+      onSignup();
+    } else {
+      onLogin();
+    }
   };
 
   return (
@@ -163,23 +169,26 @@ const LoginPage: React.FC<LoginPageProps> = ({ onLogin }) => {
               </div>
             )}
 
-            {/* Email */}
-            <div className="input-wrap input-wrap-icon">
-              <input name="email" type="email" value={form.email} onChange={handleChange}
-                placeholder="Enter your email" className="form-input" />
-              <span className="input-icon"><MailIcon /></span>
-            </div>
+            {/* Email & Password (Sign In / Sign Up only) */}
+            {(mode === 'signin' || mode === 'signup') && (
+              <>
+                <div className="input-wrap input-wrap-icon">
+                  <input name="email" type="email" value={form.email} onChange={handleChange}
+                    placeholder="Enter your email" className="form-input" />
+                  <span className="input-icon"><MailIcon /></span>
+                </div>
 
-            {/* Password */}
-            <div className="input-wrap input-wrap-icon">
-              <input name="password" type={showPassword ? 'text' : 'password'}
-                value={form.password} onChange={handleChange}
-                placeholder="Enter your password" className="form-input" />
-              <button type="button" className="input-icon-btn"
-                onClick={() => setShowPassword(v => !v)}>
-                {showPassword ? <EyeOffIcon /> : <EyeIcon />}
-              </button>
-            </div>
+                <div className="input-wrap input-wrap-icon">
+                  <input name="password" type={showPassword ? 'text' : 'password'}
+                    value={form.password} onChange={handleChange}
+                    placeholder="Enter your password" className="form-input" />
+                  <button type="button" className="input-icon-btn"
+                    onClick={() => setShowPassword(v => !v)}>
+                    {showPassword ? <EyeOffIcon /> : <EyeIcon />}
+                  </button>
+                </div>
+              </>
+            )}
 
             {/* Sign Up: Confirm + Policy */}
             {mode === 'signup' && (

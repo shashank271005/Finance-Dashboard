@@ -51,16 +51,16 @@ const ArrowRightIcon = () => (
 const AWSIcon = () => (
   <div className="tx-icon tx-icon-blue">
     <svg width="15" height="15" viewBox="0 0 24 24" fill="none">
-      <path d="M7 15l-4-4 4-4M17 15l4-4-4-4" stroke="white" strokeWidth="1.8" strokeLinecap="round"/>
-      <path d="M3 11h18" stroke="white" strokeWidth="1.8" strokeLinecap="round"/>
+      <path d="M7 15l-4-4 4-4M17 15l4-4-4-4" stroke="#0F172A" strokeWidth="1.8" strokeLinecap="round"/>
+      <path d="M3 11h18" stroke="#0F172A" strokeWidth="1.8" strokeLinecap="round"/>
     </svg>
   </div>
 );
 const ClientIcon = () => (
   <div className="tx-icon tx-icon-green">
     <svg width="15" height="15" viewBox="0 0 24 24" fill="none">
-      <rect x="2" y="7" width="20" height="14" rx="2" stroke="white" strokeWidth="1.8"/>
-      <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2" stroke="white" strokeWidth="1.8"/>
+      <rect x="2" y="7" width="20" height="14" rx="2" stroke="#0F172A" strokeWidth="1.8"/>
+      <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2" stroke="#0F172A" strokeWidth="1.8"/>
     </svg>
   </div>
 );
@@ -74,49 +74,49 @@ const CateringIcon = () => (
 const MarketingIcon = () => (
   <div className="tx-icon tx-icon-purple">
     <svg width="15" height="15" viewBox="0 0 24 24" fill="none">
-      <circle cx="12" cy="12" r="10" stroke="white" strokeWidth="1.8"/>
-      <path d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 5.66-16.88 5.85m19.5 1.9c-3.5-.93-6.63-.82-8.94 0-2.58.92-5.01 2.86-7.44 6.32" stroke="white" strokeWidth="1.8" strokeLinecap="round"/>
+      <circle cx="12" cy="12" r="10" stroke="#0F172A" strokeWidth="1.8"/>
+      <path d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 5.66-16.88 5.85m19.5 1.9c-3.5-.93-6.63-.82-8.94 0-2.58.92-5.01 2.86-7.44 6.32" stroke="#0F172A" strokeWidth="1.8" strokeLinecap="round"/>
     </svg>
   </div>
 );
 const SalaryIcon = () => (
   <div className="tx-icon tx-icon-emerald">
     <svg width="15" height="15" viewBox="0 0 24 24" fill="none">
-      <line x1="12" y1="1" x2="12" y2="23" stroke="white" strokeWidth="1.8" strokeLinecap="round"/>
-      <path d="M17 5H9.5a3.5 3.5 0 1 0 0 7h5a3.5 3.5 0 1 1 0 7H6" stroke="white" strokeWidth="1.8" strokeLinecap="round"/>
+      <line x1="12" y1="1" x2="12" y2="23" stroke="#0F172A" strokeWidth="1.8" strokeLinecap="round"/>
+      <path d="M17 5H9.5a3.5 3.5 0 1 0 0 7h5a3.5 3.5 0 1 1 0 7H6" stroke="#0F172A" strokeWidth="1.8" strokeLinecap="round"/>
     </svg>
   </div>
 );
 const OfficeIcon = () => (
   <div className="tx-icon tx-icon-orange">
     <svg width="15" height="15" viewBox="0 0 24 24" fill="none">
-      <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" stroke="white" strokeWidth="1.8"/>
-      <polyline points="9 22 9 12 15 12 15 22" stroke="white" strokeWidth="1.8"/>
+      <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" stroke="#0F172A" strokeWidth="1.8"/>
+      <polyline points="9 22 9 12 15 12 15 22" stroke="#0F172A" strokeWidth="1.8"/>
     </svg>
   </div>
 );
 const InsuranceIcon = () => (
   <div className="tx-icon tx-icon-red">
     <svg width="15" height="15" viewBox="0 0 24 24" fill="none">
-      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="#0F172A" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
     </svg>
   </div>
 );
 const ConsultingIcon = () => (
   <div className="tx-icon tx-icon-indigo">
     <svg width="15" height="15" viewBox="0 0 24 24" fill="none">
-      <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke="white" strokeWidth="1.8" strokeLinecap="round"/>
-      <circle cx="9" cy="7" r="4" stroke="white" strokeWidth="1.8"/>
-      <path d="M23 21v-2a4 4 0 0 0-3-3.87" stroke="white" strokeWidth="1.8" strokeLinecap="round"/>
-      <path d="M16 3.13a4 4 0 0 1 0 7.75" stroke="white" strokeWidth="1.8" strokeLinecap="round"/>
+      <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke="#0F172A" strokeWidth="1.8" strokeLinecap="round"/>
+      <circle cx="9" cy="7" r="4" stroke="#0F172A" strokeWidth="1.8"/>
+      <path d="M23 21v-2a4 4 0 0 0-3-3.87" stroke="#0F172A" strokeWidth="1.8" strokeLinecap="round"/>
+      <path d="M16 3.13a4 4 0 0 1 0 7.75" stroke="#0F172A" strokeWidth="1.8" strokeLinecap="round"/>
     </svg>
   </div>
 );
 const AdCampaignIcon = () => (
   <div className="tx-icon tx-icon-pink">
     <svg width="15" height="15" viewBox="0 0 24 24" fill="none">
-      <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
-      <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07" stroke="white" strokeWidth="1.8" strokeLinecap="round"/>
+      <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" stroke="#0F172A" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07" stroke="#0F172A" strokeWidth="1.8" strokeLinecap="round"/>
     </svg>
   </div>
 );

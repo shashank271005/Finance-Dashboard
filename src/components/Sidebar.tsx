@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './Sidebar.css';
 
 interface SidebarProps {
   activeTab: string;
   setActiveTab: (tab: string) => void;
+  isExpanded: boolean;
+  setIsExpanded: (expanded: boolean) => void;
 }
 
 const DashboardIcon = () => (
@@ -48,8 +50,7 @@ const CollapseIcon = () => (
   </svg>
 );
 
-const Sidebar: React.FC<SidebarProps> = ({ activeTab, setActiveTab }) => {
-  const [isExpanded, setIsExpanded] = useState(false);
+const Sidebar: React.FC<SidebarProps> = ({ activeTab, setActiveTab, isExpanded, setIsExpanded }) => {
 
   const navItems = [
     { id: 'dashboard', label: 'Dashboard', Icon: DashboardIcon },
