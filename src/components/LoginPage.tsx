@@ -5,10 +5,10 @@ import PrivacyPolicyModal from './PrivacyPolicyModal';
 /* ─── Icons ─────────────────────────────────── */
 const FinFlowLogo = () => (
   <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-    <rect x="0" y="0" width="14" height="14" rx="3.5" fill="#2563EB"/>
-    <rect x="18" y="0" width="14" height="14" rx="3.5" fill="#2563EB" opacity="0.6"/>
-    <rect x="0" y="18" width="14" height="14" rx="3.5" fill="#2563EB" opacity="0.6"/>
-    <rect x="18" y="18" width="14" height="14" rx="3.5" fill="#2563EB" opacity="0.35"/>
+    <rect x="0" y="0" width="14" height="14" rx="3.5" fill="#3b4cf0"/>
+    <rect x="0" y="18" width="14" height="14" rx="3.5" fill="#3b4cf0"/>
+    <rect x="18" y="0" width="14" height="14" rx="3.5" fill="#a4abfa"/>
+    <rect x="18" y="18" width="14" height="14" rx="3.5" fill="#a4abfa"/>
   </svg>
 );
 

@@ -1,0 +1,75 @@
+.upcoming-bills-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.bills-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.bill-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 0;
+}
+
+.bill-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: #3B4CF0;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+}
+
+.bill-details {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  margin: 0 14px;
+}
+
+.bill-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.bill-amount {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+.bill-tag {
+  font-size: 10px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+
+.status-urgent {
+  background: rgba(239, 68, 68, 0.15);
+  color: #EF4444;
+}
+
+.status-soon {
+  background: rgba(245, 158, 11, 0.15);
+  color: #F59E0B;
+}
+
+.status-future {
+  background: rgba(39, 201, 63, 0.15);
+  color: #27C93F;
+}

@@ -1,0 +1,61 @@
+.savings-goals-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.goals-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-top: 10px;
+}
+
+.goal-item {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.goal-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.goal-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.goal-amounts {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+.goal-progress-bg {
+  width: 100%;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 10px;
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(4px);
+}
+
+.goal-progress-fill {
+  height: 100%;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(59, 76, 240, 0.3);
+  transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.goal-percentage {
+  position: absolute;
+  right: 0;
+  top: -22px;
+  font-size: 11px;
+  font-weight: 700;
+}

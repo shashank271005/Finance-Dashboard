@@ -18,15 +18,7 @@
   opacity: 1;
 }
 
-/* The blue fluid background shows through the backdrop - we add a faint copy */
-.pp-backdrop::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  background: url('/blue_fluid_bg.png') center / cover no-repeat;
-  opacity: 0.55;
-  z-index: -1;
-}
+
 
 /* ─── Modal ──────────────────────────────────── */
 .pp-modal {
@@ -145,20 +137,21 @@
   margin-top: 20px;
   padding: 11px 0;
   border-radius: 30px;
-  background: linear-gradient(135deg, #2563EB 0%, #1d4ed8 100%);
+  background: #3B4CF0;
   color: #fff;
   font-size: 13px;
   font-weight: 700;
   border: none;
   cursor: pointer;
   transition: all 0.18s ease;
-  box-shadow: 0 3px 12px rgba(37,99,235,0.32);
+  box-shadow: 0 3px 12px rgba(45,63,224,0.32);
   font-family: var(--font, 'Inter', sans-serif);
 }
 
 .pp-agree-all-btn:hover {
   transform: translateY(-1px);
-  box-shadow: 0 5px 18px rgba(37,99,235,0.4);
+  box-shadow: 0 5px 18px rgba(59,76,240,0.4);
+  background: #3142e0;
 }
 
 /* ─── Content Panel ──────────────────────────── */
@@ -184,7 +177,7 @@
 .pp-section-title {
   font-size: 16px;
   font-weight: 700;
-  color: #2563EB;
+  color: #2D3FE0;
   letter-spacing: -0.2px;
   margin-bottom: 14px;
 }
@@ -273,18 +266,19 @@
 .pp-agree-btn {
   padding: 9px 32px;
   border-radius: 30px;
-  background: linear-gradient(135deg, #2563EB 0%, #1d4ed8 100%);
+  background: #3B4CF0;
   color: #fff;
   font-size: 12.5px;
   font-weight: 700;
   border: none;
   cursor: pointer;
   transition: all 0.18s ease;
-  box-shadow: 0 3px 10px rgba(37,99,235,0.3);
+  box-shadow: 0 3px 10px rgba(45,63,224,0.3);
   font-family: var(--font, 'Inter', sans-serif);
 }
 
 .pp-agree-btn:hover {
   transform: translateY(-1px);
-  box-shadow: 0 5px 16px rgba(37,99,235,0.4);
+  box-shadow: 0 5px 16px rgba(59,76,240,0.4);
+  background: #3142e0;
 }

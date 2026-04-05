@@ -1,0 +1,49 @@
+.dh-page {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  flex: 1;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 30px 50px;
+}
+
+.dh-grid {
+  display: flex;
+  gap: 16px;
+  flex: 1;
+  width: 100%;
+  min-width: 950px;
+  align-items: stretch;
+}
+
+.dh-col {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  flex: 1;
+}
+
+.dh-col-left {
+  flex: 0 0 34%;
+}
+
+.dh-col-mid {
+  flex: 0 0 33%;
+}
+
+.dh-col-right {
+  flex: 0 0 33%;
+}
+
+.placeholder-card {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.03);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #94a3b8;
+  font-weight: 500;
+  width: 100%;
+}
