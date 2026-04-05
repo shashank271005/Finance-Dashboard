@@ -102,3 +102,31 @@
 .dot-white {
   background: white;
 }
+
+/* ─── Small Calendar Mobile Refinement ─── */
+@media (max-width: 768px) {
+  .small-calendar {
+    padding: 16px;
+  }
+
+  .cal-header {
+    margin-bottom: 12px;
+  }
+
+  .cal-grid {
+    gap: 4px 2px;
+  }
+
+  .cal-day-name {
+    font-size: 10px;
+    margin-bottom: 4px;
+  }
+
+  .cal-day {
+    height: 30px;
+  }
+
+  .cal-day-num {
+    font-size: 11px;
+  }
+}

@@ -193,3 +193,37 @@
 .bold-row {
   font-weight: 600;
 }
+
+/* ─── Right Column Mobile Refinement ─── */
+@media (max-width: 768px) {
+  .credit-card {
+    padding: 14px;
+    gap: 16px;
+  }
+
+  .cc-num {
+    font-size: 13px;
+    gap: 16px;
+  }
+
+  .cc-middle {
+    gap: 16px;
+  }
+
+  .inr-badge {
+    font-size: 11px;
+  }
+
+  .b-val {
+    font-size: 13px;
+  }
+
+  .primary-row {
+    font-size: 12px;
+  }
+
+  .secondary-row {
+    font-size: 11px;
+    padding-left: 12px;
+  }
+}

@@ -231,3 +231,32 @@
   padding: 2px 6px;
   border-radius: 12px;
 }
+
+/* ─── Left Column Mobile Refinement ─── */
+@media (max-width: 768px) {
+  .card {
+    padding: 16px;
+  }
+
+  .expense-card {
+    height: auto;
+    min-height: 280px;
+  }
+
+  .expense-total {
+    margin-bottom: 20px;
+  }
+
+  .expense-total h2 {
+    font-size: 20px;
+  }
+
+  .bar-wrapper {
+    width: auto;
+    flex: 1;
+  }
+
+  .bar-label {
+    font-size: 8px;
+  }
+}
