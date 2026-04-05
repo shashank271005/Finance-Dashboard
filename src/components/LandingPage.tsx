@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './LandingPage.css';
 import GridDistortion from './GridDistortion';
 
@@ -17,6 +17,21 @@ const FinexisLogo = () => (
 
 const LandingPage: React.FC<LandingPageProps> = ({ onStart }) => {
     const [footerMouse, setFooterMouse] = useState({ x: 0, y: 0 });
+    const [showScrollDesc, setShowScrollDesc] = useState(true);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            // Disappear as soon as scroll starts
+            if (window.scrollY > 0) {
+                setShowScrollDesc(false);
+            } else {
+                setShowScrollDesc(true);
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
 
     return (
         <div className="landing-root">
@@ -58,6 +73,14 @@ const LandingPage: React.FC<LandingPageProps> = ({ onStart }) => {
                     <button className="btn-get-started animate-slide-up-delayed-2" onClick={onStart}>
                         Get Started
                     </button>
+                </div>
+
+                {/* ── Scroll Indicator ── */}
+                <div className={`scroll-indicator animate-fade-in ${!showScrollDesc ? 'scroll-hidden' : ''}`}>
+                    <span className="scroll-text">SCROLL TO CONTINUE</span>
+                    <div className="scroll-line">
+                        <div className="scroll-line-fill"></div>
+                    </div>
                 </div>
             </section>
 
@@ -188,28 +211,54 @@ const LandingPage: React.FC<LandingPageProps> = ({ onStart }) => {
                                     </div>
                                     <div className="goals-stack">
                                         <div className="goal-item">
-                                            <div className="goal-header">
+                                            <div className="goal-row-top">
                                                 <span className="goal-name">Emergency Fund</span>
-                                                <span className="goal-pcent">77%</span>
+                                                <span className="goal-pcent blue">77%</span>
                                             </div>
-                                            <div className="goal-price-line">Rs 15,400 / Rs 20,000</div>
+                                            <div className="goal-row-mid">
+                                                <span className="goal-price-line">Rs 15,400 / Rs 20,000</span>
+                                            </div>
                                             <div className="progress-bar-wrap"><div className="progress-fill blue" style={{ width: '77%' }} /></div>
                                         </div>
                                         <div className="goal-item">
-                                            <div className="goal-header">
+                                            <div className="goal-row-top">
                                                 <span className="goal-name">Summer Vacation</span>
-                                                <span className="goal-pcent">53%</span>
+                                                <span className="goal-pcent amber">53%</span>
                                             </div>
-                                            <div className="goal-price-line">Rs 4,200 / Rs 8,000</div>
+                                            <div className="goal-row-mid">
+                                                <span className="goal-price-line">Rs 4,200 / Rs 8,000</span>
+                                            </div>
                                             <div className="progress-bar-wrap"><div className="progress-fill amber" style={{ width: '53%' }} /></div>
                                         </div>
                                         <div className="goal-item">
-                                            <div className="goal-header">
+                                            <div className="goal-row-top">
                                                 <span className="goal-name">New Laptop</span>
-                                                <span className="goal-pcent">54%</span>
+                                                <span className="goal-pcent green">54%</span>
                                             </div>
-                                            <div className="goal-price-line">Rs 650 / Rs 1,200</div>
+                                            <div className="goal-row-mid">
+                                                <span className="goal-price-line">Rs 650 / Rs 1,200</span>
+                                            </div>
                                             <div className="progress-bar-wrap"><div className="progress-fill green" style={{ width: '54%' }} /></div>
+                                        </div>
+                                        <div className="goal-item">
+                                            <div className="goal-row-top">
+                                                <span className="goal-name">House Downpayment</span>
+                                                <span className="goal-pcent purple">23%</span>
+                                            </div>
+                                            <div className="goal-row-mid">
+                                                <span className="goal-price-line">Rs 34,500 / Rs 150,000</span>
+                                            </div>
+                                            <div className="progress-bar-wrap"><div className="progress-fill purple" style={{ width: '23%' }} /></div>
+                                        </div>
+                                        <div className="goal-item">
+                                            <div className="goal-row-top">
+                                                <span className="goal-name">Car Insurance</span>
+                                                <span className="goal-pcent cyan">25%</span>
+                                            </div>
+                                            <div className="goal-row-mid">
+                                                <span className="goal-price-line">Rs 150 / Rs 600</span>
+                                            </div>
+                                            <div className="progress-bar-wrap"><div className="progress-fill cyan" style={{ width: '25%' }} /></div>
                                         </div>
                                     </div>
                                 </div>
