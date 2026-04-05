@@ -596,6 +596,8 @@
   z-index: 5;
   pointer-events: none;
   object-fit: contain;
+  transition: transform 0.4s cubic-bezier(0.1, 0, 0.1, 1);
+  transform: translate(var(--mx, 0), var(--my, 0)) scale(1.02);
 }
 
 .footer-tm {

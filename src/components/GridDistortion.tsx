@@ -194,7 +194,7 @@ export default function GridDistortion({
       });
     };
 
-    container.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener('mousemove', handleMouseMove);
     container.addEventListener('mouseleave', handleMouseLeave);
 
     handleResize();
@@ -245,7 +245,7 @@ export default function GridDistortion({
         window.removeEventListener('resize', handleResize);
       }
 
-      container.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener('mousemove', handleMouseMove);
       container.removeEventListener('mouseleave', handleMouseLeave);
 
       if (renderer) {

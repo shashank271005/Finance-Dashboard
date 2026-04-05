@@ -333,7 +333,20 @@ const LandingPage: React.FC<LandingPageProps> = ({ onStart }) => {
                     </div>
                 </div>
 
-                <div className="footer-branded-visual">
+                <div 
+                    className="footer-branded-visual"
+                    onMouseMove={(e) => {
+                        const { left, top, width, height } = e.currentTarget.getBoundingClientRect();
+                        const x = (e.clientX - left) / width - 0.5;
+                        const y = (e.clientY - top) / height - 0.5;
+                        e.currentTarget.style.setProperty('--mx', `${x * 20}px`);
+                        e.currentTarget.style.setProperty('--my', `${y * 10}px`);
+                    }}
+                    onMouseLeave={(e) => {
+                        e.currentTarget.style.setProperty('--mx', '0px');
+                        e.currentTarget.style.setProperty('--my', '0px');
+                    }}
+                >
                     <h1 className="footer-big-text">Finexis<span className="footer-tm">TM</span></h1>
                     <img 
                         src="/footer-fg.png" 
