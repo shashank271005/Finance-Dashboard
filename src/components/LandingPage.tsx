@@ -361,21 +361,36 @@ const LandingPage: React.FC<LandingPageProps> = ({ onStart }) => {
                                 <div className="feature-tag highlight">INSIGHTS</div>
                                 <h2 className="feature-title">Intelligent Behavioral Scoring</h2>
                                 <p className="feature-text">Understand your spending habits with a personalized score. Our intelligent clustering identifies exactly where you can optimize your lifestyle.</p>
-                                <div className="score-brief shadow-subtle">
-                                    <span>PLATFORM SCORE</span>
-                                    <strong>81/100</strong>
-                                    <p>Your habits are balanced but can be improved further.</p>
-                                </div>
                             </div>
                             <div className="feature-visual">
                                 <div className="showcase-card visual-insights-card shadow-lux">
                                     <h3 className="visual-card-title">Spending Insights</h3>
-                                    <div className="bubbles-container">
-                                        <div className="bubble-spot b1">RENT & LIVING</div>
-                                        <div className="bubble-spot b2">INVESTMENT</div>
-                                        <div className="bubble-spot b3">FOOD</div>
-                                        <div className="bubble-spot b4">Gifts</div>
-                                        <div className="bubble-spot b5">Movies</div>
+                                    <div className="insights-content-wrap">
+                                        <div className="score-summary-card">
+                                            <span className="score-label">SCORE</span>
+                                            <div className="score-value">81<span className="score-total">/100</span></div>
+                                            <p className="score-desc">Your spending habits are balanced but you can improve the overall spending by managing your rental and investment spending.</p>
+                                        </div>
+                                        <div className="bubbles-visualization">
+                                            <div className="bubble-group-main">
+                                                <div className="insight-bubble rent">
+                                                    <span className="bubble-label">RENT & LIVING</span>
+                                                    <span className="bubble-extra top">VACATIONS</span>
+                                                    <span className="bubble-extra bottom">HEALTHCARE</span>
+                                                </div>
+                                                <div className="insight-bubble invest">
+                                                    <span className="bubble-label">INVESTMENT</span>
+                                                    <span className="bubble-extra top-left">GIFTS</span>
+                                                    <span className="bubble-extra top-center">STUDIES</span>
+                                                </div>
+                                                <div className="insight-bubble food">
+                                                    <span className="bubble-label">FOOD</span>
+                                                </div>
+                                                <div className="insight-bubble movies">
+                                                    <span className="bubble-label">MOVIES</span>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
