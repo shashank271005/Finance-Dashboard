@@ -5,6 +5,7 @@ import TransactionsPage from './components/TransactionsPage';
 import InsightsPage from './components/InsightsPage';
 import LoginPage from './components/LoginPage';
 import OnboardingPage from './components/OnboardingPage';
+import LandingPage from './components/LandingPage';
 import './App.css';
 
 const App: React.FC = () => {
@@ -12,6 +13,7 @@ const App: React.FC = () => {
   const [activeTab, setActiveTab] = useState('dashboard');
   const [isSidebarExpanded, setIsSidebarExpanded] = useState(false);
   const [isOnboarding, setIsOnboarding] = useState(false);
+  const [showLanding, setShowLanding] = useState(true);
 
   const handleLogin = () => {
     setIsLoggedIn(true);
@@ -24,6 +26,9 @@ const App: React.FC = () => {
   };
 
   if (!isLoggedIn) {
+    if (showLanding) {
+      return <LandingPage onStart={() => setShowLanding(false)} />;
+    }
     return <LoginPage onLogin={handleLogin} onSignup={handleStartOnboarding} />;
   }
 
