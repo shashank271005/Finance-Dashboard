@@ -42,7 +42,11 @@ const BellIcon = () => (
   </svg>
 );
 
-const DashboardHeader: React.FC = () => {
+interface DashboardHeaderProps {
+  onNewTransaction?: () => void;
+}
+
+const DashboardHeader: React.FC<DashboardHeaderProps> = ({ onNewTransaction }) => {
   return (
     <div className="dashboard-header">
       <div className="dh-top">
@@ -68,7 +72,7 @@ const DashboardHeader: React.FC = () => {
           </button>
         </div>
         <div className="dh-search-group" style={{ display: 'flex', gap: '12px' }}>
-          <button className="new-tx-btn">+ New Transaction</button>
+          <button className="new-tx-btn" onClick={onNewTransaction}>+ New Transaction</button>
           <div className="dh-search-wrap">
             <SearchIcon />
             <input type="text" placeholder="Search" className="dh-search-input" />

@@ -51,6 +51,13 @@ const CollapseIcon = () => (
   </svg>
 );
 
+const PlusIcon = () => (
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+    <line x1="12" y1="5" x2="12" y2="19"></line>
+    <line x1="5" y1="12" x2="19" y2="12"></line>
+  </svg>
+);
+
 const Sidebar: React.FC<SidebarProps> = ({ activeTab, setActiveTab, isExpanded, setIsExpanded }) => {
 
   const navItems = [
@@ -73,6 +80,15 @@ const Sidebar: React.FC<SidebarProps> = ({ activeTab, setActiveTab, isExpanded, 
 
         {/* Core Navigation Pill Container */}
         <nav className="sidebar-nav">
+          <button 
+            className={`sidebar-action-btn ${isExpanded ? 'expanded' : ''}`}
+            onClick={() => setActiveTab('add-transaction')}
+            title="New Transaction"
+          >
+            <span className="action-icon"><PlusIcon /></span>
+            {isExpanded && <span className="action-label">New Transaction</span>}
+          </button>
+
           <div className="nav-group-title">
             {isExpanded && <span>Main Menu</span>}
           </div>

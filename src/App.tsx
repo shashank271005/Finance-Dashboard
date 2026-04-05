@@ -7,6 +7,7 @@ import LoginPage from './components/LoginPage';
 import OnboardingPage from './components/OnboardingPage.tsx';
 import LandingPage from './components/LandingPage';
 import ProfilePage from './components/ProfilePage';
+import AddTransactionPage from './components/AddTransactionPage';
 import './App.css';
 
 const App: React.FC = () => {
@@ -57,10 +58,11 @@ const App: React.FC = () => {
         setIsExpanded={setIsSidebarExpanded}
       />
       <div className="main-content app-fade-in">
-        {activeTab === 'dashboard' && <DashboardHome />}
+        {activeTab === 'dashboard' && <DashboardHome onNewTransaction={() => setActiveTab('add-transaction')} />}
         {activeTab === 'transactions' && <TransactionsPage />}
         {activeTab === 'insights' && <InsightsPage isSidebarExpanded={isSidebarExpanded} />}
         {activeTab === 'profile' && <ProfilePage onLogout={handleLogout} />}
+        {activeTab === 'add-transaction' && <AddTransactionPage onBack={() => setActiveTab('dashboard')} />}
       </div>
 
       {/* ── Mobile Bottom Navigation ── */}

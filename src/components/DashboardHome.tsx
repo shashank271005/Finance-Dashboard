@@ -32,7 +32,11 @@ const parseDateString = (dateStr: string) => {
 
 const LATEST_DATE_MS = Math.max(...MOCK_TRANSACTIONS.map(tx => parseDateString(tx.date)));
 
-const DashboardHome: React.FC = () => {
+interface DashboardHomeProps {
+  onNewTransaction?: () => void;
+}
+
+const DashboardHome: React.FC<DashboardHomeProps> = ({ onNewTransaction }) => {
   const [selectedDate, setSelectedDate] = useState<string | null>(null);
   const [timeFilter, setTimeFilter] = useState('7');
 
@@ -53,7 +57,7 @@ const DashboardHome: React.FC = () => {
 
   return (
     <div className="dh-page">
-      <DashboardHeader />
+      <DashboardHeader onNewTransaction={onNewTransaction} />
       
       <div className="dh-grid">
         {/* Left Column */}
