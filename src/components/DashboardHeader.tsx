@@ -46,7 +46,7 @@ const DashboardHeader: React.FC = () => {
   return (
     <div className="dashboard-header">
       <div className="dh-top">
-        <h1 className="dh-greeting">Good Morning, Chirag</h1>
+        <h1 className="dh-greeting">Good Morning, shash</h1>
         <div className="dh-top-actions">
           <div className="header-icon-actions">
             <button className="icon-btn-dh"><SettingsIcon /></button>

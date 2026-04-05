@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './PrivacyPolicyModal.css';
 
 /* ─── Logo ───────────────────────────────────── */
-const FinFlowLogo = () => (
+const FinexisLogo = () => (
   <svg width="28" height="28" viewBox="0 0 32 32" fill="none">
     <rect x="0" y="0" width="14" height="14" rx="3.5" fill="#2D3FE0"/>
     <rect x="18" y="0" width="14" height="14" rx="3.5" fill="#2D3FE0" opacity="0.6"/>
@@ -261,7 +261,7 @@ const PrivacyPolicyModal: React.FC<PrivacyPolicyModalProps> = ({ onClose, onAgre
         {/* ── Header ── */}
         <div className="pp-header">
           <div className="pp-header-logo">
-            <FinFlowLogo />
+            <FinexisLogo />
             <h2 className="pp-title">Privacy Policy</h2>
           </div>
           <p className="pp-intro">

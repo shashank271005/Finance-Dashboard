@@ -8,7 +8,7 @@ interface OnboardingPageProps {
 
 type Step = 1 | 2 | 3 | 4 | 5;
 
-const FinFlowLogo = () => (
+const FinexisLogo = () => (
   <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
     <rect x="0" y="0" width="13" height="13" rx="4" fill="white"/>
     <rect x="0" y="19" width="13" height="13" rx="4" fill="white"/>
@@ -69,8 +69,8 @@ const OnboardingPage: React.FC<OnboardingPageProps> = ({ onComplete, onBackToAut
     <div className="onboarding-left">
       <div className="onboarding-glass-panel">
         <div className="onboarding-logo">
-          <FinFlowLogo />
-          <span className="onboarding-logo-text">FinFlow</span>
+          <FinexisLogo />
+          <span className="onboarding-logo-text">Finexis</span>
         </div>
         
         <div className="onboarding-steps-list">
@@ -200,12 +200,12 @@ const OnboardingPage: React.FC<OnboardingPageProps> = ({ onComplete, onBackToAut
         return (
           <div className="step-form-content">
             <span className="step-count completed">SETUP COMPLETE</span>
-            <h1 className="step-title uppercase">WELCOME TO FINFLOW, {formData.firstName.toUpperCase() || 'CHIRAG'}</h1>
+            <h1 className="step-title uppercase">WELCOME TO FINEXIS, {formData.firstName.toUpperCase() || 'SHASH'}</h1>
             <p className="step-subtitle">The hard part is over. Your financial overview is now working for you in the background. From now on, understanding your money will be the easiest part of your day.</p>
             
             <div className="summary-list">
                 <div className="summary-item">
-                    <span>{formData.firstName || 'Chirag'} {formData.lastName}</span>
+                    <span>{formData.firstName || 'shash'} {formData.lastName}</span>
                     <span className="check-bullet">✓</span>
                 </div>
                 <div className="summary-item">

@@ -65,10 +65,10 @@ const statsBreakdown = [
 ];
 
 const recentActivity = [
-  { id: 1, user: 'Chirag Patel', action: 'updated profile settings', time: '13:04', avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Chirag' },
-  { id: 2, user: 'Chirag Patel', action: 'added a new transaction', time: '11:30', avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Chirag' },
-  { id: 3, user: 'Chirag Patel', action: 'logged in', time: '11:27', avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Chirag' },
-  { id: 4, user: 'Chirag Patel', action: 'set a new goal', time: 'Yesterday 13:04', avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Chirag' },
+  { id: 1, user: 'Shashank Singh', action: 'updated profile settings', time: '13:04', avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=shash' },
+  { id: 2, user: 'Shashank Singh', action: 'added a new transaction', time: '11:30', avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=shash' },
+  { id: 3, user: 'Shashank Singh', action: 'logged in', time: '11:27', avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=shash' },
+  { id: 4, user: 'Shashank Singh', action: 'set a new goal', time: 'Yesterday 13:04', avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=shash' },
 ];
 
 /* ─── Sub-Components ───────────────────── */

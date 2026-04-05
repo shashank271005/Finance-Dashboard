@@ -3,7 +3,7 @@ import './LoginPage.css';
 import PrivacyPolicyModal from './PrivacyPolicyModal';
 
 /* ─── Icons ─────────────────────────────────── */
-const FinFlowLogo = () => (
+const FinexisLogo = () => (
   <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
     <rect x="0" y="0" width="14" height="14" rx="3.5" fill="#3b4cf0"/>
     <rect x="0" y="18" width="14" height="14" rx="3.5" fill="#3b4cf0"/>
@@ -106,7 +106,7 @@ const LoginPage: React.FC<LoginPageProps> = ({ onLogin, onSignup }) => {
 
           {/* Logo */}
           <div className="login-logo">
-            <FinFlowLogo />
+            <FinexisLogo />
             <span className="login-logo-text">Finexis</span>
           </div>
 

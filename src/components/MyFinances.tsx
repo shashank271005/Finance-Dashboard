@@ -27,7 +27,7 @@ const MyFinances: React.FC = () => {
             <span className="cc-val">10/09/2029</span>
           </div>
           <div className="cc-name-wrap">
-            <span className="cc-name">Chirag Patel</span>
+            <span className="cc-name">Shashank Singh</span>
             <div className="mastercard-rings">
               <div className="ring"></div>
               <div className="ring"></div>
