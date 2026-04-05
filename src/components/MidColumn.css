@@ -204,3 +204,30 @@
 .tx-time-filter:focus {
   outline: none;
 }
+
+/* ─── Recent Transactions Mobile Refinement ─── */
+@media (max-width: 768px) {
+  .rt-clean-card {
+    max-height: unset; /* Allow it to grow on mobile if needed */
+  }
+
+  .clean-table th:nth-child(2), 
+  .clean-table td:nth-child(2) {
+    display: none; /* Hide Date/Time column on small screens */
+  }
+
+  .tx-name-cell {
+    gap: 4px;
+  }
+
+  /* We'll inject the date into the name cell via CSS if needed, 
+     but for now, we'll just ensure the layout is clean */
+  .tx-name {
+    font-size: 14px;
+  }
+
+  .tx-amount {
+    font-size: 14px;
+    text-align: right;
+  }
+}

@@ -502,3 +502,75 @@
     gap: 4px;
     cursor: pointer;
 }
+
+/* ─── Insights Page Mobile Overhaul ─── */
+@media (max-width: 1024px) {
+  .insights-view {
+    display: flex;
+    flex-direction: column;
+    padding: 16px 16px 80px;
+    gap: 32px;
+  }
+
+  .insights-left, .insights-mid, .insights-right {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .visa-container {
+    padding: 0 20px;
+  }
+
+  .summary-cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .spending-insights-body {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .score-panel {
+    text-align: center;
+  }
+
+  .bubble-chart-container {
+    height: 240px;
+  }
+}
+
+@media (max-width: 768px) {
+  .glassy-card {
+    padding: 24px;
+  }
+
+  .total-savings-amount {
+    font-size: 28px;
+  }
+
+  .cashflow-legend {
+    display: none; /* Hide legend on small screens to save space */
+  }
+
+  .donut-container {
+    height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .action-pill {
+    padding: 12px 8px;
+    font-size: 11px;
+  }
+
+  .saving-item .item-header {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .bubble-label-main { font-size: 11px; }
+  .bubble-label { font-size: 9px; }
+  .bubble-label-small { font-size: 8px; }
+}

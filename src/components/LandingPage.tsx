@@ -17,9 +17,12 @@ const FinexisLogo = () => (
 
 const LandingPage: React.FC<LandingPageProps> = ({ onStart }) => {
     const [footerMouse, setFooterMouse] = useState({ x: 0, y: 0 });
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+    const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
     return (
-        <div className="landing-root">
+        <div className={`landing-root ${isMenuOpen ? 'menu-active' : ''}`}>
             {/* ── Interactive Grid Distortion Background ── */}
             <div className="landing-grid-bg">
                 <GridDistortion
@@ -40,7 +43,25 @@ const LandingPage: React.FC<LandingPageProps> = ({ onStart }) => {
                     </div>
 
                     <div className="header-actions">
-                        <button className="btn-free-trial" onClick={onStart}>Free Trial</button>
+                        <button className="btn-free-trial desktop-only" onClick={onStart}>Free Trial</button>
+                        <button className={`burger-btn ${isMenuOpen ? 'open' : ''}`} onClick={toggleMenu}>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </button>
+                    </div>
+
+                    {/* ── Mobile Menu Overlay ── */}
+                    <div className={`mobile-nav-overlay ${isMenuOpen ? 'active' : ''}`}>
+                        <nav className="mobile-nav-content">
+                            <span onClick={() => { onStart(); toggleMenu(); }}>Free Trial</span>
+                            <span>Features</span>
+                            <span>Pricing</span>
+                            <span>About</span>
+                            <div className="mobile-socials">
+                                <span>TW</span><span>IN</span><span>GH</span>
+                            </div>
+                        </nav>
                     </div>
                 </div>
             </header>

@@ -706,3 +706,87 @@
 .tax-view-btn:hover {
   background: rgba(255, 255, 255, 0.25);
 }
+
+/* ─── Transactions Page Mobile Overhaul ─── */
+@media (max-width: 1024px) {
+  .tx-page {
+    flex-direction: column;
+    padding: 0 16px 80px;
+  }
+
+  .tx-insight-panel {
+    width: 100%;
+    min-width: unset;
+    padding-top: 24px;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .tx-insight-panel > * {
+    flex: 1;
+    min-width: 280px;
+  }
+
+  .tax-report-banner {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .tx-filters {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .filter-left {
+    width: 100%;
+    overflow-x: auto;
+    padding-bottom: 4px;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .tx-table-wrap {
+    margin-top: 10px;
+    border-radius: 16px;
+  }
+
+  .tx-table th:nth-child(3),
+  .tx-table td:nth-child(3),
+  .tx-table th:nth-child(5),
+  .tx-table td:nth-child(5) {
+    display: none; /* Hide Category and Status on small screens */
+  }
+
+  .tx-table th:nth-child(2) { width: auto; }
+  .tx-table th:nth-child(1) { width: 90px; }
+
+  .tx-pagination {
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .tx-insight-panel {
+    flex-direction: column;
+  }
+
+  .tx-insight-panel > * {
+    min-width: 100%;
+  }
+
+  .tx-date {
+    font-size: 11px;
+  }
+
+  .tx-title {
+    font-size: 13px;
+  }
+
+  .budget-gauge-wrap {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

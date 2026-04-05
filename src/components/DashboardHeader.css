@@ -163,3 +163,42 @@
   font-size: 13px;
   color: var(--text-primary);
 }
+
+/* ─── Dashboard Header Mobile Overhaul ─── */
+@media (max-width: 768px) {
+  .dh-greeting {
+    font-size: 20px;
+  }
+
+  .dh-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .dh-filters {
+    width: 100%;
+    overflow-x: auto;
+    padding-bottom: 4px;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .dh-pill-btn {
+    white-space: nowrap;
+  }
+
+  .dh-search-group {
+    width: 100%;
+    flex-direction: column-reverse;
+  }
+
+  .dh-search-wrap {
+    width: 100% !important;
+  }
+
+  .new-tx-btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 14px;
+  }
+}
