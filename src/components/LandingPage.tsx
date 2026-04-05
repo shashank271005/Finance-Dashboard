@@ -73,13 +73,13 @@ const LandingPage: React.FC<LandingPageProps> = ({ onStart }) => {
                     <button className="btn-get-started animate-slide-up-delayed-2" onClick={onStart}>
                         Get Started
                     </button>
-                </div>
 
-                {/* ── Scroll Indicator ── */}
-                <div className={`scroll-indicator animate-fade-in ${!showScrollDesc ? 'scroll-hidden' : ''}`}>
-                    <span className="scroll-text">SCROLL TO CONTINUE</span>
-                    <div className="scroll-line">
-                        <div className="scroll-line-fill"></div>
+                    {/* ── Scroll Indicator (Integrated for Perfect Center) ── */}
+                    <div className={`scroll-indicator animate-fade-in ${!showScrollDesc ? 'scroll-hidden' : ''}`}>
+                        <span className="scroll-text">SCROLL TO CONTINUE</span>
+                        <div className="scroll-line">
+                            <div className="scroll-line-fill"></div>
+                        </div>
                     </div>
                 </div>
             </section>

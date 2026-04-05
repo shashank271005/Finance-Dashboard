@@ -146,13 +146,12 @@
 
 /* ─── Scroll Indicator ─── */
 .scroll-indicator {
-  position: absolute;
-  bottom: 40px;
-  left: 50%;
-  transform: translateX(-50%);
+  margin-top: 80px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  pointer-events: none;
   gap: 16px;
   z-index: 10;
   transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.5s ease;
@@ -171,6 +170,8 @@
   letter-spacing: 3px;
   text-transform: uppercase;
   user-select: none;
+  text-align: center;
+  margin-right: -3px; /* Offset the trailing letter-spacing to ensure absolute center */
 }
 
 .scroll-line {
@@ -179,6 +180,7 @@
   background: rgba(255, 255, 255, 0.1);
   position: relative;
   overflow: hidden;
+  margin: 0 auto;
 }
 
 .scroll-line-fill {
@@ -969,12 +971,12 @@
 }
 
 .animate-fade-in {
-  animation: fadeIn 1.2s cubic-bezier(0.16, 1, 0.3, 1) 1s both;
+  animation: scrollIndicatorFadeIn 1.2s cubic-bezier(0.16, 1, 0.3, 1) 1s both;
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: translate(-50%, 10px); }
-  to { opacity: 1; transform: translate(-50%, 0); }
+@keyframes scrollIndicatorFadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 /* ─── Animations Preserved & Fixed ─── */
