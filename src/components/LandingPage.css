@@ -380,24 +380,76 @@
 .bill-item {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 16px;
-  padding: 16px;
+  padding: 20px;
   border-radius: 24px;
   background: #ffffff;
   border: 1px solid var(--border);
-  margin-bottom: 12px;
+  margin-bottom: 16px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.bill-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
 }
 
 .bill-icon {
-  width: 50px;
-  height: 50px;
+  width: 54px;
+  height: 54px;
   border-radius: 16px;
-  font-size: 20px;
-  font-weight: 800;
   background: var(--card-bg);
   display: flex;
   align-items: center;
   justify-content: center;
+  color: var(--primary);
+  flex-shrink: 0;
+}
+
+.bill-icon.n { color: #E50914; background: rgba(229, 9, 20, 0.08); }
+.bill-icon.g { color: #3B4CF0; background: rgba(59, 76, 240, 0.08); }
+.bill-icon.i { color: #00CE7D; background: rgba(0, 206, 125, 0.08); }
+
+.bill-detail {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.bill-name {
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--text-primary);
+}
+
+.bill-price {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.bill-due {
+  font-size: 13px;
+  font-weight: 700;
+  padding: 6px 12px;
+  border-radius: 12px;
+}
+
+.bill-due.red {
+  color: #ff5252;
+  background: rgba(255, 82, 82, 0.08);
+}
+
+.bill-due.amber {
+  color: #ffb100;
+  background: rgba(255, 177, 0, 0.08);
+}
+
+.bill-due.green {
+  color: #00ce7d;
+  background: rgba(0, 206, 125, 0.08);
 }
 
 /* V4: The Ledger (Spotlight Edition) ⚡ */
