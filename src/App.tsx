@@ -4,7 +4,7 @@ import DashboardHome from './components/DashboardHome';
 import TransactionsPage from './components/TransactionsPage';
 import InsightsPage from './components/InsightsPage';
 import LoginPage from './components/LoginPage';
-import OnboardingPage from './components/OnboardingPage';
+import OnboardingPage from './components/OnboardingPage.tsx';
 import LandingPage from './components/LandingPage';
 import './App.css';
 
