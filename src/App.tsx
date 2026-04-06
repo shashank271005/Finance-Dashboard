@@ -9,6 +9,7 @@ import LandingPage from './components/LandingPage';
 import ProfilePage from './components/ProfilePage';
 import AddTransactionPage from './components/AddTransactionPage';
 import CoolDownWishlist from './components/CoolDownWishlist';
+import Goals from './components/Goals';
 import './App.css';
 
 const App: React.FC = () => {
@@ -82,6 +83,7 @@ const App: React.FC = () => {
           <AddTransactionPage onBack={() => setActiveTab('dashboard')} userRole={userRole} />
         )}
         {activeTab === 'wishlist' && <CoolDownWishlist />}
+        {activeTab === 'goals' && <Goals />}
       </div>
 
       {/* ── Mobile Bottom Navigation ── */}
