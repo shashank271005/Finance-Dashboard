@@ -8,6 +8,7 @@ import OnboardingPage from './components/OnboardingPage.tsx';
 import LandingPage from './components/LandingPage';
 import ProfilePage from './components/ProfilePage';
 import AddTransactionPage from './components/AddTransactionPage';
+import CoolDownWishlist from './components/CoolDownWishlist';
 import './App.css';
 
 const App: React.FC = () => {
@@ -63,6 +64,7 @@ const App: React.FC = () => {
         {activeTab === 'dashboard' && (
           <DashboardHome
             onNewTransaction={() => setActiveTab('add-transaction')}
+            onViewWishlist={() => setActiveTab('wishlist')}
             userRole={userRole}
             setUserRole={setUserRole}
           />
@@ -79,6 +81,7 @@ const App: React.FC = () => {
         {activeTab === 'add-transaction' && (
           <AddTransactionPage onBack={() => setActiveTab('dashboard')} userRole={userRole} />
         )}
+        {activeTab === 'wishlist' && <CoolDownWishlist />}
       </div>
 
       {/* ── Mobile Bottom Navigation ── */}

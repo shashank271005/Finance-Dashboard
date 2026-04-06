@@ -38,6 +38,13 @@ const InsightsIcon = () => (
   </svg>
 );
 
+const WishlistIcon = () => (
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+    <circle cx="12" cy="12" r="10"></circle>
+    <polyline points="12 6 12 12 16 14"></polyline>
+  </svg>
+);
+
 
 
 const ExpandIcon = () => (
@@ -65,6 +72,7 @@ const Sidebar: React.FC<SidebarProps> = ({ activeTab, setActiveTab, isExpanded, 
     { id: 'dashboard', label: 'Dashboard', Icon: DashboardIcon },
     { id: 'transactions', label: 'Transactions', Icon: TransactionsIcon },
     { id: 'insights', label: 'Insights', Icon: InsightsIcon },
+    { id: 'wishlist', label: 'Wishlist', Icon: WishlistIcon },
   ];
 
   return (
