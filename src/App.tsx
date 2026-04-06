@@ -15,7 +15,7 @@ const App: React.FC = () => {
   const [activeTab, setActiveTab] = useState('dashboard');
   const [isSidebarExpanded, setIsSidebarExpanded] = useState(false);
   const [isOnboarding, setIsOnboarding] = useState(false);
-  const [showLanding, setShowLanding] = useState(false);
+  const [showLanding, setShowLanding] = useState(true);
   const [userRole, setUserRole] = useState<'admin' | 'viewer'>('admin');
 
   const handleLogin = () => {
