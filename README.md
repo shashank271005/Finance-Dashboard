@@ -1,4 +1,4 @@
-![Finexis Header](https://res.cloudinary.com/dkdstxw96/image/upload/v1775412925/Screenshot_2026-04-05_at_11.44.38_PM_hy8ekd.png)
+![Finexis Header](public/readme-head.jpg)
 
 # Finexis — Platform that Simplifies Financial Control
 
