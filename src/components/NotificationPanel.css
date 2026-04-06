@@ -6,7 +6,7 @@
   height: 100%;
   z-index: 1000;
   background: transparent;
-  pointer-events: none; /* Allows clicks through the overlay unless on the panel */
+  pointer-events: none; 
 }
 
 .notif-panel {
@@ -14,9 +14,9 @@
   top: 80px;
   right: 20px;
   width: 380px;
-  pointer-events: auto; /* Re-enable clicks for the panel itself */
+  pointer-events: auto; 
   max-height: 600px;
-  background: rgba(255, 255, 255, 0.85); /* Increased opacity for better visibility */
+  background: rgba(255, 255, 255, 0.85); 
   backdrop-filter: blur(30px);
   -webkit-backdrop-filter: blur(30px);
   border: 1px solid rgba(255, 255, 255, 0.8);
@@ -82,7 +82,7 @@
 }
 
 .notif-card {
-  background: white; /* Solid white for maximum contrast */
+  background: white; 
   border: 1px solid rgba(0, 0, 0, 0.04);
   border-radius: 20px;
   padding: 16px;

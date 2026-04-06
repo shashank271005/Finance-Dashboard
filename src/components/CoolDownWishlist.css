@@ -108,7 +108,7 @@
 }
 
 .purchase-link-btn {
-  background: #111;
+  background: #3B4CF0;
   color: white;
   border: none;
   border-radius: 30px;
@@ -116,6 +116,13 @@
   font-size: 12px;
   font-weight: 600;
   cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(59, 76, 240, 0.3);
+}
+
+.purchase-link-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(59, 76, 240, 0.4);
 }
 
 .form-grid {
@@ -172,7 +179,7 @@
 
 .add-to-list-btn {
   width: 100%;
-  background: #111;
+  background: #3B4CF0;
   color: white;
   border: none;
   padding: 16px;
@@ -180,11 +187,13 @@
   font-size: 14px;
   font-weight: 600;
   cursor: pointer;
-  transition: opacity 0.2s;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(59, 76, 240, 0.3);
 }
 
 .add-to-list-btn:hover {
-  opacity: 0.9;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(59, 76, 240, 0.4);
 }
 
 /* Divider */
@@ -298,14 +307,20 @@
 }
 
 .remove-btn {
-  background: #111;
-  color: white;
+  background: rgba(0, 0, 0, 0.05);
+  color: #666;
   border: none;
   padding: 10px;
   border-radius: 10px;
   font-size: 12px;
   font-weight: 600;
   cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.remove-btn:hover {
+  background: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
 }
 
 .buy-now-btn {
