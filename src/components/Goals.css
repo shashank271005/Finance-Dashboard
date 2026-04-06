@@ -644,3 +644,163 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* ─── Mobile Responsiveness (Phone / iPhone SE) ─── */
+@media (max-width: 768px) {
+  .goals-page {
+    padding: 16px 16px 100px; /* Extra bottom padding for mobile nav */
+    gap: 16px;
+  }
+
+  .goals-header {
+    flex-direction: column;
+    gap: 20px;
+    align-items: stretch;
+  }
+
+  .gh-title {
+    font-size: 24px;
+    letter-spacing: -0.5px;
+  }
+
+  .gh-filters {
+    overflow-x: auto;
+    padding-bottom: 12px;
+    margin-top: 8px;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .gh-pill {
+    flex-shrink: 0;
+    padding: 6px 12px;
+    font-size: 10px;
+  }
+
+  .gh-right {
+    align-items: stretch;
+    width: 100%;
+    gap: 12px;
+  }
+
+  .gh-top-row {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .gh-bottom-row {
+    flex-direction: column-reverse;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .gh-search-group {
+    width: 100%;
+    padding: 10px 16px;
+  }
+
+  .gh-btn-wish, .gh-btn-blue {
+    width: 100%;
+    justify-content: center;
+    padding: 12px;
+  }
+
+  .gh-more-btn {
+    align-self: flex-end;
+  }
+
+  /* Grid Layout - Forced Vertical Stacking */
+  .goals-grid-top, .goals-grid-bottom, .metrics-cards-pair {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .goals-card {
+    padding: 16px;
+    border-radius: 20px;
+  }
+
+  .card-header-main h2 {
+    font-size: 18px;
+  }
+
+  /* Heatmap scaling for mobile parity */
+  .eb-main-ref {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .eb-total-ref {
+    font-size: 32px;
+  }
+
+  .eb-legend-grid {
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+  }
+
+  .eb-heatmap-area {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .heatmap-labels-ref {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0;
+    font-size: 10px;
+  }
+
+  .heatmap-grid-ref {
+    gap: 10px;
+    width: 100%;
+    overflow-x: auto;
+    padding-bottom: 4px;
+  }
+
+  .h-dot {
+    width: 28px; /* Scaled down for mobile fit */
+    height: 28px;
+  }
+
+  /* Gauge scaling for mobile parity */
+  .fb-top-labels {
+    padding: 0;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .fb-gauge-wrap {
+    min-height: 180px;
+  }
+
+  .segmented-gauge {
+    width: 160px;
+    height: 80px;
+    --gauge-radius: -75px;
+  }
+
+  .gauge-segment {
+    transform-origin: center bottom !important; 
+    /* Important: We overwrite the inline translateY in JS or keep CSS override */
+    height: 12px;
+    width: 2.5px;
+  }
+
+  /* We need a specific override for the scale since translateY is inline */
+  .segmented-gauge .gauge-segment {
+     height: 10px !important;
+  }
+
+  .g-perc {
+    font-size: 24px;
+  }
+
+  .fb-status-pill-ref {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+    border-radius: 16px;
+  }
+}

@@ -49,10 +49,14 @@ const GraduationCapIcon = () => (
     </svg>
 );
 
-const Goals: React.FC = () => {
-    // Generate segments for the gauge arc
+interface GoalsProps {
+    setActiveTab: (tab: string) => void;
+}
+
+const Goals: React.FC<GoalsProps> = ({ setActiveTab }) => {
+    
     const segments = Array.from({ length: 28 }, (_, i) => i);
-    const activeSegments = Math.floor(28 * 0.65); // ~65% filled for visual effect
+    const activeSegments = Math.floor(28 * 0.65); 
 
     return (
         <div className="goals-page">
@@ -67,7 +71,12 @@ const Goals: React.FC = () => {
                 </div>
                 <div className="gh-right">
                     <div className="gh-top-row">
-                        <button className="gh-btn-wish"><svg width="14" height="14" viewBox="0 0 24 24" fill="white" stroke="none"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14h2v2h-2v-2zm0-10h2v8h-2V6z"/></svg>Cool Down Wishlist</button>
+                        <button className="gh-btn-wish" onClick={() => setActiveTab('wishlist')}>
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="white" stroke="none">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14h2v2h-2v-2zm0-10h2v8h-2V6z"/>
+                            </svg>
+                            Cool Down Wishlist
+                        </button>
                         <button className="gh-btn-blue">+ New Payment</button>
                     </div>
                     <div className="gh-bottom-row">
@@ -230,7 +239,7 @@ const Goals: React.FC = () => {
                                     <div 
                                         key={s} 
                                         className={`gauge-segment ${s < activeSegments ? 'active' : ''}`}
-                                        style={{ transform: `rotate(${-90 + s * (180/28)}deg) translateY(-100px)` }}
+                                        style={{ transform: `rotate(${-90 + s * (180/28)}deg) translateY(var(--gauge-radius, -100px))` }}
                                     ></div>
                                 ))}
                                 <div className="gauge-center-text">

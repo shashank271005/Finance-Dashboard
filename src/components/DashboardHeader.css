@@ -283,9 +283,10 @@
     width: 100% !important;
   }
 
-  .new-tx-btn {
+  .new-tx-btn, .cool-down-btn {
     width: 100%;
     padding: 12px;
     font-size: 14px;
+    justify-content: center;
   }
 }

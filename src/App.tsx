@@ -83,7 +83,7 @@ const App: React.FC = () => {
           <AddTransactionPage onBack={() => setActiveTab('dashboard')} userRole={userRole} />
         )}
         {activeTab === 'wishlist' && <CoolDownWishlist />}
-        {activeTab === 'goals' && <Goals />}
+        {activeTab === 'goals' && <Goals setActiveTab={setActiveTab} />}
       </div>
 
       {/* ── Mobile Bottom Navigation ── */}
