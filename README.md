@@ -1,73 +1,85 @@
-# React + TypeScript + Vite
+![Finexis Header](public/readme-head.jpg)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Finexis — Platform that Simplifies Financial Control
 
-Currently, two official plugins are available:
+Finexis is a premium, high-fidelity finance management dashboard designed to transform complex financial data into an intuitive daily habit. Built with a **"Modern Liquid Glass"** aesthetic, it prioritizes clarity, behavioral guidance, and a premium user experience.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+![Finexis Preview](public/grid-distortion-1775395913439.png)
 
-## React Compiler
+## 🚀 Approach & Design Philosophy
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+The project follows a **Behavioral-First UX** strategy, focusing on reducing cognitive load through:
+- **Spatial Hierarchy**: Breathable layouts that separate data from actions.
+- **Empathetic Feedback**: Contextual cues and micro-interactions that guide user behavior.
+- **Liquid Glass Aesthetic**: A modern design system using glassmorphism, vibrant gradients, and smooth animations.
 
-## Expanding the ESLint configuration
+## ✨ Key Features
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### 1. Interactive Landing Experience
+- **Grid Distortion Hero**: A high-performance interactive background that responds to user movement.
+- **Feature Walkthroughs**: 5+ animated sections detailing Analytics, Bill Tracking, Goal Progression, and the Powerful Ledger.
+- **Design Showcase**: A modular breakdown of the platform's vision and UI performance metrics.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### 2. Comprehensive Financial Dashboard
+- **Dashboard Home**: At-a-glance view of total balance, recent transactions, and upcoming bills.
+- **Real-Time Analytics**: Visual growth trackers and daily trend analysis.
+- **Categorized Ledger**: Enterprise-grade transaction history with status tracking and smart filters.
+- **Spending Insights**: Intelligent behavioral scoring and clustering of expenses.
+- **Goal Management**: Visual progress bars and milestone tracking for savings goals.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### 3. User Experience & Polishing
+- **Fluid Animations**: Custom CSS animations for entry, hover, and state transitions.
+- **Responsive Layout**: Optimized for both desktop environments and seamless web interaction.
+- **Auth Flow**: Intuitive login/signup transitions with a unified entry point.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 🛠 Tech Stack
+
+- **Framework**: [React 18+](https://react.dev/)
+- **Language**: [TypeScript](https://www.typescriptlang.org/)
+- **Build Tool**: [Vite](https://vitejs.dev/)
+- **Styling**: [Vanilla CSS3](https://developer.mozilla.org/en-US/docs/Web/CSS) (Custom Glassmorphism & Animations)
+- **Icons**: [Lucide React](https://lucide.dev/)
+
+## ⚙️ Getting Started
+
+### Prerequisites
+- [Node.js](https://nodejs.org/) (v16 or higher)
+- [npm](https://www.npmjs.com/)
+
+### Installation
+
+1. **Clone the repository**:
+   ```bash
+   git clone <repository-url>
+   cd finance-dashboard
+   ```
+
+2. **Install dependencies**:
+   ```bash
+   npm install
+   ```
+
+3. **Start the development server**:
+   ```bash
+   npm run dev
+   ```
+
+The application will be available at `http://localhost:5173` (or the next available port).
+
+## 📂 Project Structure
+
+```text
+src/
+├── components/          # React components (Landing, Dashboard, UI)
+│   ├── LandingPage.tsx  # Main entry point & feature showcase
+│   ├── Sidebar.tsx      # Global navigation
+│   └── ...              # Specialized feature components
+├── assets/              # Static assets and design resources
+├── store/               # State management (Zustand)
+├── App.tsx              # Main application shell & routing
+└── main.tsx             # React mount point
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Developed with a focus on **Visual Excellence** and **User Interaction**.
