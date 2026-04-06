@@ -1,4 +1,4 @@
-![Finexis Header](public/)
+![Finexis Header](public/readme-head.jpg)
 
 # Finexis — Platform that Simplifies Financial Control
 
