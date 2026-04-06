@@ -14,19 +14,19 @@ const MyFinances: React.FC<MyFinancesProps> = ({ userRole = 'admin' }) => {
           <button className="add-card-btn">+ Add Card</button>
         )}
       </div>
-      
+
       <div className="credit-card">
         <div className="cc-top">
           <span className="cc-logo">VISA</span>
         </div>
-        
+
         <div className="cc-middle">
           <span className="cc-num">****</span>
           <span className="cc-num">****</span>
           <span className="cc-num">****</span>
           <span className="cc-num cc-visible">4559</span>
         </div>
-        
+
         <div className="cc-bottom">
           <div className="cc-details">
             <span className="cc-label">Expiring Date</span>

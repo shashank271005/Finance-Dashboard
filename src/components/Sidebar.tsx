@@ -27,10 +27,10 @@ const TransactionsIcon = () => (
 );
 
 const ChevronRightIcon = () => (
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ opacity: 0.6 }}>
-      <polyline points="9 18 15 12 9 6"></polyline>
-    </svg>
-  );
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ opacity: 0.6 }}>
+    <polyline points="9 18 15 12 9 6"></polyline>
+  </svg>
+);
 
 const InsightsIcon = () => (
   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
@@ -69,8 +69,8 @@ const Sidebar: React.FC<SidebarProps> = ({ activeTab, setActiveTab, isExpanded, 
 
   return (
     <div className={`sidebar-wrapper ${isExpanded ? 'expanded' : ''}`}>
-      <button 
-        className="sidebar-toggle" 
+      <button
+        className="sidebar-toggle"
         onClick={() => setIsExpanded(!isExpanded)}
         title="Toggle Navigation"
       >
@@ -82,7 +82,7 @@ const Sidebar: React.FC<SidebarProps> = ({ activeTab, setActiveTab, isExpanded, 
         {/* Core Navigation Pill Container */}
         <nav className="sidebar-nav">
           {userRole === 'admin' && (
-            <button 
+            <button
               className={`sidebar-action-btn ${isExpanded ? 'expanded' : ''}`}
               onClick={() => setActiveTab('add-transaction')}
               title="New Transaction"
@@ -110,35 +110,35 @@ const Sidebar: React.FC<SidebarProps> = ({ activeTab, setActiveTab, isExpanded, 
 
         {/* Sidebar Bottom Profile Section */}
         <div className="sidebar-bottom">
-          <div 
+          <div
             className={`sidebar-profile-item ${isExpanded ? 'expanded' : ''} ${activeTab === 'profile' ? 'active-profile' : ''}`}
             onClick={() => setActiveTab('profile')}
             style={{ cursor: 'pointer' }}
           >
-             <div className="sidebar-avatar-wrap">
-                <img 
-                   src={profileImg ? profileImg : "https://api.dicebear.com/7.x/avataaars/svg?seed=Alex"} 
-                   alt="Avatar" 
-                   className="sidebar-avatar-img"
-                />
-             </div>
-             {isExpanded && (
-               <>
-                 <div className="sidebar-user-info">
-                     <span className="sidebar-user-name">Shashank Singh</span>
-                     <span className={`sidebar-user-role-badge ${userRole}`}>
-                        {userRole.toUpperCase()}
-                     </span>
-                 </div>
-                <button 
-                  className="view-profile-cta" 
+            <div className="sidebar-avatar-wrap">
+              <img
+                src={profileImg ? profileImg : "https://api.dicebear.com/7.x/avataaars/svg?seed=Alex"}
+                alt="Avatar"
+                className="sidebar-avatar-img"
+              />
+            </div>
+            {isExpanded && (
+              <>
+                <div className="sidebar-user-info">
+                  <span className="sidebar-user-name">Shashank Singh</span>
+                  <span className={`sidebar-user-role-badge ${userRole}`}>
+                    {userRole.toUpperCase()}
+                  </span>
+                </div>
+                <button
+                  className="view-profile-cta"
                   title="View Profile"
                   onClick={(e) => { e.stopPropagation(); setActiveTab('profile'); }}
                 >
-                    <ChevronRightIcon />
+                  <ChevronRightIcon />
                 </button>
-               </>
-             )}
+              </>
+            )}
           </div>
         </div>
 

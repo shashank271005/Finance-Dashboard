@@ -15,6 +15,31 @@ const FinexisLogo = () => (
     </svg>
 );
 
+const FinFlowLogo = ({ color = "#3B4CF0" }) => (
+    <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+        <rect x="0" y="0" width="22" height="22" rx="6" fill={color} />
+        <rect x="0" y="26" width="22" height="22" rx="6" fill={color} />
+        <rect x="26" y="0" width="22" height="22" rx="6" fill={color} opacity="0.3" />
+        <rect x="26" y="26" width="22" height="22" rx="6" fill={color} opacity="0.3" />
+    </svg>
+);
+
+const SegmentedBar = ({ percent }: { percent: number }) => {
+    const totalSegments = 20;
+    const activeSegments = Math.round((percent / 100) * totalSegments);
+
+    return (
+        <div className="segmented-progress-bar">
+            {[...Array(totalSegments)].map((_, i) => (
+                <div 
+                    key={i} 
+                    className={`progress-segment ${i < activeSegments ? 'active' : ''}`}
+                />
+            ))}
+        </div>
+    );
+};
+
 const LandingPage: React.FC<LandingPageProps> = ({ onStart }) => {
     const [footerMouse, setFooterMouse] = useState({ x: 0, y: 0 });
     const [showScrollDesc, setShowScrollDesc] = useState(true);
@@ -408,6 +433,72 @@ const LandingPage: React.FC<LandingPageProps> = ({ onStart }) => {
                                         </div>
                                     </div>
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                {/* Section 06: Design Showcase (New) */}
+                <section className="design-showcase-section">
+                    <div className="design-intro">
+                        <div className="design-logo-intro">
+                            <FinFlowLogo />
+                        </div>
+                        <h2 className="design-title">
+                            Platform that simplifies <br /> financial control
+                        </h2>
+                        <p className="design-desc">
+                            The product focuses on simplicity, clarity, and behavioral guidance—transforming finance from a stressful task into an intuitive daily habit.
+                        </p>
+                    </div>
+
+                    <div className="modules-features-card">
+                        <div className="modules-header">
+                            <h3 className="modules-title">Modules & Features</h3>
+                            <p className="modules-note">
+                                To keep the cognitive load low, I utilized a flat, bottom-navigation structure prioritizing immediate access to behavioral tools over complex data tables.
+                            </p>
+                        </div>
+
+                        <div className="modules-visual-center">
+                            <div className="staggered-pills-wrap">
+                                <div className="feature-pill pill-1">Authentication</div>
+                                <div className="feature-pill pill-2">Dashboard</div>
+                                <div className="feature-pill pill-3 active">Analysis & Insights</div>
+                                <div className="feature-pill pill-4">Cool Down Wishlist</div>
+                                <div className="feature-pill pill-5">Goal Progression</div>
+                                <div className="feature-pill pill-6">Settings & Profile</div>
+                            </div>
+                            <div className="modules-footer-logo">
+                                <FinFlowLogo color="#3B4CF0" />
+                            </div>
+                        </div>
+
+                        <div className="modules-main-quote">
+                            "Design a digital product experience that helps <strong>young professionals</strong> understand their money habits, track goals, and receive insights in a way that feels <strong>approachable, clear, and engaging</strong> rather than intimidating."
+                        </div>
+                    </div>
+
+                    <div className="metrics-section">
+                        <h3 className="metrics-title">User Interface Performance Metrics</h3>
+                        <div className="metrics-grid">
+                            <div className="metric-item">
+                                <div className="metric-tag">BEHAVIORAL</div>
+                                <span className="metric-name">Purposeful <br/> Micro-Interactions</span>
+                                <div className="metric-value-row">17%</div>
+                                <SegmentedBar percent={17} />
+                            </div>
+                            <div className="metric-item">
+                                <div className="metric-tag">HIERARCHY</div>
+                                <span className="metric-name">Breathable <br/> Spatial Hierarchy</span>
+                                <div className="metric-value-row">67%</div>
+                                <SegmentedBar percent={67} />
+                            </div>
+                            <div className="metric-item">
+                                <div className="metric-tag">FEEDBACK</div>
+                                <span className="metric-name">Empathetic <br/> Contextual Feedback</span>
+                                <div className="metric-value-row">39%</div>
+                                <SegmentedBar percent={39} />
                             </div>
                         </div>
                     </div>

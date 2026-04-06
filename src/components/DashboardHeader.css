@@ -42,8 +42,15 @@
   border-radius: 50%;
 }
 
-.role-dot.admin { background: #10B981; box-shadow: 0 0 8px rgba(16, 185, 129, 0.4); }
-.role-dot.viewer { background: #F59E0B; box-shadow: 0 0 8px rgba(245, 158, 11, 0.4); }
+.role-dot.admin {
+  background: #10B981;
+  box-shadow: 0 0 8px rgba(16, 185, 129, 0.4);
+}
+
+.role-dot.viewer {
+  background: #F59E0B;
+  box-shadow: 0 0 8px rgba(245, 158, 11, 0.4);
+}
 
 .dh-top-actions {
   display: flex;
@@ -93,7 +100,7 @@
   align-items: center;
   justify-content: center;
   color: var(--text-primary);
-  box-shadow: 0 4px 14px rgba(0,0,0,0.03);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
   transition: all 0.2s ease;
   border: none;
   cursor: pointer;
@@ -106,7 +113,7 @@
 
 .icon-btn-dh:hover {
   transform: translateY(-1px);
-  box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
 }
 
 .avatar-wrap-dh {
@@ -114,7 +121,7 @@
   height: 32px;
   border-radius: 50%;
   overflow: hidden;
-  box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
 }
 
 .user-avatar-dh {
@@ -133,12 +140,12 @@
   font-weight: 600;
   cursor: pointer;
   transition: all 0.2s ease;
-  box-shadow: 0 4px 12px rgba(59,76,240,0.3);
+  box-shadow: 0 4px 12px rgba(59, 76, 240, 0.3);
 }
 
 .new-tx-btn:hover {
   transform: translateY(-1px);
-  box-shadow: 0 6px 16px rgba(59,76,240,0.4);
+  box-shadow: 0 6px 16px rgba(59, 76, 240, 0.4);
 }
 
 .dh-bottom {
@@ -167,7 +174,7 @@
   font-weight: 500;
   color: var(--text-primary);
   cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
   transition: all 0.2s ease;
 }
 
@@ -176,7 +183,7 @@
 }
 
 .dh-pill-btn:hover {
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 .dh-search-input::placeholder {
@@ -193,7 +200,7 @@
   border-radius: 30px;
   padding: 6px 14px;
   gap: 10px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
   width: 180px;
   transition: width 0.3s ease;
 }

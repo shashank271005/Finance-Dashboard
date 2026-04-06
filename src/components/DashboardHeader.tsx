@@ -59,16 +59,16 @@ const DashboardHeader: React.FC<DashboardHeaderProps> = ({ onNewTransaction, use
             {userRole.charAt(0).toUpperCase() + userRole.slice(1)} Mode
           </div>
         </div>
-        
+
         <div className="dh-top-actions">
           <div className="role-switcher">
-            <button 
+            <button
               className={`role-btn ${userRole === 'admin' ? 'active' : ''}`}
               onClick={() => setUserRole('admin')}
             >
               Admin
             </button>
-            <button 
+            <button
               className={`role-btn ${userRole === 'viewer' ? 'active' : ''}`}
               onClick={() => setUserRole('viewer')}
             >
@@ -81,7 +81,7 @@ const DashboardHeader: React.FC<DashboardHeaderProps> = ({ onNewTransaction, use
           </div>
         </div>
       </div>
-      
+
       <div className="dh-bottom">
         <div className="dh-filters">
           <button className="dh-pill-btn">

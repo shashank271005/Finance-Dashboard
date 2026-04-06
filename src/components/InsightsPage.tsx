@@ -1,5 +1,5 @@
 import React from 'react';
-import { 
+import {
   BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Cell,
   PieChart, Pie
 } from 'recharts';
@@ -35,10 +35,10 @@ const ChevronDown = () => (
 );
 
 const MoreIcon = () => (
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-      <circle cx="12" cy="12" r="1"></circle><circle cx="12" cy="5" r="1"></circle><circle cx="12" cy="19" r="1"></circle>
-    </svg>
-  );
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+    <circle cx="12" cy="12" r="1"></circle><circle cx="12" cy="5" r="1"></circle><circle cx="12" cy="19" r="1"></circle>
+  </svg>
+);
 
 /* ─── Mock Data ────────────────────────── */
 const cashflowData = [
@@ -74,48 +74,48 @@ const recentActivity = [
 /* ─── Sub-Components ───────────────────── */
 
 const SpendingBubbleChart: React.FC = () => {
-    return (
-      <div className="bubble-chart-container">
-        <svg viewBox="0 0 500 300" className="bubble-svg" preserveAspectRatio="xMidYMid meet">
-          {/* Main Overlapping Circles */}
-          <circle cx="350" cy="160" r="110" fill="url(#blueGrad)" className="bubble-main" />
-          <circle cx="230" cy="130" r="80" fill="url(#pinkGrad)" className="bubble-pink" />
-          <circle cx="145" cy="185" r="55" fill="url(#orangeGrad)" className="bubble-orange" />
-          <circle cx="95" cy="225" r="35" fill="url(#yellowGrad)" className="bubble-yellow" />
-          
-          {/* Labels */}
-          <text x="350" y="165" textAnchor="middle" className="bubble-label-main">RENT & LIVING</text>
-          <text x="230" y="135" textAnchor="middle" className="bubble-label">INVESTMENT</text>
-          <text x="145" y="190" textAnchor="middle" className="bubble-label-small">FOOD</text>
-          <text x="95" y="232" textAnchor="middle" className="bubble-label-tiny">MOVIES</text>
-          <text x="180" y="80" textAnchor="middle" className="bubble-label-tiny">GIFTS</text>
-          <text x="220" y="100" textAnchor="middle" className="bubble-label-tiny">STUDIES</text>
-          <text x="320" y="50" textAnchor="middle" className="bubble-label-tiny">VACATIONS</text>
-          <text x="380" y="270" textAnchor="middle" className="bubble-label-tiny">HEALTHCARE</text>
-  
-          {/* Gradients */}
-          <defs>
-            <linearGradient id="blueGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#3B4CF0" stopOpacity="0.8" />
-              <stop offset="100%" stopColor="#3B4CF0" stopOpacity="0.4" />
-            </linearGradient>
-            <linearGradient id="pinkGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#FF66C4" stopOpacity="0.7" />
-              <stop offset="100%" stopColor="#FF66C4" stopOpacity="0.3" />
-            </linearGradient>
-            <linearGradient id="orangeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#FF8F66" stopOpacity="0.7" />
-              <stop offset="100%" stopColor="#FF8F66" stopOpacity="0.3" />
-            </linearGradient>
-            <linearGradient id="yellowGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#FFD966" stopOpacity="0.7" />
-              <stop offset="100%" stopColor="#FFD966" stopOpacity="0.3" />
-            </linearGradient>
-          </defs>
-        </svg>
-      </div>
-    );
-  };
+  return (
+    <div className="bubble-chart-container">
+      <svg viewBox="0 0 500 300" className="bubble-svg" preserveAspectRatio="xMidYMid meet">
+        {/* Main Overlapping Circles */}
+        <circle cx="350" cy="160" r="110" fill="url(#blueGrad)" className="bubble-main" />
+        <circle cx="230" cy="130" r="80" fill="url(#pinkGrad)" className="bubble-pink" />
+        <circle cx="145" cy="185" r="55" fill="url(#orangeGrad)" className="bubble-orange" />
+        <circle cx="95" cy="225" r="35" fill="url(#yellowGrad)" className="bubble-yellow" />
+
+        {/* Labels */}
+        <text x="350" y="165" textAnchor="middle" className="bubble-label-main">RENT & LIVING</text>
+        <text x="230" y="135" textAnchor="middle" className="bubble-label">INVESTMENT</text>
+        <text x="145" y="190" textAnchor="middle" className="bubble-label-small">FOOD</text>
+        <text x="95" y="232" textAnchor="middle" className="bubble-label-tiny">MOVIES</text>
+        <text x="180" y="80" textAnchor="middle" className="bubble-label-tiny">GIFTS</text>
+        <text x="220" y="100" textAnchor="middle" className="bubble-label-tiny">STUDIES</text>
+        <text x="320" y="50" textAnchor="middle" className="bubble-label-tiny">VACATIONS</text>
+        <text x="380" y="270" textAnchor="middle" className="bubble-label-tiny">HEALTHCARE</text>
+
+        {/* Gradients */}
+        <defs>
+          <linearGradient id="blueGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#3B4CF0" stopOpacity="0.8" />
+            <stop offset="100%" stopColor="#3B4CF0" stopOpacity="0.4" />
+          </linearGradient>
+          <linearGradient id="pinkGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#FF66C4" stopOpacity="0.7" />
+            <stop offset="100%" stopColor="#FF66C4" stopOpacity="0.3" />
+          </linearGradient>
+          <linearGradient id="orangeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#FF8F66" stopOpacity="0.7" />
+            <stop offset="100%" stopColor="#FF8F66" stopOpacity="0.3" />
+          </linearGradient>
+          <linearGradient id="yellowGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#FFD966" stopOpacity="0.7" />
+            <stop offset="100%" stopColor="#FFD966" stopOpacity="0.3" />
+          </linearGradient>
+        </defs>
+      </svg>
+    </div>
+  );
+};
 
 interface InsightsPageProps {
   isSidebarExpanded?: boolean;
@@ -130,11 +130,11 @@ const InsightsPage: React.FC<InsightsPageProps> = ({ isSidebarExpanded, userRole
     <div className="insights-view app-fade-in">
       <div className="insights-role-header">
         <div className={`role-indicator-badge-mini ${userRole}`}>
-           <span className="ri-dot"></span>
-           {userRole}
+          <span className="ri-dot"></span>
+          {userRole}
         </div>
       </div>
-      
+
       <div className="insights-view-content">
         {/* ── Left Column ── */}
         <section className="insights-left">
@@ -181,15 +181,15 @@ const InsightsPage: React.FC<InsightsPageProps> = ({ isSidebarExpanded, userRole
                     <div className="item-icon-wrap">{plan.icon}</div>
                     <div className="item-content">
                       <div className="item-header">
-                          <span className="item-label">{plan.label}</span>
-                          <div className="more-options"><MoreIcon /></div>
+                        <span className="item-label">{plan.label}</span>
+                        <div className="more-options"><MoreIcon /></div>
                       </div>
                       <div className="item-stats">
-                          <span>{plan.amount} <small>{plan.p}%</small></span>
-                          <span className="item-target">Target: {plan.target}</span>
+                        <span>{plan.amount} <small>{plan.p}%</small></span>
+                        <span className="item-target">Target: {plan.target}</span>
                       </div>
                       <div className="item-progress">
-                          <div className="item-fill" style={{ width: `${plan.p}%` }}></div>
+                        <div className="item-fill" style={{ width: `${plan.p}%` }}></div>
                       </div>
                     </div>
                   </div>
@@ -237,13 +237,13 @@ const InsightsPage: React.FC<InsightsPageProps> = ({ isSidebarExpanded, userRole
               <div className="more-options"><MoreIcon /></div>
             </div>
             <div className="spending-insights-body">
-               <div className="score-panel">
-                  <span className="score-label">SCORE</span>
-                  <h2 className="score-val">81/100</h2>
-                  <p className="score-desc">
-                    Your spending is balanced. High efficiency in rental and investment management.
-                  </p>
-               </div>
+              <div className="score-panel">
+                <span className="score-label">SCORE</span>
+                <h2 className="score-val">81/100</h2>
+                <p className="score-desc">
+                  Your spending is balanced. High efficiency in rental and investment management.
+                </p>
+              </div>
               <SpendingBubbleChart />
             </div>
           </div>
@@ -252,65 +252,65 @@ const InsightsPage: React.FC<InsightsPageProps> = ({ isSidebarExpanded, userRole
             <div className="card-header">
               <span className="card-title">Cashflow</span>
               <div className="header-actions">
-                  <button className="period-toggle">This Year <ChevronDown /></button>
+                <button className="period-toggle">This Year <ChevronDown /></button>
               </div>
             </div>
             <div className="cashflow-summary">
               <div className="cashflow-balance">
-                  <p>Total Balance</p>
-                  <h3>{currencyPrefix}20,230</h3>
+                <p>Total Balance</p>
+                <h3>{currencyPrefix}20,230</h3>
               </div>
-               <div className="cashflow-legend">
-                   <div className="legend-item"><span className="rect rect-income"></span> Income</div>
-                   <div className="legend-item"><span className="rect rect-expense"></span> Expense</div>
-               </div>
+              <div className="cashflow-legend">
+                <div className="legend-item"><span className="rect rect-income"></span> Income</div>
+                <div className="legend-item"><span className="rect rect-expense"></span> Expense</div>
+              </div>
             </div>
             <div className="chart-container">
               <ResponsiveContainer width="100%" height={260}>
-                <BarChart 
-                   data={cashflowData} 
-                   margin={{ top: 20, right: 0, left: 0, bottom: 0 }} 
-                   barGap={0} 
-                   stackOffset="sign"
-                 >
-                   <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="rgba(0,0,0,0.05)" />
-                   <XAxis 
-                     dataKey="name" 
-                     axisLine={false} 
-                     tickLine={false} 
-                     tick={{ fill: '#94A3B8', fontSize: 12 }} 
-                   />
-                   <YAxis 
-                      axisLine={false} 
-                      tickLine={false} 
-                      tick={{ fill: '#94A3B8', fontSize: 12 }}
-                      tickFormatter={(v) => `${Math.abs(v/1000)}k`}
-                   />
-                   <Tooltip 
-                     cursor={{ fill: 'transparent' }}
-                     content={({ active, payload }) => {
-                       if (active && payload && payload.length) {
-                         return (
-                            <div className="custom-tooltip">
-                               <p className="tooltip-date">July 2025</p>
-                               <div className="tooltip-row">
-                                   <span>Income</span>
-                                   <span>Rs 4,500</span>
-                               </div>
-                               <div className="tooltip-row">
-                                   <span>Expense</span>
-                                   <span>Rs 2,450</span>
-                               </div>
+                <BarChart
+                  data={cashflowData}
+                  margin={{ top: 20, right: 0, left: 0, bottom: 0 }}
+                  barGap={0}
+                  stackOffset="sign"
+                >
+                  <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="rgba(0,0,0,0.05)" />
+                  <XAxis
+                    dataKey="name"
+                    axisLine={false}
+                    tickLine={false}
+                    tick={{ fill: '#94A3B8', fontSize: 12 }}
+                  />
+                  <YAxis
+                    axisLine={false}
+                    tickLine={false}
+                    tick={{ fill: '#94A3B8', fontSize: 12 }}
+                    tickFormatter={(v) => `${Math.abs(v / 1000)}k`}
+                  />
+                  <Tooltip
+                    cursor={{ fill: 'transparent' }}
+                    content={({ active, payload }) => {
+                      if (active && payload && payload.length) {
+                        return (
+                          <div className="custom-tooltip">
+                            <p className="tooltip-date">July 2025</p>
+                            <div className="tooltip-row">
+                              <span>Income</span>
+                              <span>Rs 4,500</span>
                             </div>
-                         );
-                       }
-                       return null;
-                     }}
-                   />
-                   <Bar dataKey="income" fill="#1E3A8A" radius={[6, 6, 0, 0]} barSize={24} stackId="a" />
-                   <Bar dataKey="expense" fill="#3B82F6" radius={[6, 6, 0, 0]} barSize={24} stackId="a" />
-                 </BarChart>
-               </ResponsiveContainer>
+                            <div className="tooltip-row">
+                              <span>Expense</span>
+                              <span>Rs 2,450</span>
+                            </div>
+                          </div>
+                        );
+                      }
+                      return null;
+                    }}
+                  />
+                  <Bar dataKey="income" fill="#1E3A8A" radius={[6, 6, 0, 0]} barSize={24} stackId="a" />
+                  <Bar dataKey="expense" fill="#3B82F6" radius={[6, 6, 0, 0]} barSize={24} stackId="a" />
+                </BarChart>
+              </ResponsiveContainer>
             </div>
           </div>
         </section>
@@ -326,7 +326,7 @@ const InsightsPage: React.FC<InsightsPageProps> = ({ isSidebarExpanded, userRole
               <button className="stat-tab">Income</button>
               <button className="stat-tab active">Expense</button>
             </div>
-            
+
             <div className="donut-container">
               <ResponsiveContainer width="100%" height={180}>
                 <PieChart>
@@ -366,24 +366,24 @@ const InsightsPage: React.FC<InsightsPageProps> = ({ isSidebarExpanded, userRole
           </div>
 
           <div className="insight-card glassy-card activity-card">
-             <div className="card-header">
-               <span className="card-title">Recent Activity</span>
-               <div className="more-options"><MoreIcon /></div>
-             </div>
-             <p className="activity-date">Today</p>
-             <div className="activity-list">
-                {recentActivity.map((act) => (
-                  <div key={act.id} className="activity-item">
-                    <img src={act.avatar} alt="avatar" className="activity-avatar" />
-                    <div className="activity-content">
-                      <p className="activity-text">
-                        <strong>{act.user}</strong> {act.action}
-                      </p>
-                      <span className="activity-time">{act.time}</span>
-                    </div>
+            <div className="card-header">
+              <span className="card-title">Recent Activity</span>
+              <div className="more-options"><MoreIcon /></div>
+            </div>
+            <p className="activity-date">Today</p>
+            <div className="activity-list">
+              {recentActivity.map((act) => (
+                <div key={act.id} className="activity-item">
+                  <img src={act.avatar} alt="avatar" className="activity-avatar" />
+                  <div className="activity-content">
+                    <p className="activity-text">
+                      <strong>{act.user}</strong> {act.action}
+                    </p>
+                    <span className="activity-time">{act.time}</span>
                   </div>
-                ))}
-             </div>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
       </div>

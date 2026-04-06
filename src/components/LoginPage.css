@@ -43,7 +43,9 @@
   overflow-y: auto;
 }
 
-.login-left::-webkit-scrollbar { width: 0; }
+.login-left::-webkit-scrollbar {
+  width: 0;
+}
 
 .login-form-container {
   width: 100%;
@@ -127,7 +129,9 @@
   gap: 10px;
 }
 
-.form-row-two .input-wrap { flex: 1; }
+.form-row-two .input-wrap {
+  flex: 1;
+}
 
 .input-wrap {
   position: relative;
@@ -135,7 +139,9 @@
   align-items: center;
 }
 
-.input-wrap-icon .form-input { padding-right: 42px; }
+.input-wrap-icon .form-input {
+  padding-right: 42px;
+}
 
 .form-input {
   width: 100%;
@@ -149,11 +155,13 @@
   font-family: inherit;
 }
 
-.form-input::placeholder { color: #94a3b8; }
+.form-input::placeholder {
+  color: #94a3b8;
+}
 
 .form-input:focus {
   border-color: #3B4CF0;
-  box-shadow: 0 0 0 3px rgba(59,76,240,0.12);
+  box-shadow: 0 0 0 3px rgba(59, 76, 240, 0.12);
   outline: none;
   background: #fff;
 }
@@ -237,13 +245,15 @@
   color: #3B4CF0;
   cursor: pointer;
   text-decoration: underline;
-  text-decoration-color: rgba(59,76,240,0.4);
+  text-decoration-color: rgba(59, 76, 240, 0.4);
   text-underline-offset: 2px;
   transition: color 0.15s;
   font-family: inherit;
 }
 
-.policy-link:hover { color: #2734b3; }
+.policy-link:hover {
+  color: #2734b3;
+}
 
 /* ─── Forgot ─────────────────────────────────── */
 .forgot-btn {
@@ -256,7 +266,9 @@
   font-family: inherit;
 }
 
-.forgot-btn:hover { text-decoration: underline; }
+.forgot-btn:hover {
+  text-decoration: underline;
+}
 
 /* ─── Submit Button ──────────────────────────── */
 .submit-btn {
@@ -278,11 +290,13 @@
 
 .submit-btn:hover {
   transform: translateY(-1px);
-  box-shadow: 0 6px 22px rgba(59,76,240,0.42);
+  box-shadow: 0 6px 22px rgba(59, 76, 240, 0.42);
   background: #3142e0;
 }
 
-.submit-btn:active { transform: translateY(0); }
+.submit-btn:active {
+  transform: translateY(0);
+}
 
 /* ─── OR Divider ─────────────────────────────── */
 .or-divider {
@@ -335,7 +349,7 @@
 
 .social-apple:hover {
   background: #1e293b;
-  box-shadow: 0 3px 12px rgba(0,0,0,0.22);
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.22);
 }
 
 .social-google {

@@ -17,14 +17,15 @@
 /* Glassmorphic Pill styling */
 .sidebar {
   width: 65px;
-  height: calc(100vh - 40px); /* 20px padding top/bottom from window edge */
+  height: calc(100vh - 40px);
+  /* 20px padding top/bottom from window edge */
   border-radius: 40px;
   background: rgba(255, 255, 255, 0.4);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
   border: 1px solid rgba(255, 255, 255, 0.6);
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
-  
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -56,7 +57,8 @@
   color: #64748B;
   cursor: pointer;
   z-index: 105;
-  box-shadow: 0 4px 14px rgba(0,0,0,0.08); /* Softer, broader shadow */
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  /* Softer, broader shadow */
   transform: translateY(-50%);
   opacity: 0;
   transition: all 0.2s ease;
@@ -198,7 +200,8 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  margin-top: auto; /* Pin down to the bottom to naturally group top elements */
+  margin-top: auto;
+  /* Pin down to the bottom to naturally group top elements */
 }
 
 .sidebar-profile-item {
@@ -228,7 +231,7 @@
   overflow: hidden;
   border: 1.5px solid white;
   flex-shrink: 0;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .sidebar-avatar-img {
@@ -241,7 +244,8 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  flex: 1; /* Pushes the CTA to the right */
+  flex: 1;
+  /* Pushes the CTA to the right */
 }
 
 .sidebar-user-name {
@@ -259,19 +263,19 @@
 }
 
 .view-profile-cta {
-    background: transparent;
-    border: none;
-    color: #94A3B8;
-    padding: 4px;
-    border-radius: 6px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    transition: all 0.2s ease;
+  background: transparent;
+  border: none;
+  color: #94A3B8;
+  padding: 4px;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: all 0.2s ease;
 }
 
 .view-profile-cta:hover {
-    color: #3B4CF0;
-    background: rgba(59, 76, 240, 0.05);
-    transform: translateX(2px);
+  color: #3B4CF0;
+  background: rgba(59, 76, 240, 0.05);
+  transform: translateX(2px);
 }

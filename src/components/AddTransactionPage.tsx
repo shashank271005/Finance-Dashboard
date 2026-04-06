@@ -64,12 +64,12 @@ const AddTransactionPage: React.FC<AddTransactionPageProps> = ({ onBack, userRol
           <RefreshIcon /> Recurring Payment
         </button>
         {isViewer && (
-           <div className="viewer-warning">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-              View-only mode: You cannot execute new transactions.
-           </div>
+          <div className="viewer-warning">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            View-only mode: You cannot execute new transactions.
+          </div>
         )}
-        
+
         <div className="at-form-grid">
           <div className="at-input-group">
             <label className="at-label">Transaction Name</label>
@@ -102,12 +102,12 @@ const AddTransactionPage: React.FC<AddTransactionPageProps> = ({ onBack, userRol
           <span>Make this a favorite transaction</span>
         </div>
 
-          {userRole === 'admin' ? (
-            <button className="at-execute-btn">Execute Transaction</button>
-          ) : (
-            <button className="at-execute-btn disabled" disabled>Execute Transaction (Disabled)</button>
-          )}
-        </div>
+        {userRole === 'admin' ? (
+          <button className="at-execute-btn">Execute Transaction</button>
+        ) : (
+          <button className="at-execute-btn disabled" disabled>Execute Transaction (Disabled)</button>
+        )}
+      </div>
 
       <div className="at-table-card">
         <table className="at-table">

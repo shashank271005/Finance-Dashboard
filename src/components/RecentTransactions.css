@@ -4,7 +4,7 @@
   padding: 18px 20px;
   box-shadow: var(--shadow-md);
   flex: 1;
-  border: 1px solid rgba(255,255,255,0.8);
+  border: 1px solid rgba(255, 255, 255, 0.8);
   min-width: 0;
 }
 
@@ -33,7 +33,9 @@
   transition: background 0.18s;
 }
 
-.view-all-btn:hover { background: var(--primary-light); }
+.view-all-btn:hover {
+  background: var(--primary-light);
+}
 
 .transactions-list {
   display: flex;
@@ -104,8 +106,13 @@
   letter-spacing: -0.3px;
 }
 
-.tx-amount.pos { color: #16a34a; }
-.tx-amount.neg { color: var(--text-primary); }
+.tx-amount.pos {
+  color: #16a34a;
+}
+
+.tx-amount.neg {
+  color: var(--text-primary);
+}
 
 .tx-status {
   font-size: 8.5px;
@@ -117,10 +124,10 @@
 
 .tx-status.completed {
   color: #16a34a;
-  background: rgba(34,197,94,0.1);
+  background: rgba(34, 197, 94, 0.1);
 }
 
 .tx-status.pending {
   color: #f97316;
-  background: rgba(249,115,22,0.1);
+  background: rgba(249, 115, 22, 0.1);
 }

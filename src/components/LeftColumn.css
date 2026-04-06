@@ -5,7 +5,7 @@
   border: 1px solid rgba(255, 255, 255, 0.6);
   border-radius: 16px;
   padding: 18px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
   display: flex;
   flex-direction: column;
 }
@@ -42,7 +42,8 @@
 
 /* ─── Income Card ──────────────────────────── */
 .income-card {
-  background: rgba(255, 255, 255, 0.35); /* Extremely soft base for income card */
+  background: rgba(255, 255, 255, 0.35);
+  /* Extremely soft base for income card */
 }
 
 .income-amount-row {
@@ -82,7 +83,7 @@
   border-radius: 20px;
   font-size: 11px;
   font-weight: 700;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 }
 
 .income-badge svg {
@@ -152,7 +153,8 @@
 }
 
 .expense-content {
-  background: rgba(255, 255, 255, 0.25); /* Subtle inner glass differentiation */
+  background: rgba(255, 255, 255, 0.25);
+  /* Subtle inner glass differentiation */
   border: 1px solid rgba(255, 255, 255, 0.4);
   border-radius: 12px;
   padding: 16px;
@@ -245,15 +247,18 @@
 }
 
 .bar-bg-dark {
-  background: #1e3a8a; /* Dark blue */
+  background: #1e3a8a;
+  /* Dark blue */
 }
 
 .bar-bg-primary {
-  background: #3B4CF0; /* Primary purple-blue */
+  background: #3B4CF0;
+  /* Primary purple-blue */
 }
 
 .bar-bg-light {
-  background: #A4ABFA; /* Light purple-blue */
+  background: #A4ABFA;
+  /* Light purple-blue */
 }
 
 .bar-badge {
@@ -268,7 +273,7 @@
   font-weight: 800;
   padding: 3px 8px;
   border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
   z-index: 10;
 }

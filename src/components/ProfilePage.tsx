@@ -161,13 +161,13 @@ const ProfilePage: React.FC<ProfilePageProps> = ({ onLogout, userRole, setUserRo
                         <td className="label">User Role</td>
                         <td className="value">
                            <div className="role-toggle-inline">
-                              <button 
+                              <button
                                  className={`toggle-btn ${userRole === 'admin' ? 'active' : ''}`}
                                  onClick={() => setUserRole('admin')}
                               >
                                  Admin
                               </button>
-                              <button 
+                              <button
                                  className={`toggle-btn ${userRole === 'viewer' ? 'active' : ''}`}
                                  onClick={() => setUserRole('viewer')}
                               >

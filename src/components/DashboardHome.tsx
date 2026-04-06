@@ -52,19 +52,19 @@ const DashboardHome: React.FC<DashboardHomeProps> = ({ onNewTransaction, userRol
   })();
 
   const markedDates = timeFilteredTransactions.map(tx => tx.date);
-  
+
   const finalFilteredTransactions = selectedDate
     ? timeFilteredTransactions.filter(tx => tx.date === selectedDate)
     : timeFilteredTransactions;
 
   return (
     <div className="dh-page">
-      <DashboardHeader 
-        onNewTransaction={onNewTransaction} 
-        userRole={userRole} 
-        setUserRole={setUserRole} 
+      <DashboardHeader
+        onNewTransaction={onNewTransaction}
+        userRole={userRole}
+        setUserRole={setUserRole}
       />
-      
+
       <div className="dh-grid">
         {/* Left Column */}
         <div className="dh-col dh-col-left">
@@ -76,8 +76,8 @@ const DashboardHome: React.FC<DashboardHomeProps> = ({ onNewTransaction, userRol
         {/* Middle Column */}
         <div className="dh-col dh-col-mid">
           <OverviewGauge />
-          <RecentTransactionsCard 
-            transactions={finalFilteredTransactions} 
+          <RecentTransactionsCard
+            transactions={finalFilteredTransactions}
             timeFilter={timeFilter}
             onTimeFilterChange={(val) => {
               setTimeFilter(val);
@@ -91,10 +91,10 @@ const DashboardHome: React.FC<DashboardHomeProps> = ({ onNewTransaction, userRol
         <div className="dh-col dh-col-right">
           <MyFinances userRole={userRole} />
           <WealthOverview />
-          <SmallCalendar 
-            selectedDate={selectedDate} 
-            onSelectDate={setSelectedDate} 
-            markedDates={markedDates} 
+          <SmallCalendar
+            selectedDate={selectedDate}
+            onSelectDate={setSelectedDate}
+            markedDates={markedDates}
           />
         </div>
       </div>
