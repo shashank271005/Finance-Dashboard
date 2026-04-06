@@ -384,29 +384,37 @@
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  padding: 20px;
-  border-radius: 24px;
+  padding: 16px 24px;
+  border-radius: 20px;
   background: #ffffff;
   border: 1px solid var(--border);
-  margin-bottom: 16px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 12px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
 }
 
 .bill-item:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+  border-color: rgba(59, 76, 240, 0.1);
+  background: #fbfbff;
 }
 
 .bill-icon {
-  width: 54px;
-  height: 54px;
-  border-radius: 16px;
-  background: var(--card-bg);
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--primary);
   flex-shrink: 0;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.bill-item:hover .bill-icon {
+  transform: scale(1.1) rotate(5deg);
 }
 
 .bill-icon.n { color: #E50914; background: rgba(229, 9, 20, 0.08); }
@@ -422,21 +430,69 @@
 
 .bill-name {
   font-weight: 700;
-  font-size: 16px;
+  font-size: 15px;
   color: var(--text-primary);
+  transition: color 0.3s ease;
+}
+
+.bill-item:hover .bill-name {
+  color: #3B4CF0;
 }
 
 .bill-price {
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 600;
   color: var(--text-muted);
 }
 
+.landing-bill-action {
+  position: relative;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  min-width: 90px;
+}
+
 .bill-due {
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 700;
-  padding: 6px 12px;
-  border-radius: 12px;
+  padding: 5px 12px;
+  border-radius: 20px;
+  transition: all 0.4s ease;
+  opacity: 1;
+}
+
+.bill-item:hover .bill-due {
+  transform: translateX(20px);
+  opacity: 0;
+}
+
+.bill-pay-btn {
+  position: absolute;
+  right: -100px;
+  background: #3B4CF0;
+  color: white;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 4px 12px rgba(59, 76, 240, 0.2);
+  opacity: 0;
+  white-space: nowrap;
+}
+
+.bill-item:hover .bill-pay-btn {
+  right: 0;
+  opacity: 1;
+}
+
+.bill-pay-btn:hover {
+  background: #2D3BC0;
+  transform: scale(1.05);
 }
 
 .bill-due.red {
@@ -453,6 +509,7 @@
   color: #00ce7d;
   background: rgba(0, 206, 125, 0.08);
 }
+
 
 /* V4: The Ledger (Spotlight Edition) ⚡ */
 .feature-section-spotlight {
