@@ -79,7 +79,7 @@ src/
 ├── App.tsx              # Main application shell & routing
 └── main.tsx             # React mount point
 ```
-
+![Finexis Project Structure](https://res.cloudinary.com/dkdstxw96/image/upload/v1775490825/Screenshot_2026-04-06_at_9.23.22_PM_fkiqds.png)
 ---
 
 Developed with a focus on **Visual Excellence** and **User Interaction**.
