@@ -1,21 +1,72 @@
-/* ─── Layout ───────────────────────────── */
 .insights-view {
-  display: grid;
-  grid-template-columns: minmax(200px, 280px) 1fr minmax(220px, 300px);
-  gap: 16px;
-  padding: 24px;
-  height: 100%;
-  overflow-y: auto;
-  overflow-x: hidden;
-  align-items: start;
-  box-sizing: border-box;
-}
-
-.insights-left, .insights-mid, .insights-right {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  padding: 16px 20px 24px 0;
+  gap: 12px;
+  height: 100%;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+.insights-role-header {
+  display: flex;
+  justify-content: flex-end;
+  padding: 4px 0;
+}
+
+.role-indicator-badge-mini {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 9px;
+  font-weight: 800;
+  color: #64748B;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background: rgba(255, 255, 255, 0.4);
+  padding: 4px 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.role-indicator-badge-mini .ri-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+
+.role-indicator-badge-mini.admin .ri-dot { background: #10B981; box-shadow: 0 0 8px rgba(16, 185, 129, 0.4); }
+.role-indicator-badge-mini.viewer .ri-dot { background: #F59E0B; box-shadow: 0 0 8px rgba(245, 158, 11, 0.4); }
+
+.insights-view-content {
+  display: flex;
+  gap: 16px;
+  flex: 1;
+  align-items: flex-start;
+}
+
+.insights-left {
+  width: 280px;
+  min-width: 280px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.insights-mid {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
   min-width: 0;
+}
+
+.insights-right {
+  width: 300px;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
 /* ─── Cards ────────────────────────────── */
@@ -24,8 +75,8 @@
   backdrop-filter: blur(28px);
   -webkit-backdrop-filter: blur(28px);
   border: 1px solid rgba(255, 255, 255, 0.4);
-  border-radius: 32px;
-  padding: 32px;
+  border-radius: 24px;
+  padding: 20px;
   box-shadow: 0 16px 48px rgba(0, 0, 0, 0.03);
 }
 
@@ -33,7 +84,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 28px;
+  margin-bottom: 16px;
 }
 
 .more-options {
@@ -147,7 +198,7 @@
 .saving-items {
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 16px;
 }
 
 .saving-item {
@@ -222,21 +273,22 @@
 
 .summary-card {
     flex: 1;
-    min-width: 140px;
+    min-width: 120px;
     display: flex;
     align-items: center;
-    gap: 12px;
-    padding: 18px;
+    gap: 10px;
+    padding: 14px 16px;
+    border-radius: 20px;
 }
 
 .summary-icon {
-    width: 44px;
-    height: 44px;
-    border-radius: 12px;
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 700;
     color: white;
 }
@@ -258,10 +310,11 @@
 .summary-trend.neg { color: #FF4D4D; }
 
 .summary-val {
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 800;
-    margin: 4px 0;
+    margin: 2px 0;
     white-space: nowrap;
+    color: #1E293B;
 }
 
 .summary-label {
@@ -273,17 +326,18 @@
 
 /* ─── Bubble Chart ─────────────────────── */
 .spending-insights-body {
-    display: grid;
-    grid-template-columns: 200px 1fr;
+    display: flex;
     gap: 20px;
     align-items: center;
+    justify-content: space-between;
 }
 
 .score-panel {
     background: rgba(248, 250, 252, 0.5);
     border: 1px solid rgba(0,0,0,0.03);
     border-radius: 20px;
-    padding: 24px;
+    padding: 20px;
+    flex: 0 0 170px;
 }
 
 .score-label {
@@ -308,7 +362,10 @@
 
 .bubble-chart-container {
     height: 300px;
+    flex: 1;
     position: relative;
+    display: flex;
+    justify-content: center;
 }
 
 .bubble-svg {
@@ -357,9 +414,9 @@
     color: #1E293B;
 }
 
-.dot { width: 10px; height: 10px; border-radius: 50%; }
-.dot-income { background: #3B4CF0; }
-.dot-expense { background: #4F70F5; opacity: 0.6; }
+.rect { width: 18px; height: 18px; border-radius: 4px; }
+.rect-income { background: #1E3A8A; }
+.rect-expense { background: #3B82F6; }
 
 .custom-tooltip {
     background: white;
@@ -506,56 +563,66 @@
 /* ─── Insights Page Mobile Overhaul ─── */
 @media (max-width: 1024px) {
   .insights-view {
-    display: flex;
-    flex-direction: column;
     padding: 16px 16px 80px;
-    gap: 32px;
+    gap: 16px;
+  }
+
+  .insights-view-content {
+    flex-direction: column;
+    gap: 24px;
   }
 
   .insights-left, .insights-mid, .insights-right {
     width: 100%;
-    max-width: 100%;
-  }
-
-  .visa-container {
-    padding: 0 20px;
+    min-width: 100%;
+    gap: 20px;
   }
 
   .summary-cards {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 16px;
+    gap: 12px;
   }
 
   .spending-insights-body {
-    grid-template-columns: 1fr;
-    gap: 32px;
+    flex-direction: column;
+    padding: 24px 0;
   }
 
   .score-panel {
+    width: 100%;
+    flex: none;
     text-align: center;
+    border-radius: 20px;
   }
 
   .bubble-chart-container {
-    height: 240px;
+    height: 280px;
+    width: 100%;
   }
 }
 
 @media (max-width: 768px) {
   .glassy-card {
-    padding: 24px;
+    padding: 18px;
+    border-radius: 20px;
+  }
+
+  .summary-card {
+    padding: 12px 14px;
   }
 
   .total-savings-amount {
-    font-size: 28px;
+    font-size: 24px;
+    margin-bottom: 24px;
   }
 
   .cashflow-legend {
-    display: none; /* Hide legend on small screens to save space */
+    display: none; 
   }
 
-  .donut-container {
-    height: 200px;
+  .chart-container {
+    height: 220px;
   }
 }
 
@@ -573,4 +640,33 @@
   .bubble-label-main { font-size: 11px; }
   .bubble-label { font-size: 9px; }
   .bubble-label-small { font-size: 8px; }
+}
+
+@media (max-width: 375px) {
+  .summary-card {
+    padding: 10px 12px;
+    border-radius: 16px;
+  }
+  
+  .summary-val {
+    font-size: 14px;
+  }
+  
+  .summary-label {
+    font-size: 11px;
+  }
+
+  .summary-icon {
+    width: 32px;
+    height: 32px;
+    font-size: 14px;
+  }
+
+  .glassy-card {
+    padding: 16px;
+  }
+  
+  .total-savings-amount {
+    font-size: 22px;
+  }
 }

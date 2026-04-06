@@ -2,6 +2,31 @@
 .overview-card {
   display: flex;
   flex-direction: column;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.overview-card:hover {
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  border-color: rgba(59, 76, 246, 0.15);
+}
+
+.overview-card:hover .gauge-svg-wrapper path {
+  stroke-dasharray: 300;
+  stroke-dashoffset: 300;
+  animation: gauge-draw 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes gauge-draw {
+  to { stroke-dashoffset: 0; }
+}
+
+.overview-card .dots-btn {
+  transition: transform 0.3s ease;
+}
+
+.overview-card:hover .dots-btn {
+  transform: rotate(90deg);
 }
 
 .gauge-container {
@@ -17,6 +42,11 @@
   width: 100%;
   display: flex;
   justify-content: center;
+  transition: transform 0.4s ease;
+}
+
+.overview-card:hover .gauge-svg-wrapper {
+  transform: scale(1.05);
 }
 
 .gauge-center-text {
@@ -27,6 +57,12 @@
   text-align: center;
   display: flex;
   flex-direction: column;
+  transition: all 0.4s ease;
+}
+
+.overview-card:hover .gauge-center-text h2 {
+  color: #3278F6;
+  transform: scale(1.1);
 }
 
 .gauge-center-text h2 {
@@ -36,6 +72,7 @@
   margin: 0 0 4px 0;
   letter-spacing: -0.8px;
   line-height: 1;
+  transition: all 0.4s ease;
 }
 
 .gauge-center-text span {
@@ -43,6 +80,7 @@
   color: var(--text-muted);
   font-weight: 500;
 }
+
 
 .gauge-legend {
   display: flex;

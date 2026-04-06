@@ -33,7 +33,11 @@ const bills = [
   { id: 3, name: 'Internet Bill', date: 'In 7 Days', icon: <InternetIcon />, amount: 800, status: 'future' }
 ];
 
-const UpcomingBills: React.FC = () => {
+interface UpcomingBillsProps {
+  userRole?: 'admin' | 'viewer';
+}
+
+const UpcomingBills: React.FC<UpcomingBillsProps> = ({ userRole = 'admin' }) => {
   return (
     <div className="card upcoming-bills-card">
       <div className="card-header border-bottom">
@@ -53,7 +57,9 @@ const UpcomingBills: React.FC = () => {
               <div className={`bill-tag status-${bill.status}`}>
                 {bill.date}
               </div>
-              <button className="bill-pay-btn">Pay</button>
+              {userRole === 'admin' && (
+                <button className="bill-pay-btn">Pay Now</button>
+              )}
             </div>
           </div>
         ))}

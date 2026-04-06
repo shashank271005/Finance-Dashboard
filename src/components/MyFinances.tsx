@@ -1,12 +1,18 @@
 import React from 'react';
 import './RightColumn.css';
 
-const MyFinances: React.FC = () => {
+interface MyFinancesProps {
+  userRole?: 'admin' | 'viewer';
+}
+
+const MyFinances: React.FC<MyFinancesProps> = ({ userRole = 'admin' }) => {
   return (
     <div className="card my-finances-card">
       <div className="card-header">
         <span className="card-title">My Finances</span>
-        <button className="add-card-btn">+ Add Card</button>
+        {userRole === 'admin' && (
+          <button className="add-card-btn">+ Add Card</button>
+        )}
       </div>
       
       <div className="credit-card">

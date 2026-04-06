@@ -58,13 +58,13 @@
   flex: 1;
 }
 
-/* Wrapper gives position context for the overlaid dot */
+
 .chart-svg-wrap {
   position: relative;
   width: 100%;
 }
 
-/* True CSS circle — never distorted by SVG scaling */
+
 .chart-dot {
   position: absolute;
   width: 12px;
@@ -79,7 +79,7 @@
   z-index: 2;
 }
 
-/* Value tooltip above the peak dot */
+
 .chart-tooltip {
   position: absolute;
   transform: translateX(-50%);
@@ -96,7 +96,7 @@
   box-shadow: 0 2px 8px rgba(45,63,224,0.35);
 }
 
-/* Small arrow below tooltip */
+
 .chart-tooltip::after {
   content: '';
   position: absolute;

@@ -204,8 +204,8 @@ const BudgetGauge: React.FC<{ current: number; total: number }> = ({ current, to
 };
 
 /* ─── Smart Audit Alert ──────────────────── */
-const SmartAudit: React.FC = () => {
-  return (
+const SmartAudit: React.FC<{ isViewer: boolean }> = ({ isViewer }) => {
+   return (
     <div className="insight-card glassy-card smart-audit-card">
       <div className="audit-header">
         <div className="audit-notify-dot"></div>
@@ -216,7 +216,9 @@ const SmartAudit: React.FC = () => {
           <span className="audit-count">3</span>
           <span className="audit-text">Transactions need categories</span>
         </div>
-        <div className="audit-action-link">Review Now <ArrowRightIcon /></div>
+        <div className="audit-action-link" style={isViewer ? { opacity: 0.5, cursor: 'not-allowed' } : {}}>
+          {isViewer ? 'Restricted Access' : 'Review Now'} {!isViewer && <ArrowRightIcon />}
+        </div>
       </div>
     </div>
   );
@@ -241,12 +243,17 @@ const SpendingTrendChart: React.FC = () => {
 };
 
 /* ─── Main Component ─────────────────────── */
-const TransactionsPage: React.FC = () => {
+interface TransactionsPageProps {
+  userRole?: 'admin' | 'viewer';
+}
+
+const TransactionsPage: React.FC<TransactionsPageProps> = ({ userRole = 'admin' }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [sortOrder, setSortOrder] = useState<'newest' | 'oldest'>('newest');
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
   const [isCategoryOpen, setIsCategoryOpen] = useState(false);
   const itemsPerPage = 9;
+  const isViewer = userRole === 'viewer';
 
   // 1. Get unique categories
   const categories = ['All', ...new Set(transactions.map(tx => tx.category))];
@@ -277,6 +284,10 @@ const TransactionsPage: React.FC = () => {
         <div className="tx-filters">
           <div className="filter-left">
             <span className="tx-version-badge">Finexis v2.0</span>
+            <div className={`role-indicator-badge ${userRole}`}>
+               <span className="ri-dot"></span>
+               {userRole}
+            </div>
             <button 
               className={`filter-chip ${selectedCategory === 'All' ? 'filter-chip-active' : ''}`}
               onClick={() => { setSelectedCategory('All'); setCurrentPage(1); }}
@@ -425,7 +436,7 @@ const TransactionsPage: React.FC = () => {
         </div>
 
         {/* Smart Audit Card */}
-        <SmartAudit />
+        <SmartAudit isViewer={isViewer} />
 
         {/* Spending Trend Chart */}
         <div className="insight-card insight-chart-card glassy-card">
@@ -443,8 +454,8 @@ const TransactionsPage: React.FC = () => {
           <div className="tax-report-title">Annual Tax Report 2023</div>
           <div className="tax-report-sub">Ready for audit and submission</div>
           <div className="tax-report-actions">
-            <button className="tax-download-btn">
-              <DownloadIcon /> Download
+            <button className="tax-download-btn" disabled={isViewer}>
+              <DownloadIcon /> {isViewer ? 'Disabled' : 'Download'}
             </button>
             <button className="tax-view-btn">
               <EyeIcon />

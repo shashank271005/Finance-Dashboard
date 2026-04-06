@@ -16,6 +16,7 @@ const App: React.FC = () => {
   const [isSidebarExpanded, setIsSidebarExpanded] = useState(false);
   const [isOnboarding, setIsOnboarding] = useState(false);
   const [showLanding, setShowLanding] = useState(true);
+  const [userRole, setUserRole] = useState<'admin' | 'viewer'>('admin');
 
   const handleLogin = () => {
     setIsLoggedIn(true);
@@ -56,13 +57,28 @@ const App: React.FC = () => {
         setActiveTab={setActiveTab} 
         isExpanded={isSidebarExpanded}
         setIsExpanded={setIsSidebarExpanded}
+        userRole={userRole}
       />
       <div className="main-content app-fade-in">
-        {activeTab === 'dashboard' && <DashboardHome onNewTransaction={() => setActiveTab('add-transaction')} />}
-        {activeTab === 'transactions' && <TransactionsPage />}
-        {activeTab === 'insights' && <InsightsPage isSidebarExpanded={isSidebarExpanded} />}
-        {activeTab === 'profile' && <ProfilePage onLogout={handleLogout} />}
-        {activeTab === 'add-transaction' && <AddTransactionPage onBack={() => setActiveTab('dashboard')} />}
+        {activeTab === 'dashboard' && (
+          <DashboardHome 
+            onNewTransaction={() => setActiveTab('add-transaction')} 
+            userRole={userRole}
+            setUserRole={setUserRole}
+          />
+        )}
+        {activeTab === 'transactions' && <TransactionsPage userRole={userRole} />}
+        {activeTab === 'insights' && <InsightsPage isSidebarExpanded={isSidebarExpanded} userRole={userRole} />}
+        {activeTab === 'profile' && (
+          <ProfilePage 
+            onLogout={handleLogout} 
+            userRole={userRole} 
+            setUserRole={setUserRole} 
+          />
+        )}
+        {activeTab === 'add-transaction' && (
+          <AddTransactionPage onBack={() => setActiveTab('dashboard')} userRole={userRole} />
+        )}
       </div>
 
       {/* ── Mobile Bottom Navigation ── */}

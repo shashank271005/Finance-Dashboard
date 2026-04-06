@@ -19,16 +19,66 @@
   letter-spacing: -0.8px;
 }
 
+.dh-greeting-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.role-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.role-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+
+.role-dot.admin { background: #10B981; box-shadow: 0 0 8px rgba(16, 185, 129, 0.4); }
+.role-dot.viewer { background: #F59E0B; box-shadow: 0 0 8px rgba(245, 158, 11, 0.4); }
+
 .dh-top-actions {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 20px;
+}
+
+.role-switcher {
+  display: flex;
+  background: rgba(0, 0, 0, 0.04);
+  padding: 4px;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.role-btn {
+  padding: 6px 12px;
+  font-size: 11px;
+  font-weight: 700;
+  border-radius: 7px;
+  transition: all 0.2s ease;
+  color: var(--text-muted);
+  background: transparent;
+}
+
+.role-btn.active {
+  background: white;
+  color: var(--primary);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 .header-icon-actions {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
 }
 
 .icon-btn-dh {

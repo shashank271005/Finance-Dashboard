@@ -7,6 +7,7 @@ interface SidebarProps {
   setActiveTab: (tab: string) => void;
   isExpanded: boolean;
   setIsExpanded: (expanded: boolean) => void;
+  userRole?: 'admin' | 'viewer';
 }
 
 const DashboardIcon = () => (
@@ -58,7 +59,7 @@ const PlusIcon = () => (
   </svg>
 );
 
-const Sidebar: React.FC<SidebarProps> = ({ activeTab, setActiveTab, isExpanded, setIsExpanded }) => {
+const Sidebar: React.FC<SidebarProps> = ({ activeTab, setActiveTab, isExpanded, setIsExpanded, userRole = 'admin' }) => {
 
   const navItems = [
     { id: 'dashboard', label: 'Dashboard', Icon: DashboardIcon },
@@ -80,14 +81,16 @@ const Sidebar: React.FC<SidebarProps> = ({ activeTab, setActiveTab, isExpanded, 
 
         {/* Core Navigation Pill Container */}
         <nav className="sidebar-nav">
-          <button 
-            className={`sidebar-action-btn ${isExpanded ? 'expanded' : ''}`}
-            onClick={() => setActiveTab('add-transaction')}
-            title="New Transaction"
-          >
-            <span className="action-icon"><PlusIcon /></span>
-            {isExpanded && <span className="action-label">New Transaction</span>}
-          </button>
+          {userRole === 'admin' && (
+            <button 
+              className={`sidebar-action-btn ${isExpanded ? 'expanded' : ''}`}
+              onClick={() => setActiveTab('add-transaction')}
+              title="New Transaction"
+            >
+              <span className="action-icon"><PlusIcon /></span>
+              {isExpanded && <span className="action-label">New Transaction</span>}
+            </button>
+          )}
 
           <div className="nav-group-title">
             {isExpanded && <span>Main Menu</span>}
@@ -121,10 +124,12 @@ const Sidebar: React.FC<SidebarProps> = ({ activeTab, setActiveTab, isExpanded, 
              </div>
              {isExpanded && (
                <>
-                <div className="sidebar-user-info">
-                    <span className="sidebar-user-name">Shashank Singh</span>
-                    <span className="sidebar-user-role">Student</span>
-                </div>
+                 <div className="sidebar-user-info">
+                     <span className="sidebar-user-name">Shashank Singh</span>
+                     <span className={`sidebar-user-role-badge ${userRole}`}>
+                        {userRole.toUpperCase()}
+                     </span>
+                 </div>
                 <button 
                   className="view-profile-cta" 
                   title="View Profile"

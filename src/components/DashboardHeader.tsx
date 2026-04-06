@@ -44,14 +44,37 @@ const BellIcon = () => (
 
 interface DashboardHeaderProps {
   onNewTransaction?: () => void;
+  userRole: 'admin' | 'viewer';
+  setUserRole: (role: 'admin' | 'viewer') => void;
 }
 
-const DashboardHeader: React.FC<DashboardHeaderProps> = ({ onNewTransaction }) => {
+const DashboardHeader: React.FC<DashboardHeaderProps> = ({ onNewTransaction, userRole, setUserRole }) => {
   return (
     <div className="dashboard-header">
       <div className="dh-top">
-        <h1 className="dh-greeting">Good Morning, Shashank</h1>
+        <div className="dh-greeting-group">
+          <h1 className="dh-greeting">Good Morning, Shashank</h1>
+          <div className="role-badge">
+            <span className={`role-dot ${userRole}`}></span>
+            {userRole.charAt(0).toUpperCase() + userRole.slice(1)} Mode
+          </div>
+        </div>
+        
         <div className="dh-top-actions">
+          <div className="role-switcher">
+            <button 
+              className={`role-btn ${userRole === 'admin' ? 'active' : ''}`}
+              onClick={() => setUserRole('admin')}
+            >
+              Admin
+            </button>
+            <button 
+              className={`role-btn ${userRole === 'viewer' ? 'active' : ''}`}
+              onClick={() => setUserRole('viewer')}
+            >
+              Viewer
+            </button>
+          </div>
           <div className="header-icon-actions">
             <button className="icon-btn-dh"><SettingsIcon /></button>
             <button className="icon-btn-dh"><BellIcon /></button>
@@ -72,7 +95,9 @@ const DashboardHeader: React.FC<DashboardHeaderProps> = ({ onNewTransaction }) =
           </button>
         </div>
         <div className="dh-search-group" style={{ display: 'flex', gap: '12px' }}>
-          <button className="new-tx-btn" onClick={onNewTransaction}>+ New Transaction</button>
+          {userRole === 'admin' && (
+            <button className="new-tx-btn" onClick={onNewTransaction}>+ New Transaction</button>
+          )}
           <div className="dh-search-wrap">
             <SearchIcon />
             <input type="text" placeholder="Search" className="dh-search-input" />

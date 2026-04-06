@@ -142,6 +142,13 @@
 /* ─── Expense Strategy Card ────────────────── */
 .expense-card {
   height: 340px;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.expense-card:hover {
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  border-color: rgba(59, 76, 246, 0.15);
 }
 
 .expense-content {
@@ -167,6 +174,12 @@
   color: #0F172A;
   margin: 0;
   letter-spacing: -0.8px;
+  line-height: 1;
+  transition: color 0.3s ease;
+}
+
+.expense-card:hover .expense-total h2 {
+  color: #3B4CF0;
 }
 
 .expense-subtitle {
@@ -181,7 +194,7 @@
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  gap: 8px;
+  gap: 12px;
   flex: 1;
 }
 
@@ -190,20 +203,45 @@
   flex-direction: column;
   align-items: center;
   width: 32%;
+  transition: all 0.4s ease;
+}
+
+/* Dim other bars when the card is hovered */
+.expense-card:hover .bar-wrapper {
+  opacity: 0.5;
+  filter: grayscale(80%);
+  transform: translateY(4px);
+}
+
+/* Highlight the specific bar being hovered */
+.expense-card .bar-wrapper:hover {
+  opacity: 1;
+  filter: grayscale(0%);
+  transform: translateY(-2px);
 }
 
 .bar-label {
   font-size: 9px;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--text-muted);
   margin-bottom: 8px;
+  transition: all 0.3s ease;
+}
+
+.bar-wrapper:hover .bar-label {
+  color: var(--text-primary);
+  transform: scale(1.1);
 }
 
 .bar {
   width: 100%;
   border-radius: 8px 8px 0 0;
   position: relative;
-  transition: all 0.3s ease;
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.bar-wrapper:hover .bar {
+  box-shadow: 0 4px 15px rgba(59, 76, 240, 0.3);
 }
 
 .bar-bg-dark {
@@ -223,14 +261,24 @@
   top: 16px;
   left: 50%;
   transform: translateX(-50%);
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(12px);
   color: #3B4CF0;
   font-size: 9px;
-  font-weight: 700;
-  padding: 2px 6px;
+  font-weight: 800;
+  padding: 3px 8px;
   border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  z-index: 10;
 }
+
+.bar-wrapper:hover .bar-badge {
+  transform: translateX(-50%) scale(1.2);
+  background: #3B4CF0;
+  color: white;
+}
+
 
 /* ─── Left Column Mobile Refinement ─── */
 @media (max-width: 768px) {

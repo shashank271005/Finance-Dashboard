@@ -26,9 +26,11 @@ const ArrowUpRight = () => (
 
 interface ProfilePageProps {
    onLogout: () => void;
+   userRole: 'admin' | 'viewer';
+   setUserRole: (role: 'admin' | 'viewer') => void;
 }
 
-const ProfilePage: React.FC<ProfilePageProps> = ({ onLogout }) => {
+const ProfilePage: React.FC<ProfilePageProps> = ({ onLogout, userRole, setUserRole }) => {
    return (
       <div className="profile-root app-fade-in">
          <header className="profile-header-strip">
@@ -71,7 +73,7 @@ const ProfilePage: React.FC<ProfilePageProps> = ({ onLogout }) => {
                <section className="section-card">
                   <div className="header-with-edit">
                      <h2>Account Details</h2>
-                     <div className="edit-icon-box"><EditIcon /></div>
+                     {userRole === 'admin' && <div className="edit-icon-box"><EditIcon /></div>}
                   </div>
                   <table className="details-table">
                      <tbody>
@@ -87,7 +89,7 @@ const ProfilePage: React.FC<ProfilePageProps> = ({ onLogout }) => {
                <section className="section-card">
                   <div className="header-with-edit">
                      <h2>Statistics</h2>
-                     <div className="edit-icon-box"><EditIcon /></div>
+                     {userRole === 'admin' && <div className="edit-icon-box"><EditIcon /></div>}
                   </div>
                   <table className="details-table">
                      <tbody>
@@ -105,7 +107,7 @@ const ProfilePage: React.FC<ProfilePageProps> = ({ onLogout }) => {
             <section className="section-card">
                <div className="card-section-header">
                   <h2>Card Details</h2>
-                  <button className="add-card-btn"><span>+</span> Add Card</button>
+                  {userRole === 'admin' && <button className="add-card-btn"><span>+</span> Add Card</button>}
                </div>
 
                <div className="visa-card-visual">
@@ -149,12 +151,31 @@ const ProfilePage: React.FC<ProfilePageProps> = ({ onLogout }) => {
             <section className="section-card security-privacy-card">
                <div className="header-with-edit">
                   <h2>Security & Privacy</h2>
-                  <div className="edit-icon-box"><EditIcon /></div>
+                  {userRole === 'admin' && <div className="edit-icon-box"><EditIcon /></div>}
                </div>
                <table className="details-table security-table">
                   <tbody>
                      <tr><td className="label">Security Method</td><td className="value">Facial Recognition</td></tr>
                      <tr><td className="label">Change Password</td><td className="value">Use Email</td></tr>
+                     <tr>
+                        <td className="label">User Role</td>
+                        <td className="value">
+                           <div className="role-toggle-inline">
+                              <button 
+                                 className={`toggle-btn ${userRole === 'admin' ? 'active' : ''}`}
+                                 onClick={() => setUserRole('admin')}
+                              >
+                                 Admin
+                              </button>
+                              <button 
+                                 className={`toggle-btn ${userRole === 'viewer' ? 'active' : ''}`}
+                                 onClick={() => setUserRole('viewer')}
+                              >
+                                 Viewer
+                              </button>
+                           </div>
+                        </td>
+                     </tr>
                   </tbody>
                </table>
             </section>
