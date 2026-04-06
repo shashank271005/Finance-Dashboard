@@ -1,10 +1,10 @@
-![Finexis Header](public/readme-head.jpg)
+![Finexis Header](https://res.cloudinary.com/dkdstxw96/image/upload/v1775412925/Screenshot_2026-04-05_at_11.44.38_PM_hy8ekd.png)
 
 # Finexis — Platform that Simplifies Financial Control
 
 Finexis is a premium, high-fidelity finance management dashboard designed to transform complex financial data into an intuitive daily habit. Built with a **"Modern Liquid Glass"** aesthetic, it prioritizes clarity, behavioral guidance, and a premium user experience.
 
-![Finexis Preview](public/grid-distortion-1775395913439.png)
+![Finexis Preview](https://res.cloudinary.com/dkdstxw96/image/upload/v1775489648/Screenshot_2026-04-06_at_9.03.46_PM_zgtisw.png)
 
 ## 🚀 Approach & Design Philosophy
 
