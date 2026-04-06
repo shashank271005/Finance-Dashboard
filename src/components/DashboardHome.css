@@ -4,7 +4,7 @@
   flex: 1;
   box-sizing: border-box;
   margin: 0;
-  padding: 24px 30px;
+  padding: 24px 60px 24px 30px;
 }
 
 .dh-grid {
@@ -38,24 +38,34 @@
   .dh-grid {
     flex-wrap: wrap;
   }
-  .dh-col-left, .dh-col-mid, .dh-col-right {
+
+  .dh-col-left,
+  .dh-col-mid,
+  .dh-col-right {
     flex: 1 1 45%;
   }
 }
 
 @media (max-width: 768px) {
   .dh-page {
-    padding: 16px 12px 100px; /* Extra bottom space for fixed nav */
+    padding: 16px 12px 100px;
+    /* Extra bottom space for fixed nav */
   }
+
   .dh-grid {
     display: flex;
     flex-direction: column;
     gap: 20px;
   }
+
   .dh-col {
-    display: contents; /* Allows children (cards) to stack directly in the flex-column dh-grid */
+    display: contents;
+    /* Allows children (cards) to stack directly in the flex-column dh-grid */
   }
-  .dh-col-left, .dh-col-mid, .dh-col-right {
+
+  .dh-col-left,
+  .dh-col-mid,
+  .dh-col-right {
     flex: 1 0 auto;
     width: 100%;
   }
@@ -64,7 +74,7 @@
 .placeholder-card {
   background: white;
   border-radius: 16px;
-  box-shadow: 0 4px 14px rgba(0,0,0,0.03);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
   display: flex;
   align-items: center;
   justify-content: center;

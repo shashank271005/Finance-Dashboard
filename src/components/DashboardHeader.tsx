@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './DashboardHeader.css';
+import NotificationPanel from './NotificationPanel';
 
 const FilterIcon = () => (
   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -36,7 +37,8 @@ const SettingsIcon = () => (
 );
 
 const BellIcon = () => (
-  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
     <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
   </svg>
 );
@@ -62,6 +64,8 @@ interface DashboardHeaderProps {
 }
 
 const DashboardHeader: React.FC<DashboardHeaderProps> = ({ onNewTransaction, onViewWishlist, userRole, setUserRole }) => {
+  const [isNotificationsOpen, setIsNotificationsOpen] = useState(false);
+
   return (
     <div className="dashboard-header">
       <div className="dh-top">
@@ -90,10 +94,17 @@ const DashboardHeader: React.FC<DashboardHeaderProps> = ({ onNewTransaction, onV
           </div>
           <div className="header-icon-actions">
             <button className="icon-btn-dh"><SettingsIcon /></button>
-            <button className="icon-btn-dh"><BellIcon /></button>
+            <button 
+              className={`icon-btn-dh ${isNotificationsOpen ? 'active' : ''}`}
+              onClick={() => setIsNotificationsOpen(!isNotificationsOpen)}
+            >
+              <BellIcon />
+            </button>
           </div>
         </div>
       </div>
+
+      <NotificationPanel isOpen={isNotificationsOpen} onClose={() => setIsNotificationsOpen(false)} />
 
       <div className="dh-bottom">
         <div className="dh-filters">
