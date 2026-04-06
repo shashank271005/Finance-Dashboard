@@ -135,16 +135,47 @@ const LoginPage: React.FC<LoginPageProps> = ({ onLogin, onSignup }) => {
           )}
 
           {/* Mode Toggle (Only for Sign In / Sign Up) */}
+          {/* Mode Toggle (Only for Sign In / Sign Up) */}
           {(mode === 'signin' || mode === 'signup') && (
-            <div className="login-toggle">
+            <div className="login-toggle" style={{
+              display: 'flex',
+              background: '#ffffff',
+              border: '1px solid #e2e8f0',
+              borderRadius: '50px',
+              padding: '6px',
+              marginBottom: '32px',
+              gap: '0'
+            }}>
               <button
-                className={`toggle-btn ${mode === 'signin' ? 'toggle-btn-active' : ''}`}
+                style={{
+                  flex: 1,
+                  padding: '12px 0',
+                  borderRadius: '40px',
+                  fontSize: '15px',
+                  fontWeight: mode === 'signin' ? '600' : '500',
+                  color: mode === 'signin' ? '#ffffff' : '#94a3b8',
+                  background: mode === 'signin' ? '#3b4cf0' : 'transparent',
+                  border: 'none',
+                  cursor: 'pointer',
+                  transition: 'all 0.25s ease'
+                }}
                 onClick={() => setMode('signin')}
               >
                 Sign In
               </button>
               <button
-                className={`toggle-btn ${mode === 'signup' ? 'toggle-btn-active' : ''}`}
+                style={{
+                  flex: 1,
+                  padding: '12px 0',
+                  borderRadius: '40px',
+                  fontSize: '15px',
+                  fontWeight: mode === 'signup' ? '600' : '500',
+                  color: mode === 'signup' ? '#ffffff' : '#94a3b8',
+                  background: mode === 'signup' ? '#3b4cf0' : 'transparent',
+                  border: 'none',
+                  cursor: 'pointer',
+                  transition: 'all 0.25s ease'
+                }}
                 onClick={() => setMode('signup')}
               >
                 Sign Up
