@@ -115,6 +115,31 @@ const App: React.FC = () => {
           <span className="mob-nav-label">Txns</span>
         </button>
         <button
+          className={`mob-nav-item ${activeTab === 'wishlist' ? 'active' : ''}`}
+          onClick={() => setActiveTab('wishlist')}
+        >
+          <span className="mob-nav-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12 6 12 12 16 14"></polyline>
+            </svg>
+          </span>
+          <span className="mob-nav-label">Wishlist</span>
+        </button>
+        <button
+          className={`mob-nav-item ${activeTab === 'goals' ? 'active' : ''}`}
+          onClick={() => setActiveTab('goals')}
+        >
+          <span className="mob-nav-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <circle cx="12" cy="12" r="6"></circle>
+              <circle cx="12" cy="12" r="2"></circle>
+            </svg>
+          </span>
+          <span className="mob-nav-label">Goals</span>
+        </button>
+        <button
           className={`mob-nav-item ${activeTab === 'insights' ? 'active' : ''}`}
           onClick={() => setActiveTab('insights')}
         >
