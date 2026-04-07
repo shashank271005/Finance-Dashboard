@@ -385,6 +385,32 @@
   font-weight: 800;
 }
 
+.income-chart {
+  margin-top: 20px;
+  position: relative;
+}
+
+.income-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.chart-days {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 16px;
+  padding: 0 5px;
+}
+
+.chart-days span {
+  font-size: 11px;
+  font-weight: 700;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
 /* V2: Bills Visual */
 .bill-item {
   display: flex;
