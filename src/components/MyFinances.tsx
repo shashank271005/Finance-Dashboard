@@ -62,7 +62,7 @@ const MyFinances: React.FC<MyFinancesProps> = ({ userRole = 'admin' }) => {
     };
 
     setCards([...cards, cardToAdd]);
-    setCurrentIndex(cards.length); // Switch to the new card
+    setCurrentIndex(cards.length);
     setIsAdding(false);
     setNewCard({ type: 'VISA', number: '', expiry: '', name: '' });
     setFormError('');
@@ -168,7 +168,7 @@ const MyFinances: React.FC<MyFinancesProps> = ({ userRole = 'admin' }) => {
                 <label>Cardholder Name</label>
                 <input 
                   type="text" 
-                  placeholder="John Doe"
+                  placeholder="Enter Name"
                   value={newCard.name}
                   onChange={e => setNewCard({...newCard, name: e.target.value})}
                 />
