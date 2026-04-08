@@ -1,4 +1,4 @@
-.upcoming-bills-card {
+.ub-card {
   background: var(--surface);
   border-radius: var(--radius-lg);
   padding: 18px 24px;
@@ -6,17 +6,23 @@
   border: 1px solid var(--border);
 }
 
-.card-header {
+.ub-header {
   margin-bottom: 20px;
 }
 
-.bills-list {
+.ub-card-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.ub-list {
   display: flex;
   flex-direction: column;
   gap: 12px;
 }
 
-.bill-row {
+.ub-row {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -29,12 +35,12 @@
   overflow: hidden;
 }
 
-.bill-row:hover {
+.ub-row:hover {
   background: var(--primary-light);
   transform: translateY(-2px) scale(1.01);
 }
 
-.bill-icon {
+.ub-icon-wrap {
   width: 44px;
   height: 44px;
   border-radius: 12px;
@@ -48,37 +54,37 @@
   flex-shrink: 0;
 }
 
-.bill-row:hover .bill-icon {
+.ub-row:hover .ub-icon-wrap {
   transform: scale(1.1) rotate(5deg);
   box-shadow: 0 8px 20px rgba(59, 76, 240, 0.15);
   background: var(--surface);
 }
 
-.bill-details {
+.ub-details {
   flex: 1;
   display: flex;
   flex-direction: column;
   margin-left: 16px;
 }
 
-.bill-name {
+.ub-name {
   font-size: 14px;
   font-weight: 700;
-  color: var(--text-main);
+  color: var(--text-main) !important; /* Force theme color to avoid collisions */
   transition: color 0.3s ease;
 }
 
-.bill-row:hover .bill-name {
-  color: var(--primary);
+.ub-row:hover .ub-name {
+  color: var(--primary) !important;
 }
 
-.bill-amount {
+.ub-amount {
   font-size: 11.5px;
   font-weight: 500;
   color: var(--text-muted);
 }
 
-.bill-action-area {
+.ub-action-area {
   display: flex;
   align-items: center;
   position: relative;
@@ -88,7 +94,7 @@
   overflow: hidden;
 }
 
-.bill-tag {
+.ub-tag {
   font-size: 10px;
   font-weight: 800;
   padding: 5px 12px;
@@ -98,12 +104,12 @@
   opacity: 1;
 }
 
-.bill-row:hover .bill-tag {
+.ub-row:hover .ub-tag {
   transform: translateX(25px);
   opacity: 0;
 }
 
-.bill-pay-btn {
+.ub-pay-btn {
   position: absolute;
   right: -90px;
   background: var(--primary);
@@ -120,12 +126,12 @@
   white-space: nowrap;
 }
 
-.bill-row:hover .bill-pay-btn {
+.ub-row:hover .ub-pay-btn {
   right: 0;
   opacity: 1;
 }
 
-.bill-pay-btn:hover {
+.ub-pay-btn:hover {
   background: var(--primary-hover);
   transform: scale(1.05);
   box-shadow: 0 6px 15px rgba(59, 76, 240, 0.35);

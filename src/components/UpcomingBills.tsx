@@ -39,26 +39,26 @@ interface UpcomingBillsProps {
 
 const UpcomingBills: React.FC<UpcomingBillsProps> = ({ userRole = 'admin' }) => {
   return (
-    <div className="card upcoming-bills-card">
-      <div className="card-header border-bottom">
-        <span className="card-title">Upcoming Bills</span>
+    <div className="card ub-card">
+      <div className="ub-header border-bottom">
+        <span className="ub-card-title">Upcoming Bills</span>
       </div>
-      <div className="bills-list">
+      <div className="ub-list">
         {bills.map(bill => (
-          <div key={bill.id} className="bill-row">
-            <div className="bill-icon">
+          <div key={bill.id} className="ub-row">
+            <div className="ub-icon-wrap">
               {bill.icon}
             </div>
-            <div className="bill-details">
-              <span className="bill-name">{bill.name}</span>
-              <span className="bill-amount">Rs {bill.amount}</span>
+            <div className="ub-details">
+              <span className="ub-name">{bill.name}</span>
+              <span className="ub-amount">Rs {bill.amount}</span>
             </div>
-            <div className="bill-action-area">
-              <div className={`bill-tag status-${bill.status}`}>
+            <div className="ub-action-area">
+              <div className={`ub-tag status-${bill.status}`}>
                 {bill.date}
               </div>
               {userRole === 'admin' && (
-                <button className="bill-pay-btn">Pay Now</button>
+                <button className="ub-pay-btn">Pay Now</button>
               )}
             </div>
           </div>

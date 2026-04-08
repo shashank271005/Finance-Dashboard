@@ -29,7 +29,10 @@ const SavingsGoals: React.FC = () => {
           return (
             <div key={goal.id} className="goal-item">
               <div className="goal-info">
-                <span className="goal-title">{goal.title}</span>
+                <div className="goal-title-row">
+                  <span className="goal-title">{goal.title}</span>
+                  <span className="goal-percentage" style={{ color: goal.color }}>{percentage}%</span>
+                </div>
                 <span className="goal-amounts">Rs {goal.current.toLocaleString()} / Rs {goal.target.toLocaleString()}</span>
               </div>
               <div className="goal-progress-bg">
@@ -38,7 +41,6 @@ const SavingsGoals: React.FC = () => {
                   style={{ width: `${percentage}%`, backgroundColor: goal.color }}
                 ></div>
               </div>
-              <div className="goal-percentage" style={{ color: goal.color }}>{percentage}%</div>
             </div>
           );
         })}
