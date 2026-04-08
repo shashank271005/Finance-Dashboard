@@ -10,6 +10,7 @@ import ProfilePage from './components/ProfilePage';
 import AddTransactionPage from './components/AddTransactionPage';
 import CoolDownWishlist from './components/CoolDownWishlist';
 import Goals from './components/Goals';
+import SettingsPage from './components/SettingsPage';
 import './App.css';
 
 const App: React.FC = () => {
@@ -79,6 +80,7 @@ const App: React.FC = () => {
           <DashboardHome
             onNewTransaction={() => setActiveTab('add-transaction')}
             onViewWishlist={() => setActiveTab('wishlist')}
+            onViewSettings={() => setActiveTab('settings')}
             userRole={userRole}
             setUserRole={setUserRole}
             theme={theme}
@@ -99,6 +101,14 @@ const App: React.FC = () => {
         )}
         {activeTab === 'wishlist' && <CoolDownWishlist />}
         {activeTab === 'goals' && <Goals setActiveTab={setActiveTab} />}
+        {activeTab === 'settings' && (
+          <SettingsPage
+            theme={theme}
+            toggleTheme={toggleTheme}
+            userRole={userRole}
+            setUserRole={setUserRole}
+          />
+        )}
       </div>
 
       {/* ── Mobile Bottom Navigation ── */}

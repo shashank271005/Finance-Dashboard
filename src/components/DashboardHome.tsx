@@ -35,6 +35,7 @@ const LATEST_DATE_MS = Math.max(...MOCK_TRANSACTIONS.map(tx => parseDateString(t
 interface DashboardHomeProps {
   onNewTransaction?: () => void;
   onViewWishlist?: () => void;
+  onViewSettings?: () => void;
   userRole: 'admin' | 'viewer';
   setUserRole: (role: 'admin' | 'viewer') => void;
   theme: 'light' | 'dark';
@@ -44,6 +45,7 @@ interface DashboardHomeProps {
 const DashboardHome: React.FC<DashboardHomeProps> = ({ 
   onNewTransaction, 
   onViewWishlist, 
+  onViewSettings,
   userRole, 
   setUserRole,
   theme,
@@ -72,6 +74,7 @@ const DashboardHome: React.FC<DashboardHomeProps> = ({
       <DashboardHeader
         onNewTransaction={onNewTransaction}
         onViewWishlist={onViewWishlist}
+        onViewSettings={onViewSettings}
         userRole={userRole}
         setUserRole={setUserRole}
         theme={theme}

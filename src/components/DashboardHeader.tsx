@@ -79,6 +79,7 @@ const MoonIcon = () => (
 interface DashboardHeaderProps {
   onNewTransaction?: () => void;
   onViewWishlist?: () => void;
+  onViewSettings?: () => void;
   userRole: 'admin' | 'viewer';
   setUserRole: (role: 'admin' | 'viewer') => void;
   theme: 'light' | 'dark';
@@ -88,6 +89,7 @@ interface DashboardHeaderProps {
 const DashboardHeader: React.FC<DashboardHeaderProps> = ({ 
   onNewTransaction, 
   onViewWishlist, 
+  onViewSettings,
   userRole, 
   setUserRole,
   theme,
@@ -125,7 +127,9 @@ const DashboardHeader: React.FC<DashboardHeaderProps> = ({
             <button className="icon-btn-dh theme-toggle" onClick={toggleTheme}>
               {theme === 'light' ? <MoonIcon /> : <SunIcon />}
             </button>
-            <button className="icon-btn-dh"><SettingsIcon /></button>
+            <button className="icon-btn-dh" onClick={onViewSettings} title="Settings">
+              <SettingsIcon />
+            </button>
             <button 
               className={`icon-btn-dh ${isNotificationsOpen ? 'active' : ''}`}
               onClick={() => setIsNotificationsOpen(!isNotificationsOpen)}
