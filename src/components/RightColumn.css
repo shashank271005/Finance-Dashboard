@@ -2,6 +2,9 @@
 .my-finances-card {
   display: flex;
   flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  min-height: 280px;
 }
 
 .add-card-btn {
@@ -9,27 +12,77 @@
   color: var(--text-on-primary);
   border: none;
   border-radius: 20px;
-  padding: 6px 12px;
-  font-size: 10px;
-  font-weight: 600;
+  padding: 6px 14px;
+  font-size: 11px;
+  font-weight: 700;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 10px rgba(59, 76, 240, 0.2);
 }
 
 .add-card-btn:hover {
   background: var(--primary-hover);
-  transform: translateY(-1px);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(59, 76, 240, 0.3);
 }
 
+.add-card-btn.cancel-btn {
+  background: var(--bg-secondary);
+  color: var(--text-sub);
+  box-shadow: none;
+}
+
+/* ─── Animation Container ─── */
+.finances-content-wrapper {
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-display-view, .add-card-form-view {
+  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  width: 100%;
+}
+
+.show-card .card-display-view {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+  visibility: visible;
+}
+
+.show-card .add-card-form-view {
+  transform: translateY(40px) scale(0.95);
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+}
+
+.show-form .card-display-view {
+  transform: translateY(-40px) scale(0.95);
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+}
+
+.show-form .add-card-form-view {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ─── Credit Card Styling ─── */
 .credit-card {
-  background: linear-gradient(135deg, #1e3a8a 0%, #2D3FE0 100%);
   border-radius: 16px;
-  padding: 18px;
+  padding: 24px;
   color: white;
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  box-shadow: 0 10px 30px rgba(45, 63, 224, 0.4);
+  gap: 24px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
 }
 
 .cc-top {
@@ -38,28 +91,29 @@
 }
 
 .cc-logo {
-  font-size: 18px;
-  font-weight: 800;
+  font-size: 20px;
+  font-weight: 900;
   font-style: italic;
-  letter-spacing: -0.5px;
+  letter-spacing: -1px;
 }
 
 .cc-middle {
   display: flex;
   align-items: center;
-  gap: 24px;
+  gap: 20px;
   margin-top: 10px;
 }
 
 .cc-num {
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 700;
-  letter-spacing: 2px;
+  letter-spacing: 3px;
   opacity: 0.9;
 }
 
 .cc-visible {
-  font-size: 16px;
+  font-size: 18px;
+  letter-spacing: 1px;
 }
 
 .cc-bottom {
@@ -68,55 +122,98 @@
   justify-content: space-between;
 }
 
-.cc-details {
+/* ─── Card Navigation ─── */
+.card-nav-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.nav-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--border);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s;
+  padding: 0;
+}
+
+.nav-dot.active {
+  width: 18px;
+  border-radius: 4px;
+  background: var(--primary);
+}
+
+/* ─── Add Card Form Styling ─── */
+.add-card-form {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 16px;
+  padding: 5px;
 }
 
-.cc-label {
-  font-size: 9px;
-  text-transform: uppercase;
-  opacity: 0.7;
-  letter-spacing: 0.5px;
-}
-
-.cc-val {
-  font-size: 12px;
-  font-weight: 500;
-  letter-spacing: 0.5px;
-}
-
-.cc-name-wrap {
+.field {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
   gap: 10px;
 }
 
-.cc-name {
-  font-size: 12px;
-  font-weight: 500;
+.field-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
 }
 
-.mastercard-rings {
-  display: flex;
-  position: relative;
-  width: 40px;
-  height: 24px;
+.field label {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
-.mastercard-rings .ring {
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.4);
-  position: absolute;
+.add-card-form input, .add-card-form select {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 12px 14px;
+  font-size: 13px;
+  color: var(--text-main);
+  transition: all 0.2s;
 }
 
-.mastercard-rings .ring:last-child {
-  right: 0;
-  background: rgba(255, 255, 255, 0.2);
+.add-card-form input:focus, .add-card-form select:focus {
+  border-color: var(--primary);
+  background: var(--surface);
+  box-shadow: 0 0 0 4px var(--primary-light);
+}
+
+.save-card-btn {
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 14px;
+  font-weight: 700;
+  font-size: 14px;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.save-card-btn:hover {
+  background: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(59, 76, 240, 0.25);
+}
+
+.form-error-msg {
+  color: var(--danger);
+  font-size: 11px;
+  font-weight: 600;
 }
 
 
@@ -230,5 +327,29 @@
   .secondary-row {
     font-size: 11px;
     padding-left: 12px;
+  }
+
+  /* ─── Add Card Form Mobile ─── */
+  .my-finances-card {
+    min-height: auto;
+    padding-bottom: 24px;
+  }
+
+  .field-row {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .add-card-form {
+    gap: 12px;
+  }
+
+  .add-card-form input, .add-card-form select {
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+
+  .save-card-btn {
+    padding: 12px;
   }
 }

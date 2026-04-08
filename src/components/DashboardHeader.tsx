@@ -154,15 +154,15 @@ const DashboardHeader: React.FC<DashboardHeaderProps> = ({
             Download CSV <DownloadIcon />
           </button>
         </div>
-        <div className="dh-search-group" style={{ display: 'flex', gap: '12px', alignItems: 'center' }}>
+        <div className="dh-search-group">
           {userRole === 'admin' && (
-            <>
+            <div className="dh-actions-row">
               <button className="cool-down-btn" onClick={onViewWishlist}>
                 <CoolDownIcon />
                 Cool Down Wishlist
               </button>
               <button className="new-tx-btn" onClick={onNewTransaction}>+ New Transaction</button>
-            </>
+            </div>
           )}
           <div className="dh-search-wrap">
             <SearchIcon />
