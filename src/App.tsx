@@ -17,7 +17,7 @@ const App: React.FC = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(() => localStorage.getItem('isLoggedIn') === 'true');
   const [activeTab, setActiveTab] = useState(() => localStorage.getItem('activeTab') || 'dashboard');
   const [isSidebarExpanded, setIsSidebarExpanded] = useState(false);
-  const [isOnboarding, setIsOnboarding] = useState(false);
+  const [isOnboarding, setIsOnboarding] = useState(() => localStorage.getItem('isOnboarding') === 'true');
   const [showLanding, setShowLanding] = useState(() => localStorage.getItem('isLoggedIn') !== 'true');
   const [userRole, setUserRole] = useState<'admin' | 'viewer'>(() => (localStorage.getItem('userRole') as 'admin' | 'viewer') || 'admin');
   const [theme, setTheme] = useState<'light' | 'dark'>(() => {
@@ -34,7 +34,8 @@ const App: React.FC = () => {
     localStorage.setItem('isLoggedIn', isLoggedIn.toString());
     localStorage.setItem('activeTab', activeTab);
     localStorage.setItem('userRole', userRole);
-  }, [isLoggedIn, activeTab, userRole]);
+    localStorage.setItem('isOnboarding', isOnboarding.toString());
+  }, [isLoggedIn, activeTab, userRole, isOnboarding]);
 
   const toggleTheme = () => {
     setTheme(prev => prev === 'light' ? 'dark' : 'light');
