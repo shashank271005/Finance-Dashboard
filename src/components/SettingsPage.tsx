@@ -47,6 +47,7 @@ const PaletteIcon = () => (
 
 const SettingsPage: React.FC<SettingsPageProps> = ({ theme, toggleTheme, userRole, setUserRole }) => {
   const [activeSection, setActiveSection] = useState('general');
+  const [privacyMode, setPrivacyMode] = useState(false);
 
   const navItems = [
     { id: 'general', label: 'General', Icon: GeneralIcon },
@@ -95,7 +96,6 @@ const SettingsPage: React.FC<SettingsPageProps> = ({ theme, toggleTheme, userRol
                 </div>
 
                 <div className="setting-divider"></div>
-
                 <div className="setting-group">
                   <label className="setting-label">Interface Language</label>
                   <select className="setting-select">
@@ -107,7 +107,6 @@ const SettingsPage: React.FC<SettingsPageProps> = ({ theme, toggleTheme, userRol
                 </div>
 
                 <div className="setting-divider"></div>
-
                 <div className="setting-group">
                   <label className="setting-label">System Timezone</label>
                   <select className="setting-select">
@@ -115,6 +114,57 @@ const SettingsPage: React.FC<SettingsPageProps> = ({ theme, toggleTheme, userRol
                     <option value="EST">Eastern Standard Time (GMT-5:00)</option>
                     <option value="GMT">Greenwich Mean Time (GMT+0:00)</option>
                   </select>
+                </div>
+
+                <div className="setting-divider"></div>
+                <div className="setting-group">
+                  <label className="setting-label">Budget Cycle Start</label>
+                  <select className="setting-select">
+                    <option value="1">1st of the month</option>
+                    <option value="5">5th of the month</option>
+                    <option value="15">15th of the month</option>
+                    <option value="custom">Custom (Salary Date)</option>
+                  </select>
+                  <p className="setting-hint">Defines when your monthly spending and income benchmarks reset.</p>
+                </div>
+
+                <div className="setting-divider"></div>
+                <div className="setting-group">
+                  <label className="setting-label">Default Reporting Period</label>
+                  <div className="setting-pills">
+                    <button className="pill-btn active">Monthly</button>
+                    <button className="pill-btn">Rolling 30 Days</button>
+                    <button className="pill-btn">Quarterly</button>
+                  </div>
+                </div>
+
+                <div className="setting-divider"></div>
+
+                <div className="setting-group">
+                  <label className="setting-label">Fiscal Year Start</label>
+                  <select className="setting-select">
+                    <option value="apr">April (India Standard)</option>
+                    <option value="jan">January (Calendar Year)</option>
+                  </select>
+                </div>
+
+                <div className="setting-divider"></div>
+
+                <div className="setting-group">
+                  <div className="setting-flex-row">
+                    <div className="setting-info">
+                      <label className="setting-label">Dashboard Privacy Mode</label>
+                      <p className="setting-hint">Automatically mask specific balances and sensitive numbers on the home screen.</p>
+                    </div>
+                    <label className="modern-switch">
+                      <input 
+                        type="checkbox" 
+                        checked={privacyMode} 
+                        onChange={() => setPrivacyMode(!privacyMode)}
+                      />
+                      <span className="switch-slider"></span>
+                    </label>
+                  </div>
                 </div>
               </div>
             </div>

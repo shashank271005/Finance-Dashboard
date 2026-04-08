@@ -99,7 +99,7 @@
   font-size: 22px;
   font-weight: 700;
   color: var(--text-main);
-  margin-bottom: 32px;
+  margin-bottom: 24px;
   display: flex;
   align-items: center;
   gap: 12px;
@@ -110,8 +110,8 @@
   background: var(--bg-main);
   border: 1px solid var(--border);
   border-radius: 20px;
-  padding: 32px;
-  margin-bottom: 32px;
+  padding: 28px 32px;
+  margin-bottom: 20px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
   transition: all 0.3s ease;
 }
@@ -122,7 +122,7 @@
 }
 
 .setting-group {
-  margin-bottom: 24px;
+  margin-bottom: 20px;
 }
 
 .setting-group:last-child {
@@ -131,9 +131,9 @@
 
 .setting-divider {
   height: 1px;
-  background: var(--border);
-  margin: 32px 0;
-  opacity: 0.6;
+  background: var(--border-strong);
+  margin: 24px 0;
+  opacity: 0.8;
 }
 
 .setting-label {
@@ -212,6 +212,37 @@
   background: var(--surface);
   color: var(--primary);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* ── Pill Buttons ── */
+.setting-pills {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.pill-btn {
+  padding: 10px 20px;
+  border-radius: 30px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text-sub);
+  font-size: 13.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.pill-btn:hover {
+  border-color: var(--text-muted);
+  background: var(--bg-secondary);
+}
+
+.pill-btn.active {
+  background: var(--primary);
+  color: white;
+  border-color: var(--primary);
+  box-shadow: 0 4px 12px rgba(59, 76, 240, 0.2);
 }
 
 /* ── Role Selector ── */
