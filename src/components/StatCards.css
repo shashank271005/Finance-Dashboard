@@ -5,20 +5,21 @@
 }
 
 .stat-card {
-  background: var(--card-bg);
+  background: var(--surface);
   border-radius: var(--radius-lg);
   padding: 18px 20px;
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-sm);
   display: flex;
   flex-direction: column;
   gap: 8px;
   transition: transform 0.18s, box-shadow 0.18s;
-  border: 1px solid rgba(255, 255, 255, 0.8);
+  border: 1px solid var(--border);
 }
 
 .stat-card:hover {
-  transform: translateY(-1px);
-  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--border-strong);
 }
 
 .stat-card-header {
@@ -44,10 +45,25 @@
   justify-content: center;
 }
 
+.stat-icon.success {
+  background: rgba(16, 185, 129, 0.1);
+  color: var(--success);
+}
+
+.stat-icon.primary {
+  background: var(--primary-light);
+  color: var(--primary);
+}
+
+.stat-icon.danger {
+  background: rgba(244, 63, 94, 0.1);
+  color: var(--danger);
+}
+
 .stat-value {
   font-size: 24px;
   font-weight: 800;
-  color: var(--text-primary);
+  color: var(--text-main);
   letter-spacing: -1.2px;
   line-height: 1;
 }
@@ -61,9 +77,9 @@
 }
 
 .stat-change.positive {
-  color: #16a34a;
+  color: var(--success);
 }
 
 .stat-change.negative {
-  color: #ef4444;
+  color: var(--danger);
 }

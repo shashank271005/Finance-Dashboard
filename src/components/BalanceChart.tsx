@@ -70,9 +70,9 @@ const BalanceChart: React.FC = () => {
           >
             <defs>
               <linearGradient id="areaGrad" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%"   stopColor="#2D3FE0" stopOpacity="0.22"/>
-                <stop offset="70%"  stopColor="#2D3FE0" stopOpacity="0.06"/>
-                <stop offset="100%" stopColor="#2D3FE0" stopOpacity="0.0"/>
+                <stop offset="0%"   stopColor="var(--primary)" stopOpacity="0.22"/>
+                <stop offset="70%"  stopColor="var(--primary)" stopOpacity="0.06"/>
+                <stop offset="100%" stopColor="var(--primary)" stopOpacity="0.0"/>
               </linearGradient>
             </defs>
 
@@ -82,7 +82,7 @@ const BalanceChart: React.FC = () => {
                 key={f}
                 x1={PAD_X} y1={PAD_Y + f * (SVG_H - 2 * PAD_Y)}
                 x2={SVG_W - PAD_X} y2={PAD_Y + f * (SVG_H - 2 * PAD_Y)}
-                stroke="#e8edf5" strokeWidth="1"
+                stroke="var(--border)" strokeWidth="1"
               />
             ))}
 
@@ -90,7 +90,7 @@ const BalanceChart: React.FC = () => {
             <line
               x1={peak.x} y1={peak.y + 6}
               x2={peak.x} y2={SVG_H - PAD_Y}
-              stroke="#2D3FE0" strokeWidth="1.2"
+              stroke="var(--primary)" strokeWidth="1.2"
               strokeDasharray="3 3" strokeOpacity="0.4"
             />
 
@@ -98,7 +98,7 @@ const BalanceChart: React.FC = () => {
             <path d={area} fill="url(#areaGrad)"/>
 
             {/* Main line */}
-            <path d={line} fill="none" stroke="#2D3FE0" strokeWidth="2.2"
+            <path d={line} fill="none" stroke="var(--primary)" strokeWidth="2.2"
               strokeLinecap="round" strokeLinejoin="round"/>
           </svg>
 

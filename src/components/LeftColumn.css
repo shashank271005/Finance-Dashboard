@@ -1,11 +1,11 @@
 .card {
-  background: rgba(255, 255, 255, 0.45);
+  background: var(--glass-bg);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
-  border: 1px solid rgba(255, 255, 255, 0.6);
+  border: 1px solid var(--glass-border);
   border-radius: 16px;
   padding: 18px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  box-shadow: var(--shadow-sm);
   display: flex;
   flex-direction: column;
 }
@@ -20,7 +20,7 @@
 .card-title {
   font-size: 15px;
   font-weight: 700;
-  color: var(--text-primary);
+  color: var(--text-main);
   letter-spacing: -0.3px;
 }
 
@@ -37,12 +37,12 @@
 }
 
 .dots-btn:hover {
-  color: var(--text-primary);
+  color: var(--text-main);
 }
 
 /* ─── Income Card ──────────────────────────── */
 .income-card {
-  background: rgba(255, 255, 255, 0.35);
+  background: var(--glass-bg);
   /* Extremely soft base for income card */
 }
 
@@ -61,7 +61,7 @@
 .income-amount-row h2 {
   font-size: 22px;
   font-weight: 700;
-  color: #0F172A;
+  color: var(--text-main);
   margin: 0;
   letter-spacing: -0.5px;
 }
@@ -77,13 +77,13 @@
   display: flex;
   align-items: center;
   gap: 4px;
-  background: white;
-  color: #0F172A;
+  background: var(--surface);
+  color: var(--text-main);
   padding: 4px 8px;
   border-radius: 20px;
   font-size: 11px;
   font-weight: 700;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  box-shadow: var(--shadow-sm);
 }
 
 .income-badge svg {
@@ -92,13 +92,13 @@
 
 /* ─── Income Card Tooltip (Recharts) ───────── */
 .custom-income-tooltip {
-  background: rgba(255, 255, 255, 0.7);
+  background: var(--glass-bg);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.8);
+  border: 1px solid var(--glass-border);
   border-radius: 10px;
   padding: 8px 12px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  box-shadow: var(--shadow-md);
   display: flex;
   flex-direction: column;
 }
@@ -114,7 +114,7 @@
 .tooltip-date {
   font-size: 10px;
   font-weight: 600;
-  color: #64748B;
+  color: var(--text-sub);
 }
 
 .tooltip-trend {
@@ -137,7 +137,7 @@
 .tooltip-amount {
   font-size: 13px;
   font-weight: 700;
-  color: #0F172A;
+  color: var(--text-main);
 }
 
 /* ─── Expense Strategy Card ────────────────── */
@@ -148,14 +148,14 @@
 
 .expense-card:hover {
   transform: translateY(-4px) scale(1.01);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
-  border-color: rgba(59, 76, 246, 0.15);
+  box-shadow: var(--shadow-md);
+  border-color: var(--primary-light);
 }
 
 .expense-content {
-  background: rgba(255, 255, 255, 0.25);
+  background: var(--bg-secondary);
   /* Subtle inner glass differentiation */
-  border: 1px solid rgba(255, 255, 255, 0.4);
+  border: 1px solid var(--border);
   border-radius: 12px;
   padding: 16px;
   flex: 1;
@@ -173,7 +173,7 @@
 .expense-total h2 {
   font-size: 24px;
   font-weight: 700;
-  color: #0F172A;
+  color: var(--text-main);
   margin: 0;
   letter-spacing: -0.8px;
   line-height: 1;
@@ -181,7 +181,7 @@
 }
 
 .expense-card:hover .expense-total h2 {
-  color: #3B4CF0;
+  color: var(--primary);
 }
 
 .expense-subtitle {
@@ -231,7 +231,7 @@
 }
 
 .bar-wrapper:hover .bar-label {
-  color: var(--text-primary);
+  color: var(--text-main);
   transform: scale(1.1);
 }
 
@@ -243,22 +243,22 @@
 }
 
 .bar-wrapper:hover .bar {
-  box-shadow: 0 4px 15px rgba(59, 76, 240, 0.3);
+  box-shadow: 0 4px 15px var(--primary-light);
 }
 
 .bar-bg-dark {
-  background: #1e3a8a;
-  /* Dark blue */
+  background: var(--border-strong);
+  /* Darker base */
 }
 
 .bar-bg-primary {
-  background: #3B4CF0;
-  /* Primary purple-blue */
+  background: var(--primary);
+  /* Primary blue */
 }
 
 .bar-bg-light {
-  background: #A4ABFA;
-  /* Light purple-blue */
+  background: var(--primary-light);
+  /* Lighter primary */
 }
 
 .bar-badge {
@@ -266,9 +266,9 @@
   top: 16px;
   left: 50%;
   transform: translateX(-50%);
-  background: rgba(255, 255, 255, 0.95);
+  background: var(--surface);
   backdrop-filter: blur(12px);
-  color: #3B4CF0;
+  color: var(--primary);
   font-size: 9px;
   font-weight: 800;
   padding: 3px 8px;
@@ -280,7 +280,7 @@
 
 .bar-wrapper:hover .bar-badge {
   transform: translateX(-50%) scale(1.2);
-  background: #3B4CF0;
+  background: var(--primary);
   color: white;
 }
 

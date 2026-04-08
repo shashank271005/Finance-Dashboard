@@ -21,13 +21,13 @@ const OverviewGauge: React.FC = () => {
         <div className="gauge-svg-wrapper">
           <svg viewBox="0 0 200 120" style={{ width: '100%', maxWidth: '260px' }}>
             {/* Dark Blue Arc (Available) - span 180 to 100 degrees */}
-            <path d="M 20 100 A 80 80 0 0 1 86.1 21.2" fill="none" stroke="#1C51A5" strokeWidth="14" strokeLinecap="round" />
+            <path d="M 20 100 A 80 80 0 0 1 86.1 21.2" fill="none" stroke="var(--primary)" strokeWidth="14" strokeLinecap="round" />
             
             {/* Primary Blue Arc (Planned) - span 85 to 35 degrees */}
-            <path d="M 107.0 20.3 A 80 80 0 0 1 165.5 54.2" fill="none" stroke="#3278F6" strokeWidth="14" strokeLinecap="round" />
+            <path d="M 107.0 20.3 A 80 80 0 0 1 165.5 54.2" fill="none" stroke="var(--info)" strokeWidth="14" strokeLinecap="round" />
             
             {/* Light Grey Arc (Other) - span 20 to 0 degrees */}
-            <path d="M 175.1 72.6 A 80 80 0 0 1 180 100" fill="none" stroke="#D9D9D9" strokeWidth="14" strokeLinecap="round" />
+            <path d="M 175.1 72.6 A 80 80 0 0 1 180 100" fill="none" stroke="var(--border-strong)" strokeWidth="14" strokeLinecap="round" />
           </svg>
           
           <div className="gauge-center-text">

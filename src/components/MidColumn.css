@@ -7,8 +7,8 @@
 
 .overview-card:hover {
   transform: translateY(-4px) scale(1.01);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
-  border-color: rgba(59, 76, 246, 0.15);
+  box-shadow: var(--shadow-md);
+  border-color: var(--primary-light);
 }
 
 .overview-card:hover .gauge-svg-wrapper path {
@@ -63,14 +63,14 @@
 }
 
 .overview-card:hover .gauge-center-text h2 {
-  color: #3278F6;
+  color: var(--primary);
   transform: scale(1.1);
 }
 
 .gauge-center-text h2 {
   font-size: 26px;
   font-weight: 700;
-  color: #0F172A;
+  color: var(--text-main);
   margin: 0 0 4px 0;
   letter-spacing: -0.8px;
   line-height: 1;
@@ -108,27 +108,27 @@
 }
 
 .dot-dark {
-  background: #1C51A5;
+  background: var(--primary);
 }
 
 .dot-primary {
-  background: #3278F6;
+  background: var(--info);
 }
 
 .dot-grey {
-  background: #D9D9D9;
+  background: var(--border-strong);
 }
 
 /* ─── Recent Transactions (Refactored) ───────── */
 /* These styles will augment the existing RecentTransactions.css cleanly */
 .rt-clean-card {
-  background: rgba(255, 255, 255, 0.45);
+  background: var(--glass-bg);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
-  border: 1px solid rgba(255, 255, 255, 0.6);
+  border: 1px solid var(--glass-border);
   border-radius: 16px;
   padding: 16px 20px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  box-shadow: var(--shadow-sm);
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -159,7 +159,7 @@
 .rt-header-clean h3 {
   font-size: 15px;
   font-weight: 700;
-  color: var(--text-primary);
+  color: var(--text-main);
   letter-spacing: -0.3px;
   margin: 0;
 }
@@ -175,8 +175,8 @@
   font-weight: 600;
   color: var(--text-muted);
   padding: 8px 10px;
-  background: rgba(255, 255, 255, 0.3);
-  /* Subtle glass table header */
+  background: var(--bg-secondary);
+  /* Subtle inner header */
   backdrop-filter: blur(8px);
 }
 
@@ -190,7 +190,7 @@
 
 .clean-table td {
   padding: 12px 10px;
-  border-bottom: 1px solid #F1F5F9;
+  border-bottom: 1px solid var(--border);
   vertical-align: middle;
 }
 
@@ -207,7 +207,7 @@
 .tx-name {
   font-size: 12.5px;
   font-weight: 600;
-  color: var(--text-primary);
+  color: var(--text-main);
 }
 
 .tx-category {
@@ -224,7 +224,7 @@
 .tx-date {
   font-size: 11px;
   font-weight: 500;
-  color: var(--text-primary);
+  color: var(--text-main);
 }
 
 .tx-time {
@@ -235,13 +235,13 @@
 .tx-amount {
   font-size: 12.5px;
   font-weight: 600;
-  color: var(--text-muted);
+  color: var(--text-sub);
 }
 
 .tx-time-filter {
   appearance: none;
   background-color: transparent;
-  color: #64748B;
+  color: var(--text-sub);
   font-size: 13px;
   font-weight: 500;
   border: none;
@@ -254,7 +254,7 @@
 }
 
 .tx-time-filter:hover {
-  color: #0F172A;
+  color: var(--text-main);
 }
 
 .tx-time-filter:focus {

@@ -1139,12 +1139,30 @@
 }
 
 /* Position offsets to match image */
-.pill-1 { transform: translateX(-150px); }
-.pill-2 { transform: translateX(-50px); }
-.pill-3 { transform: translateX(50px); } /* Analysis & Insights (Active) */
-.pill-4 { transform: translateX(100px); }
-.pill-5 { transform: translateX(200px); }
-.pill-6 { transform: translateX(300px); }
+.pill-1 {
+  transform: translateX(-150px);
+}
+
+.pill-2 {
+  transform: translateX(-50px);
+}
+
+.pill-3 {
+  transform: translateX(50px);
+}
+
+/* Analysis & Insights (Active) */
+.pill-4 {
+  transform: translateX(100px);
+}
+
+.pill-5 {
+  transform: translateX(200px);
+}
+
+.pill-6 {
+  transform: translateX(300px);
+}
 
 .modules-footer-logo {
   margin-top: 40px;
@@ -1235,20 +1253,61 @@
 }
 
 @media (max-width: 1024px) {
-  .modules-features-card { padding: 60px 40px; }
-  .metrics-grid { gap: 40px; }
-  .feature-pill { padding: 10px 24px; font-size: 12px; }
-  .pill-1, .pill-2, .pill-3, .pill-4, .pill-5, .pill-6 { transform: none; }
-  .staggered-pills-wrap { align-items: center; }
-  .modules-title { font-size: 32px; }
-  .design-title { font-size: 38px; }
+  .modules-features-card {
+    padding: 60px 40px;
+  }
+
+  .metrics-grid {
+    gap: 40px;
+  }
+
+  .feature-pill {
+    padding: 10px 24px;
+    font-size: 12px;
+  }
+
+  .pill-1,
+  .pill-2,
+  .pill-3,
+  .pill-4,
+  .pill-5,
+  .pill-6 {
+    transform: none;
+  }
+
+  .staggered-pills-wrap {
+    align-items: center;
+  }
+
+  .modules-title {
+    font-size: 32px;
+  }
+
+  .design-title {
+    font-size: 38px;
+  }
 }
 
 @media (max-width: 768px) {
-  .metrics-grid { grid-template-columns: 1fr; gap: 40px; }
-  .modules-header { flex-direction: column; gap: 20px; align-items: flex-start; margin-bottom: 60px; }
-  .modules-note { text-align: left; }
-  .modules-main-quote { font-size: 18px; }
+  .metrics-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .modules-header {
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+    margin-bottom: 60px;
+  }
+
+  .modules-note {
+    text-align: left;
+  }
+
+  .modules-main-quote {
+    font-size: 18px;
+  }
 }
 
 /* ─── Premium Branded Footer ─── */

@@ -72,13 +72,13 @@
 }
 
 .placeholder-card {
-  background: white;
+  background: var(--surface);
   border-radius: 16px;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
+  box-shadow: var(--shadow-sm);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #94a3b8;
+  color: var(--text-muted);
   font-weight: 500;
   width: 100%;
 }

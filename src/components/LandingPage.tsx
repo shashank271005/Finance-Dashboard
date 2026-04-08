@@ -31,8 +31,8 @@ const SegmentedBar = ({ percent }: { percent: number }) => {
     return (
         <div className="segmented-progress-bar">
             {[...Array(totalSegments)].map((_, i) => (
-                <div 
-                    key={i} 
+                <div
+                    key={i}
                     className={`progress-segment ${i < activeSegments ? 'active' : ''}`}
                 />
             ))}
@@ -484,19 +484,19 @@ const LandingPage: React.FC<LandingPageProps> = ({ onStart }) => {
                         <div className="metrics-grid">
                             <div className="metric-item">
                                 <div className="metric-tag">BEHAVIORAL</div>
-                                <span className="metric-name">Purposeful <br/> Micro-Interactions</span>
+                                <span className="metric-name">Purposeful <br /> Micro-Interactions</span>
                                 <div className="metric-value-row">17%</div>
                                 <SegmentedBar percent={17} />
                             </div>
                             <div className="metric-item">
                                 <div className="metric-tag">HIERARCHY</div>
-                                <span className="metric-name">Breathable <br/> Spatial Hierarchy</span>
+                                <span className="metric-name">Breathable <br /> Spatial Hierarchy</span>
                                 <div className="metric-value-row">67%</div>
                                 <SegmentedBar percent={67} />
                             </div>
                             <div className="metric-item">
                                 <div className="metric-tag">FEEDBACK</div>
-                                <span className="metric-name">Empathetic <br/> Contextual Feedback</span>
+                                <span className="metric-name">Empathetic <br /> Contextual Feedback</span>
                                 <div className="metric-value-row">39%</div>
                                 <SegmentedBar percent={39} />
                             </div>
@@ -518,7 +518,7 @@ const LandingPage: React.FC<LandingPageProps> = ({ onStart }) => {
                     </div>
                 </div>
 
-                <div 
+                <div
                     className="footer-branded-visual"
                     onMouseMove={(e) => {
                         const { left, top, width, height } = e.currentTarget.getBoundingClientRect();
@@ -529,9 +529,9 @@ const LandingPage: React.FC<LandingPageProps> = ({ onStart }) => {
                     onMouseLeave={() => setFooterMouse({ x: 0, y: 0 })}
                 >
                     <h1 className="footer-big-text">Finexis<span className="footer-tm">TM</span></h1>
-                    <img 
-                        src="/footer-fg.png" 
-                        alt="Finexis Legacy" 
+                    <img
+                        src="/footer-fg.png"
+                        alt="Finexis Legacy"
                         className="footer-people-img"
                         style={{
                             transform: `translate(${footerMouse.x}px, ${footerMouse.y}px) scale(1.02)`

@@ -1,9 +1,9 @@
 .upcoming-bills-card {
-  background: var(--card-bg);
+  background: var(--surface);
   border-radius: var(--radius-lg);
   padding: 18px 24px;
-  box-shadow: var(--shadow-md);
-  border: 1px solid rgba(255,255,255,0.8);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border);
 }
 
 .card-header {
@@ -30,7 +30,7 @@
 }
 
 .bill-row:hover {
-  background: rgba(59, 76, 240, 0.04);
+  background: var(--primary-light);
   transform: translateY(-2px) scale(1.01);
 }
 
@@ -38,8 +38,8 @@
   width: 44px;
   height: 44px;
   border-radius: 12px;
-  background: rgba(255, 255, 255, 0.8);
-  border: 1px solid rgba(255, 255, 255, 1);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -51,7 +51,7 @@
 .bill-row:hover .bill-icon {
   transform: scale(1.1) rotate(5deg);
   box-shadow: 0 8px 20px rgba(59, 76, 240, 0.15);
-  background: #fff;
+  background: var(--surface);
 }
 
 .bill-details {
@@ -64,7 +64,7 @@
 .bill-name {
   font-size: 14px;
   font-weight: 700;
-  color: var(--text-primary);
+  color: var(--text-main);
   transition: color 0.3s ease;
 }
 
@@ -126,24 +126,24 @@
 }
 
 .bill-pay-btn:hover {
-  background: var(--primary-dark);
+  background: var(--primary-hover);
   transform: scale(1.05);
   box-shadow: 0 6px 15px rgba(59, 76, 240, 0.35);
 }
 
 .status-urgent {
   background: rgba(239, 68, 68, 0.1);
-  color: var(--accent-red);
+  color: var(--danger);
 }
 
 .status-soon {
   background: rgba(245, 158, 11, 0.1);
-  color: var(--accent-orange);
+  color: var(--warning);
 }
 
 .status-future {
   background: rgba(34, 197, 94, 0.1);
-  color: var(--accent-green);
+  color: var(--success);
 }
 
 

@@ -3,7 +3,7 @@
   display: flex;
   flex-direction: column;
   overflow-y: auto;
-  background: var(--main-bg);
+  background: var(--bg-main);
   padding: 24px 30px;
   gap: 24px;
 }
@@ -24,7 +24,7 @@
 .profile-header-strip h1 {
   font-size: 24px;
   font-weight: 600;
-  color: var(--text-primary);
+  color: var(--text-main);
   margin: 0;
   letter-spacing: -0.8px;
 }
@@ -38,17 +38,17 @@
   width: 34px;
   height: 34px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.45);
+  background: var(--glass-bg);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.6);
+  border: 1px solid var(--glass-border);
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
+  box-shadow: var(--shadow-sm);
   cursor: pointer;
   transition: all 0.2s ease;
-  color: var(--text-primary);
+  color: var(--text-main);
 }
 
 .icon-btn-circle svg {
@@ -62,8 +62,8 @@
 }
 
 .icon-btn-filled {
-  background: #0F172A;
-  color: white;
+  background: var(--text-main);
+  color: var(--bg-main);
   border: none;
 }
 
@@ -76,14 +76,14 @@
 
 /* ─── Left Column (Card-like) ──────── */
 .profile-side-card {
-  background: var(--card-bg);
+  background: var(--surface);
   border-radius: var(--radius-lg);
   padding: 24px 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  box-shadow: var(--shadow-md);
-  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border);
 }
 
 .profile-avatar-large {
@@ -104,7 +104,7 @@
 .profile-side-name {
   font-size: 24px;
   font-weight: 700;
-  color: #0F172A;
+  color: var(--text-main);
   margin-bottom: 16px;
   text-align: center;
 }
@@ -132,7 +132,7 @@
 .profile-side-divider {
   width: 100%;
   height: 1px;
-  background: #F1F5F9;
+  background: var(--border);
   margin-bottom: 24px;
 }
 
@@ -155,7 +155,7 @@
 }
 
 .contact-value {
-  color: #64748B;
+  color: var(--text-sub);
   font-weight: 500;
 }
 
@@ -167,17 +167,17 @@
 
 /* ─── Generic Section Card ─────────── */
 .section-card {
-  background: var(--card-bg);
+  background: var(--surface);
   border-radius: var(--radius-lg);
   padding: 18px 20px;
   position: relative;
-  box-shadow: var(--shadow-md);
-  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border);
 }
 
 .role-toggle-inline {
   display: flex;
-  background: rgba(0, 0, 0, 0.05);
+  background: var(--bg-secondary);
   padding: 2px;
   border-radius: 8px;
   width: fit-content;
@@ -196,9 +196,9 @@
 }
 
 .toggle-btn.active {
-  background: white;
+  background: var(--surface);
   color: var(--primary);
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow-sm);
 }
 
 .header-with-edit {
@@ -211,16 +211,16 @@
 .header-with-edit h2 {
   font-size: 13.5px;
   font-weight: 700;
-  color: var(--text-primary);
+  color: var(--text-main);
   margin: 0;
   letter-spacing: -0.2px;
 }
 
 .edit-icon-box {
-  background: rgba(255, 255, 255, 0.8);
+  background: var(--surface);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  color: var(--text-primary);
+  color: var(--text-main);
   width: 32px;
   height: 32px;
   border-radius: 50%;
@@ -228,7 +228,8 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border);
   transition: all 0.2s ease;
 }
 
@@ -254,7 +255,7 @@
 
 .details-table .value {
   text-align: right;
-  color: #0F172A;
+  color: var(--text-main);
   font-weight: 600;
 }
 
@@ -298,7 +299,7 @@
   background:
     radial-gradient(circle at 70% 30%, rgba(59, 76, 240, 0.35) 0%, rgba(15, 23, 42, 0) 70%),
     radial-gradient(circle at 20% 80%, rgba(45, 63, 224, 0.25) 0%, rgba(15, 23, 42, 0) 60%),
-    #0F172A;
+    #151921;
   border-radius: var(--radius-lg);
   padding: 24px;
   color: white;
@@ -439,8 +440,8 @@
 }
 
 .security-privacy-card {
-  background: #0F172A;
-  color: white;
+  background: var(--text-main);
+  color: var(--bg-main);
   overflow: hidden;
   position: relative;
   border: none;
@@ -501,7 +502,7 @@
 
 .manual-url {
   font-size: 13px;
-  color: #0F172A;
+  color: var(--primary);
   font-weight: 600;
   text-decoration: none;
 }
@@ -517,14 +518,14 @@
   font-size: 24px;
   font-weight: 700;
   margin: 0;
-  color: #0F172A;
+  color: var(--text-main);
 }
 
 .external-arrow-box {
   width: 32px;
   height: 32px;
-  background: #0F172A;
-  color: #fff;
+  background: var(--text-main);
+  color: var(--bg-main);
   border-radius: 50%;
   display: flex;
   align-items: center;

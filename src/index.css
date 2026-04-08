@@ -9,26 +9,79 @@
 }
 
 :root {
-  --primary: #2D3FE0;
-  --primary-dark: #1a2bb8;
-  --primary-light: #eef0fd;
-  --accent-green: #22c55e;
-  --accent-red: #ef4444;
-  --accent-orange: #f97316;
-  --sidebar-bg: #f0f2f7;
-  --main-bg: #e8ebf4;
-  --card-bg: #ffffff;
-  --text-primary: #0f172a;
-  --text-secondary: #64748b;
-  --text-muted: #94a3b8;
-  --border: #e2e8f0;
+  /* Core Brand Colors */
+  --primary: #3B4CF0;
+  --primary-hover: #2D3EDD;
+  --primary-light: #EEF0FD;
+  
+  /* Semantic Palette - Light (Default) */
+  --bg-main: #E8EBF4;
+  --bg-secondary: #F0F2F7;
+  --surface: #FFFFFF;
+  --surface-hover: #F8FAFC;
+  --border: #E2E8F0;
+  --border-strong: #CBD5E1;
+  
+  /* Text Palette */
+  --text-main: #0F172A;
+  --text-sub: #64748B;
+  --text-muted: #94A3B8;
+  --text-on-primary: #FFFFFF;
+
+  /* Accents */
+  --success: #22C55E;
+  --danger: #EF4444;
+  --warning: #F97316;
+  --info: #3B82F6;
+
+  /* Effects */
   --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
   --shadow-md: 0 4px 14px rgba(0, 0, 0, 0.07), 0 2px 5px rgba(0, 0, 0, 0.04);
-  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.10);
+  --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.12);
+  --glass-bg: rgba(255, 255, 255, 0.4);
+  --glass-border: rgba(255, 255, 255, 0.6);
+  
+  /* Radius */
   --radius-sm: 6px;
   --radius-md: 10px;
-  --radius-lg: 14px;
+  --radius-lg: 16px;
+  --radius-xl: 40px;
+  
   --font: 'Inter', -apple-system, sans-serif;
+}
+
+[data-theme='dark'] {
+  /* Core Brand Colors */
+  --primary: #4F5EFF;
+  --primary-hover: #6371FF;
+  --primary-light: rgba(79, 94, 255, 0.15);
+
+  /* Semantic Palette - Dark (Obsidian) */
+  --bg-main: #080A0F;
+  --bg-secondary: #0F1219;
+  --surface: #11141B;
+  --surface-hover: #171B24;
+  --border: #1E232E;
+  --border-strong: #2D3544;
+
+  /* Text Palette */
+  --text-main: #F1F5F9;
+  --text-sub: #94A3B8;
+  --text-muted: #64748B;
+  --text-on-primary: #FFFFFF;
+
+  /* Accents */
+  --success: #10B981;
+  --danger: #F43F5E;
+  --warning: #F59E0B;
+  --info: #60A5FA;
+
+  /* Effects */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 8px 30px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 16px 50px rgba(0, 0, 0, 0.7);
+  --glass-bg: rgba(17, 20, 27, 0.75);
+  --glass-border: rgba(255, 255, 255, 0.08);
 }
 
 html,
@@ -36,15 +89,16 @@ body,
 #root {
   height: 100%;
   width: 100%;
-  overflow-x: hidden; /* Prevent horizontal scroll */
+  overflow-x: hidden;
 }
 
 body {
   font-family: var(--font);
-  background: var(--main-bg);
-  color: var(--text-primary);
+  background: var(--bg-main);
+  color: var(--text-main);
   -webkit-font-smoothing: antialiased;
   font-size: 13px;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 button {
@@ -52,12 +106,16 @@ button {
   cursor: pointer;
   border: none;
   outline: none;
+  background: none;
+  color: inherit;
 }
 
 input {
   font-family: var(--font);
   border: none;
   outline: none;
+  background: none;
+  color: inherit;
 }
 
 svg {

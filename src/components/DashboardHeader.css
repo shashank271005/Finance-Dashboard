@@ -15,7 +15,7 @@
 .dh-greeting {
   font-size: 24px;
   font-weight: 600;
-  color: var(--text-primary);
+  color: var(--text-main);
   letter-spacing: -0.8px;
 }
 
@@ -60,10 +60,10 @@
 
 .role-switcher {
   display: flex;
-  background: rgba(0, 0, 0, 0.04);
+  background: var(--bg-secondary);
   padding: 4px;
   border-radius: 10px;
-  border: 1px solid rgba(0, 0, 0, 0.05);
+  border: 1px solid var(--border);
 }
 
 .role-btn {
@@ -77,9 +77,9 @@
 }
 
 .role-btn.active {
-  background: white;
+  background: var(--surface);
   color: var(--primary);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  box-shadow: var(--shadow-sm);
 }
 
 .header-icon-actions {
@@ -92,15 +92,15 @@
   width: 32px;
   height: 32px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.45);
+  background: var(--glass-bg);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.6);
+  border: 1px solid var(--glass-border);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--text-primary);
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
+  color: var(--text-main);
+  box-shadow: var(--shadow-sm);
   transition: all 0.2s ease;
   border: none;
   cursor: pointer;
@@ -113,9 +113,9 @@
 
 .icon-btn-dh:hover, .icon-btn-dh.active {
   transform: translateY(-1px);
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
-  background: white;
-  color: #3B4CF0;
+  box-shadow: var(--shadow-md);
+  background: var(--surface);
+  color: var(--primary);
 }
 
 .avatar-wrap-dh {
@@ -133,8 +133,8 @@
 }
 
 .new-tx-btn {
-  background: #3B4CF0;
-  color: white;
+  background: var(--primary);
+  color: var(--text-on-primary);
   border: none;
   border-radius: 30px;
   padding: 8px 16px;
@@ -146,13 +146,14 @@
 }
 
 .new-tx-btn:hover {
+  background: var(--primary-hover);
   transform: translateY(-1px);
   box-shadow: 0 6px 16px rgba(59, 76, 240, 0.4);
 }
 
 .cool-down-btn {
-  background: #000000;
-  color: white;
+  background: var(--text-main);
+  color: var(--bg-main);
   border: none;
   border-radius: 30px;
   padding: 8px 18px;
@@ -163,13 +164,13 @@
   align-items: center;
   gap: 8px;
   transition: all 0.2s ease;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow-sm);
 }
 
 .cool-down-btn:hover {
-  background: #1a1a1a;
+  opacity: 0.9;
   transform: translateY(-1px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  box-shadow: var(--shadow-md);
 }
 
 .cool-down-btn svg {
@@ -191,10 +192,10 @@
 }
 
 .dh-pill-btn {
-  background: rgba(255, 255, 255, 0.45);
+  background: var(--glass-bg);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.6);
+  border: 1px solid var(--glass-border);
   border-radius: 30px;
   padding: 6px 14px;
   display: flex;
@@ -202,14 +203,14 @@
   gap: 8px;
   font-size: 11px;
   font-weight: 500;
-  color: var(--text-primary);
+  color: var(--text-main);
   cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  box-shadow: var(--shadow-sm);
   transition: all 0.2s ease;
 }
 
 .dh-pill-btn svg {
-  color: var(--text-secondary);
+  color: var(--text-sub);
 }
 
 .dh-pill-btn:hover {
@@ -223,14 +224,14 @@
 .dh-search-wrap {
   display: flex;
   align-items: center;
-  background: rgba(255, 255, 255, 0.45);
+  background: var(--glass-bg);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.6);
+  border: 1px solid var(--glass-border);
   border-radius: 30px;
   padding: 6px 14px;
   gap: 10px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  box-shadow: var(--shadow-sm);
   width: 180px;
   transition: width 0.3s ease;
 }
@@ -248,7 +249,7 @@
   background: transparent;
   width: 100%;
   font-size: 13px;
-  color: var(--text-primary);
+  color: var(--text-main);
 }
 
 /* ─── Dashboard Header Mobile Overhaul ─── */

@@ -73,32 +73,32 @@ const IncomeChart: React.FC = () => {
           <AreaChart data={data} margin={{ top: 5, right: 20, left: 20, bottom: 20 }}>
             <defs>
               <linearGradient id="colorValue" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="5%" stopColor="#3B4CF0" stopOpacity={0.4}/>
-                <stop offset="95%" stopColor="#3B4CF0" stopOpacity={0}/>
+                <stop offset="5%" stopColor="var(--primary)" stopOpacity={0.4}/>
+                <stop offset="95%" stopColor="var(--primary)" stopOpacity={0}/>
               </linearGradient>
             </defs>
-            <CartesianGrid vertical={false} strokeDasharray="3 3" stroke="rgba(255,255,255,0.1)" />
+            <CartesianGrid vertical={false} strokeDasharray="3 3" stroke="var(--border)" />
             <XAxis 
               dataKey="name" 
               axisLine={false} 
               tickLine={false} 
-              tick={{ fontSize: 10, fill: '#94A3B8' }}
+              tick={{ fontSize: 10, fill: 'var(--text-muted)' }}
               dy={10}
               interval={0}
               padding={{ left: 10, right: 10 }}
             />
             <Tooltip 
               content={<CustomTooltip />} 
-              cursor={{ stroke: '#A4ABFA', strokeWidth: 1, strokeDasharray: '4 4' }} 
+              cursor={{ stroke: 'var(--primary-light)', strokeWidth: 1, strokeDasharray: '4 4' }} 
             />
             <Area 
               type="monotone" 
               dataKey="value" 
-              stroke="#3B4CF0" 
+              stroke="var(--primary)" 
               strokeWidth={3} 
               fillOpacity={1} 
               fill="url(#colorValue)" 
-              activeDot={{ r: 6, fill: '#3B4CF0', stroke: 'white', strokeWidth: 2 }}
+              activeDot={{ r: 6, fill: 'var(--primary)', stroke: 'var(--surface)', strokeWidth: 2 }}
             />
           </AreaChart>
         </ResponsiveContainer>

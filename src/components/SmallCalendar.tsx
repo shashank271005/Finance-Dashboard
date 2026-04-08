@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useMemo } from 'react';
 import './SmallCalendar.css';
 
 interface SmallCalendarProps {
@@ -25,7 +25,6 @@ export const SmallCalendar: React.FC<SmallCalendarProps> = ({ selectedDate, onSe
   );
 
   const daysInMonth = 31; // Oct has 31
-  const firstDayOfWeek = 3; // Oct 1, 2025 is Wednesday (0=Sun, 1=Mon, 2=Tue, 3=Wed)
 
   const calendarDays = useMemo(() => {
     const days = [];

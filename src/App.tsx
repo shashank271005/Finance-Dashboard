@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Sidebar from './components/Sidebar';
 import DashboardHome from './components/DashboardHome';
 import TransactionsPage from './components/TransactionsPage';
@@ -19,6 +19,19 @@ const App: React.FC = () => {
   const [isOnboarding, setIsOnboarding] = useState(false);
   const [showLanding, setShowLanding] = useState(true);
   const [userRole, setUserRole] = useState<'admin' | 'viewer'>('admin');
+  const [theme, setTheme] = useState<'light' | 'dark'>(() => {
+    const savedTheme = localStorage.getItem('finance-dashboard-theme');
+    return (savedTheme as 'light' | 'dark') || 'light';
+  });
+
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('finance-dashboard-theme', theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme(prev => prev === 'light' ? 'dark' : 'light');
+  };
 
   const handleLogin = () => {
     setIsLoggedIn(true);
@@ -68,6 +81,8 @@ const App: React.FC = () => {
             onViewWishlist={() => setActiveTab('wishlist')}
             userRole={userRole}
             setUserRole={setUserRole}
+            theme={theme}
+            toggleTheme={toggleTheme}
           />
         )}
         {activeTab === 'transactions' && <TransactionsPage userRole={userRole} />}

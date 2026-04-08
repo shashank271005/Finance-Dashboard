@@ -1,10 +1,10 @@
 .balance-chart-card {
-  background: var(--card-bg);
+  background: var(--surface);
   border-radius: var(--radius-lg);
-  padding: 18px 20px;
-  box-shadow: var(--shadow-md);
+  padding: 18px 24px;
+  box-shadow: var(--shadow-sm);
   flex: 1;
-  border: 1px solid rgba(255,255,255,0.8);
+  border: 1px solid var(--border);
   display: flex;
   flex-direction: column;
   min-width: 0;
@@ -18,9 +18,9 @@
 }
 
 .chart-title {
-  font-size: 13.5px;
+  font-size: 14.5px;
   font-weight: 700;
-  color: var(--text-primary);
+  color: var(--text-main);
   letter-spacing: -0.2px;
 }
 
@@ -32,10 +32,9 @@
 
 .chart-tabs {
   display: flex;
-  background: #f1f5f9;
-  border-radius: 8px;
-  padding: 2px;
-  gap: 1px;
+  background: var(--bg-secondary);
+  padding: 4px;
+  border-radius: 10px;
 }
 
 .chart-tab {
@@ -49,9 +48,9 @@
 }
 
 .chart-tab.active {
-  background: var(--primary);
-  color: white;
-  box-shadow: 0 2px 6px rgba(45,63,224,0.28);
+  background: var(--surface);
+  color: var(--primary);
+  box-shadow: var(--shadow-sm);
 }
 
 .chart-area {
@@ -69,42 +68,38 @@
   position: absolute;
   width: 12px;
   height: 12px;
+  background: var(--primary);
+  border: 2.5px solid var(--surface);
   border-radius: 50%;
-  background: white;
-  border: 2.5px solid #2D3FE0;
-  box-shadow:
-    0 0 0 4px rgba(45, 63, 224, 0.12),
-    0 2px 8px rgba(45, 63, 224, 0.25);
+  box-shadow: 0 0 10px rgba(59, 76, 240, 0.4);
+  z-index: 10;
   pointer-events: none;
-  z-index: 2;
 }
 
 
 .chart-tooltip {
   position: absolute;
-  transform: translateX(-50%);
-  background: #2D3FE0;
-  color: white;
+  background: var(--text-main);
+  color: var(--bg-main);
+  padding: 4px 10px;
+  border-radius: 6px;
   font-size: 10.5px;
   font-weight: 700;
-  padding: 3px 9px;
-  border-radius: 6px;
-  white-space: nowrap;
+  transform: translateX(-50%);
   pointer-events: none;
-  z-index: 3;
-  letter-spacing: -0.2px;
-  box-shadow: 0 2px 8px rgba(45,63,224,0.35);
+  box-shadow: var(--shadow-md);
+  z-index: 11;
 }
 
 
 .chart-tooltip::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 100%;
   left: 50%;
+  border: 5px solid transparent;
+  border-top-color: var(--text-main);
   transform: translateX(-50%);
-  border: 4px solid transparent;
-  border-top-color: #2D3FE0;
 }
 
 .chart-x-labels {

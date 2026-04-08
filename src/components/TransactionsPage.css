@@ -38,11 +38,11 @@
   gap: 6px;
   padding: 8px 16px;
   border-radius: 40px;
-  background: rgba(255, 255, 255, 0.4);
+  background: var(--glass-bg);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.6);
-  color: #64748B;
+  border: 1px solid var(--glass-border);
+  color: var(--text-sub);
   font-size: 13px;
   font-weight: 500;
   transition: all 0.2s ease;
@@ -56,15 +56,15 @@
 }
 
 .filter-chip-active {
-  background: #3B4CF0;
-  color: white;
-  border-color: #3B4CF0;
+  background: var(--primary);
+  color: var(--text-on-primary);
+  border-color: var(--primary);
   box-shadow: 0 4px 12px rgba(59, 76, 240, 0.2);
 }
 
 .filter-chip-active:hover {
-  background: #3B4CF0;
-  color: white;
+  background: var(--primary-hover);
+  color: var(--text-on-primary);
 }
 
 .filter-right {
@@ -132,13 +132,13 @@
 
 /* ─── Table Wrapper (Glassified) ──────── */
 .tx-table-wrap {
-  background: rgba(255, 255, 255, 0.45);
+  background: var(--glass-bg);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
-  border: 1px solid rgba(255, 255, 255, 0.6);
+  border: 1px solid var(--glass-border);
   border-radius: 24px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04);
-  overflow-x: auto; /* Enable scrolling for wide tables */
+  box-shadow: var(--shadow-sm);
+  overflow-x: auto;
   display: flex;
   flex-direction: column;
   margin-bottom: 10px; 
@@ -172,10 +172,10 @@
   color: var(--text-muted);
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  background: rgba(0, 0, 0, 0.04);
+  background: var(--bg-secondary);
   padding: 4px 10px;
   border-radius: 8px;
-  border: 1px solid rgba(0, 0, 0, 0.05);
+  border: 1px solid var(--border);
 }
 
 .ri-dot {
@@ -198,10 +198,10 @@
   text-align: left;
   font-size: 11px;
   font-weight: 700;
-  color: #94A3B8;
+  color: var(--text-muted);
   letter-spacing: 1px;
   text-transform: uppercase;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+  border-bottom: 1px solid var(--border);
 }
 
 .tx-table th:nth-child(1) { width: 110px; }
@@ -216,12 +216,12 @@
 }
 
 .tx-row {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  border-bottom: 1px solid var(--border);
   transition: all 0.2s ease;
 }
 
 .tx-row:hover {
-  background: rgba(255, 255, 255, 0.5);
+  background: var(--surface-hover);
 }
 
 /* ─── Date Cell ───────────────────────── */
@@ -253,19 +253,19 @@
 .tx-title {
   font-size: 14px;
   font-weight: 600;
-  color: #0F172A;
+  color: var(--text-main);
 }
 
 /* ─── Category Chip ───────────────────── */
 .tx-category {
   display: inline-flex;
   padding: 4px 12px;
-  background: rgba(255, 255, 255, 0.4);
-  border: 1px solid rgba(255, 255, 255, 0.8);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
   border-radius: 40px;
   font-size: 12px;
   font-weight: 500;
-  color: #64748B;
+  color: var(--text-sub);
 }
 
 /* ─── Amount ──────────────────────────── */
@@ -297,7 +297,7 @@
 .status-text {
   font-size: 13px;
   font-weight: 600;
-  color: #334155;
+  color: var(--text-sub);
 }
 
 /* ─── Action Buttons (Hover Trigger) ──── */
@@ -322,9 +322,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: white;
-  border: 1px solid #E2E8F0;
-  color: #64748B;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text-sub);
   cursor: pointer;
   transition: all 0.2s ease;
 }
@@ -347,8 +347,8 @@
   align-items: center;
   justify-content: space-between;
   padding: 16px 24px;
-  background: rgba(255, 255, 255, 0.3);
-  border-top: 1px solid rgba(255, 255, 255, 0.4);
+  background: var(--glass-bg);
+  border-top: 1px solid var(--border);
 }
 
 .pagination-info {
@@ -413,19 +413,19 @@
 .insight-title {
   font-size: 18px;
   font-weight: 800;
-  color: #0F172A;
+  color: var(--text-main);
   letter-spacing: -0.5px;
 }
 
 /* ─── Glassy Insight Cards ────────────── */
 .glassy-card {
-  background: rgba(255, 255, 255, 0.45);
+  background: var(--glass-bg);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
-  border: 1px solid rgba(255, 255, 255, 0.6);
+  border: 1px solid var(--glass-border);
   border-radius: 20px;
   padding: 14px 15px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.03);
+  box-shadow: var(--shadow-sm);
   transition: transform 0.2s ease;
 }
 
@@ -445,7 +445,7 @@
 .insight-card-value {
   font-size: 24px;
   font-weight: 800;
-  color: #0F172A;
+  color: var(--text-main);
   letter-spacing: -0.8px;
 }
 
@@ -465,7 +465,7 @@
 }
 
 .gauge-bg {
-  stroke: rgba(0, 0, 0, 0.05);
+  stroke: var(--border);
 }
 
 .gauge-fill {
@@ -478,7 +478,7 @@
   position: absolute;
   font-size: 14px;
   font-weight: 800;
-  color: #0F172A;
+  color: var(--text-main);
 }
 
 .gauge-amounts {
@@ -489,7 +489,7 @@
 .gauge-current {
   font-size: 16px;
   font-weight: 800;
-  color: #0F172A;
+  color: var(--text-main);
 }
 
 .gauge-total {
@@ -859,6 +859,7 @@
     line-height: 1.1;
     display: -webkit-box;
     -webkit-line-clamp: 2;
+    line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
   }

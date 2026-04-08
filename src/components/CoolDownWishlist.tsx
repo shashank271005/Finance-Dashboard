@@ -153,7 +153,7 @@ const CoolDownWishlist: React.FC = () => {
                     className="timer-bar-fill" 
                     style={{ 
                       width: `${item.progress}%`,
-                      background: item.isReady ? '#10B981' : (item.progress > 70 ? '#F59E0B' : '#E5E7EB')
+                      background: item.isReady ? 'var(--success)' : (item.progress > 70 ? 'var(--warning)' : 'var(--border-strong)')
                     }}
                   ></div>
                 </div>

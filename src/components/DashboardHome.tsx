@@ -37,9 +37,18 @@ interface DashboardHomeProps {
   onViewWishlist?: () => void;
   userRole: 'admin' | 'viewer';
   setUserRole: (role: 'admin' | 'viewer') => void;
+  theme: 'light' | 'dark';
+  toggleTheme: () => void;
 }
 
-const DashboardHome: React.FC<DashboardHomeProps> = ({ onNewTransaction, onViewWishlist, userRole, setUserRole }) => {
+const DashboardHome: React.FC<DashboardHomeProps> = ({ 
+  onNewTransaction, 
+  onViewWishlist, 
+  userRole, 
+  setUserRole,
+  theme,
+  toggleTheme
+}) => {
   const [selectedDate, setSelectedDate] = useState<string | null>(null);
   const [timeFilter, setTimeFilter] = useState('7');
 
@@ -65,6 +74,8 @@ const DashboardHome: React.FC<DashboardHomeProps> = ({ onNewTransaction, onViewW
         onViewWishlist={onViewWishlist}
         userRole={userRole}
         setUserRole={setUserRole}
+        theme={theme}
+        toggleTheme={toggleTheme}
       />
 
       <div className="dh-grid">
