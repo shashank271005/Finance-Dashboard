@@ -10,7 +10,7 @@ import ProfilePage from './components/ProfilePage';
 import AddTransactionPage from './components/AddTransactionPage';
 import CoolDownWishlist from './components/CoolDownWishlist';
 import Goals from './components/Goals';
-import SettingsPage from './components/SettingsPage';
+import SettingsPage from './components/SettingsPage.tsx';
 import './App.css';
 
 const App: React.FC = () => {
