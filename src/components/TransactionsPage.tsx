@@ -245,9 +245,10 @@ const SpendingTrendChart: React.FC = () => {
 /* ─── Main Component ─────────────────────── */
 interface TransactionsPageProps {
   userRole?: 'admin' | 'viewer';
+  onGoToLanding?: () => void;
 }
 
-const TransactionsPage: React.FC<TransactionsPageProps> = ({ userRole = 'admin' }) => {
+const TransactionsPage: React.FC<TransactionsPageProps> = ({ userRole = 'admin', onGoToLanding }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [sortOrder, setSortOrder] = useState<'newest' | 'oldest'>('newest');
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
@@ -283,7 +284,7 @@ const TransactionsPage: React.FC<TransactionsPageProps> = ({ userRole = 'admin' 
         {/* Filter Bar */}
         <div className="tx-filters">
           <div className="filter-left">
-            <span className="tx-version-badge">Finexis v2.0</span>
+            <span className="tx-version-badge" onClick={onGoToLanding} style={{ cursor: 'pointer' }}>Finexis v2.0</span>
             <div className={`role-indicator-badge ${userRole}`}>
                <span className="ri-dot"></span>
                {userRole}

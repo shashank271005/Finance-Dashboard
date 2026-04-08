@@ -14,12 +14,12 @@ import SettingsPage from './components/SettingsPage';
 import './App.css';
 
 const App: React.FC = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [activeTab, setActiveTab] = useState('dashboard');
+  const [isLoggedIn, setIsLoggedIn] = useState(() => localStorage.getItem('isLoggedIn') === 'true');
+  const [activeTab, setActiveTab] = useState(() => localStorage.getItem('activeTab') || 'dashboard');
   const [isSidebarExpanded, setIsSidebarExpanded] = useState(false);
   const [isOnboarding, setIsOnboarding] = useState(false);
-  const [showLanding, setShowLanding] = useState(true);
-  const [userRole, setUserRole] = useState<'admin' | 'viewer'>('admin');
+  const [showLanding, setShowLanding] = useState(() => localStorage.getItem('isLoggedIn') !== 'true');
+  const [userRole, setUserRole] = useState<'admin' | 'viewer'>(() => (localStorage.getItem('userRole') as 'admin' | 'viewer') || 'admin');
   const [theme, setTheme] = useState<'light' | 'dark'>(() => {
     const savedTheme = localStorage.getItem('finance-dashboard-theme');
     return (savedTheme as 'light' | 'dark') || 'light';
@@ -29,6 +29,12 @@ const App: React.FC = () => {
     document.documentElement.setAttribute('data-theme', theme);
     localStorage.setItem('finance-dashboard-theme', theme);
   }, [theme]);
+
+  useEffect(() => {
+    localStorage.setItem('isLoggedIn', isLoggedIn.toString());
+    localStorage.setItem('activeTab', activeTab);
+    localStorage.setItem('userRole', userRole);
+  }, [isLoggedIn, activeTab, userRole]);
 
   const toggleTheme = () => {
     setTheme(prev => prev === 'light' ? 'dark' : 'light');
@@ -48,13 +54,22 @@ const App: React.FC = () => {
     setIsLoggedIn(false);
     setIsOnboarding(false);
     setShowLanding(false); // Go straight to LoginPage on logout
+    localStorage.removeItem('isLoggedIn');
+    localStorage.removeItem('activeTab');
+    localStorage.removeItem('userRole');
+  };
+
+  const handleGoToLanding = () => {
+    setIsLoggedIn(false);
+    setShowLanding(true);
+    localStorage.removeItem('isLoggedIn');
   };
 
   if (!isLoggedIn) {
     if (showLanding) {
       return <LandingPage onStart={() => setShowLanding(false)} />;
     }
-    return <LoginPage onLogin={handleLogin} onSignup={handleStartOnboarding} />;
+    return <LoginPage onLogin={handleLogin} onSignup={handleStartOnboarding} onGoToLanding={handleGoToLanding} />;
   }
 
   if (isOnboarding) {
@@ -62,6 +77,7 @@ const App: React.FC = () => {
       <OnboardingPage
         onComplete={() => setIsOnboarding(false)}
         onBackToAuth={() => { setIsLoggedIn(false); setIsOnboarding(false); }}
+        onGoToLanding={handleGoToLanding}
       />
     );
   }
@@ -74,6 +90,7 @@ const App: React.FC = () => {
         isExpanded={isSidebarExpanded}
         setIsExpanded={setIsSidebarExpanded}
         userRole={userRole}
+        onGoToLanding={handleGoToLanding}
       />
       <div className="main-content app-fade-in">
         {activeTab === 'dashboard' && (
@@ -87,7 +104,7 @@ const App: React.FC = () => {
             toggleTheme={toggleTheme}
           />
         )}
-        {activeTab === 'transactions' && <TransactionsPage userRole={userRole} />}
+        {activeTab === 'transactions' && <TransactionsPage userRole={userRole} onGoToLanding={handleGoToLanding} />}
         {activeTab === 'insights' && <InsightsPage isSidebarExpanded={isSidebarExpanded} userRole={userRole} />}
         {activeTab === 'profile' && (
           <ProfilePage

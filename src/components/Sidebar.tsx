@@ -8,7 +8,17 @@ interface SidebarProps {
   isExpanded: boolean;
   setIsExpanded: (expanded: boolean) => void;
   userRole?: 'admin' | 'viewer';
+  onGoToLanding?: () => void;
 }
+
+const FinexisLogo = () => (
+  <svg width="24" height="24" viewBox="0 0 32 32" fill="none">
+    <rect x="0" y="0" width="14" height="14" rx="3.5" fill="#3B4CF0" />
+    <rect x="0" y="18" width="14" height="14" rx="3.5" fill="#3B4CF0" />
+    <rect x="18" y="0" width="14" height="14" rx="3.5" fill="#a4abfa" />
+    <rect x="18" y="18" width="14" height="14" rx="3.5" fill="#a4abfa" />
+  </svg>
+);
 
 const DashboardIcon = () => (
   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
@@ -81,7 +91,7 @@ const PlusIcon = () => (
   </svg>
 );
 
-const Sidebar: React.FC<SidebarProps> = ({ activeTab, setActiveTab, isExpanded, setIsExpanded, userRole = 'admin' }) => {
+const Sidebar: React.FC<SidebarProps> = ({ activeTab, setActiveTab, isExpanded, setIsExpanded, userRole = 'admin', onGoToLanding }) => {
 
   const navItems = [
     { id: 'dashboard', label: 'Dashboard', Icon: DashboardIcon },
@@ -103,6 +113,14 @@ const Sidebar: React.FC<SidebarProps> = ({ activeTab, setActiveTab, isExpanded, 
       </button>
 
       <aside className={`sidebar ${isExpanded ? 'expanded' : ''}`}>
+        
+        {/* Brand Logo Section */}
+        <div className="sidebar-brand" onClick={onGoToLanding} style={{ cursor: 'pointer' }}>
+          <div className="brand-logo">
+            <FinexisLogo />
+          </div>
+          {isExpanded && <span className="brand-name">Finexis</span>}
+        </div>
 
         {/* Core Navigation Pill Container */}
         <nav className="sidebar-nav">

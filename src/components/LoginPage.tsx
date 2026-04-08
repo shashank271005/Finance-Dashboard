@@ -53,9 +53,10 @@ const AppleIcon = () => (
 interface LoginPageProps {
   onLogin: () => void;
   onSignup: () => void;
+  onGoToLanding?: () => void;
 }
 
-const LoginPage: React.FC<LoginPageProps> = ({ onLogin, onSignup }) => {
+const LoginPage: React.FC<LoginPageProps> = ({ onLogin, onSignup, onGoToLanding }) => {
   const [mode, setMode] = useState<'signin' | 'signup' | 'forgot' | 'reset'>('signin');
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirm, setShowConfirm] = useState(false);
@@ -105,7 +106,7 @@ const LoginPage: React.FC<LoginPageProps> = ({ onLogin, onSignup }) => {
         <div className="login-form-container">
 
           {/* Logo */}
-          <div className="login-logo">
+          <div className="login-logo" onClick={onGoToLanding} style={{ cursor: 'pointer' }}>
             <FinexisLogo />
             <span className="login-logo-text">Finexis</span>
           </div>

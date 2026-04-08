@@ -4,6 +4,7 @@ import './OnboardingPage.css';
 interface OnboardingPageProps {
   onComplete: () => void;
   onBackToAuth: () => void;
+  onGoToLanding?: () => void;
 }
 
 type Step = 1 | 2 | 3 | 4 | 5;
@@ -42,7 +43,7 @@ const GoalsIcon = () => (
   </svg>
 );
 
-const OnboardingPage: React.FC<OnboardingPageProps> = ({ onComplete, onBackToAuth }) => {
+const OnboardingPage: React.FC<OnboardingPageProps> = ({ onComplete, onBackToAuth, onGoToLanding }) => {
   const [step, setStep] = useState<Step>(1);
   const [formData, setFormData] = useState({
     firstName: '', lastName: '', country: '', currency: '', fieldOfWork: '',
@@ -68,7 +69,7 @@ const OnboardingPage: React.FC<OnboardingPageProps> = ({ onComplete, onBackToAut
   const renderLeftPanel = () => (
     <div className="onboarding-left">
       <div className="onboarding-glass-panel">
-        <div className="onboarding-logo">
+        <div className="onboarding-logo" onClick={onGoToLanding} style={{ cursor: 'pointer' }}>
           <FinexisLogo />
           <span className="onboarding-logo-text">Finexis</span>
         </div>

@@ -42,6 +42,36 @@
   padding: 18px 20px 24px 20px;
 }
 
+/* ─── Branding ────────────────────────────── */
+.sidebar-brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 10px 4px;
+  margin-bottom: 24px;
+  transition: all 0.3s ease;
+  width: 100%;
+  overflow: hidden;
+}
+
+.brand-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+}
+
+.brand-name {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--text-main);
+  letter-spacing: -0.5px;
+  white-space: nowrap;
+}
+
+
 .sidebar-toggle {
   position: absolute;
   top: 50%;
