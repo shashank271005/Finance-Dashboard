@@ -1,9 +1,10 @@
 /* ─── Onboarding Page Styling ──────────────── */
-.onboarding-root {
+.onboarding-root,
+[data-theme='dark'] .onboarding-root {
     display: flex;
     width: 100vw;
     height: 100vh;
-    background: #FFFFFF;
+    background: #FFFFFF !important;
     overflow: hidden;
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
 }
@@ -176,13 +177,14 @@
 }
 
 /* ─── Right Panel (Form) ────────────────── */
-.onboarding-right {
+.onboarding-right,
+[data-theme='dark'] .onboarding-right {
     flex: 1;
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #FFFFFF;
+    background: #FFFFFF !important;
     z-index: 1;
     overflow-y: auto;
 }
@@ -219,10 +221,11 @@
     color: #10b981;
 }
 
-.step-title {
+.step-title,
+[data-theme='dark'] .step-title {
     font-size: 32px;
     font-weight: 800;
-    color: #0F172A;
+    color: #0F172A !important;
     margin-bottom: 16px;
     letter-spacing: -1px;
 }
@@ -231,9 +234,10 @@
     text-transform: uppercase;
 }
 
-.step-subtitle {
+.step-subtitle,
+[data-theme='dark'] .step-subtitle {
     font-size: 15px;
-    color: #64748B;
+    color: #64748B !important;
     line-height: 1.6;
     margin-bottom: 40px;
     max-width: 90%;
@@ -250,16 +254,17 @@
     margin-bottom: 16px;
 }
 
-.ob-input {
+.ob-input,
+[data-theme='dark'] .ob-input {
     width: 100%;
     height: 56px;
     padding: 12px 24px;
-    background: #FFFFFF;
-    border: 1px solid #E2E8F0;
+    background: #FFFFFF !important;
+    border: 1px solid #E2E8F0 !important;
     border-radius: 16px;
     font-size: 15px;
     font-weight: 500;
-    color: #0F172A;
+    color: #0F172A !important;
     transition: all 0.2s;
     box-sizing: border-box;
 }
@@ -352,18 +357,19 @@
     margin-bottom: 32px;
 }
 
-.summary-item {
+.summary-item,
+[data-theme='dark'] .summary-item {
     height: 56px;
     padding: 0 24px;
-    background: #F0F2F7;
-    border: 1px solid #E2E8F0;
+    background: #F0F2F7 !important;
+    border: 1px solid #E2E8F0 !important;
     border-radius: 16px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     font-size: 15px;
     font-weight: 600;
-    color: #0F172A;
+    color: #0F172A !important;
 }
 
 .check-bullet {
