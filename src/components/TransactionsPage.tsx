@@ -4,119 +4,119 @@ import './TransactionsPage.css';
 /* ─── Icons ─────────────────────────────── */
 const CalendarIcon = () => (
   <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
-    <rect x="3" y="4" width="18" height="18" rx="2" stroke="currentColor" strokeWidth="1.8"/>
-    <path d="M16 2v4M8 2v4M3 10h18" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"/>
+    <rect x="3" y="4" width="18" height="18" rx="2" stroke="currentColor" strokeWidth="1.8" />
+    <path d="M16 2v4M8 2v4M3 10h18" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
   </svg>
 );
 const ChevronDown = () => (
   <svg width="10" height="10" viewBox="0 0 24 24" fill="none">
-    <path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+    <path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
   </svg>
 );
 const ChevronLeft = () => (
   <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
-    <path d="M15 18l-6-6 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+    <path d="M15 18l-6-6 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
   </svg>
 );
 const ChevronRight = () => (
   <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
-    <path d="M9 18l6-6-6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+    <path d="M9 18l6-6-6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
   </svg>
 );
 const TrendUpIcon = () => (
   <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
-    <polyline points="22 7 13.5 15.5 8.5 10.5 2 17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-    <polyline points="16 7 22 7 22 13" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+    <polyline points="22 7 13.5 15.5 8.5 10.5 2 17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+    <polyline points="16 7 22 7 22 13" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
   </svg>
 );
 const DownloadIcon = () => (
   <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
-    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-    <polyline points="7 10 12 15 17 10" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-    <line x1="12" y1="15" x2="12" y2="3" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+    <polyline points="7 10 12 15 17 10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+    <line x1="12" y1="15" x2="12" y2="3" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
   </svg>
 );
 const EyeIcon = () => (
   <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
-    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" stroke="currentColor" strokeWidth="2"/>
-    <circle cx="12" cy="12" r="3" stroke="currentColor" strokeWidth="2"/>
+    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" stroke="currentColor" strokeWidth="2" />
+    <circle cx="12" cy="12" r="3" stroke="currentColor" strokeWidth="2" />
   </svg>
 );
 const ArrowRightIcon = () => (
   <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
-    <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+    <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
   </svg>
 );
 /* ─── Tx icon avatars ────────────────────── */
 const AWSIcon = () => (
   <div className="tx-icon tx-icon-blue">
     <svg width="15" height="15" viewBox="0 0 24 24" fill="none">
-      <path d="M7 15l-4-4 4-4M17 15l4-4-4-4" stroke="#0F172A" strokeWidth="1.8" strokeLinecap="round"/>
-      <path d="M3 11h18" stroke="#0F172A" strokeWidth="1.8" strokeLinecap="round"/>
+      <path d="M7 15l-4-4 4-4M17 15l4-4-4-4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+      <path d="M3 11h18" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
     </svg>
   </div>
 );
 const ClientIcon = () => (
   <div className="tx-icon tx-icon-green">
     <svg width="15" height="15" viewBox="0 0 24 24" fill="none">
-      <rect x="2" y="7" width="20" height="14" rx="2" stroke="#0F172A" strokeWidth="1.8"/>
-      <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2" stroke="#0F172A" strokeWidth="1.8"/>
+      <rect x="2" y="7" width="20" height="14" rx="2" stroke="currentColor" strokeWidth="1.8" />
+      <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2" stroke="currentColor" strokeWidth="1.8" />
     </svg>
   </div>
 );
 const CateringIcon = () => (
   <div className="tx-icon tx-icon-gray">
     <svg width="15" height="15" viewBox="0 0 24 24" fill="none">
-      <path d="M3 11l19-9-9 19-2-8-8-2z" stroke="#64748b" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M3 11l19-9-9 19-2-8-8-2z" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   </div>
 );
 const MarketingIcon = () => (
   <div className="tx-icon tx-icon-purple">
     <svg width="15" height="15" viewBox="0 0 24 24" fill="none">
-      <circle cx="12" cy="12" r="10" stroke="#0F172A" strokeWidth="1.8"/>
-      <path d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 5.66-16.88 5.85m19.5 1.9c-3.5-.93-6.63-.82-8.94 0-2.58.92-5.01 2.86-7.44 6.32" stroke="#0F172A" strokeWidth="1.8" strokeLinecap="round"/>
+      <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="1.8" />
+      <path d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 5.66-16.88 5.85m19.5 1.9c-3.5-.93-6.63-.82-8.94 0-2.58.92-5.01 2.86-7.44 6.32" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
     </svg>
   </div>
 );
 const SalaryIcon = () => (
   <div className="tx-icon tx-icon-emerald">
     <svg width="15" height="15" viewBox="0 0 24 24" fill="none">
-      <line x1="12" y1="1" x2="12" y2="23" stroke="#0F172A" strokeWidth="1.8" strokeLinecap="round"/>
-      <path d="M17 5H9.5a3.5 3.5 0 1 0 0 7h5a3.5 3.5 0 1 1 0 7H6" stroke="#0F172A" strokeWidth="1.8" strokeLinecap="round"/>
+      <line x1="12" y1="1" x2="12" y2="23" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+      <path d="M17 5H9.5a3.5 3.5 0 1 0 0 7h5a3.5 3.5 0 1 1 0 7H6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
     </svg>
   </div>
 );
 const OfficeIcon = () => (
   <div className="tx-icon tx-icon-orange">
     <svg width="15" height="15" viewBox="0 0 24 24" fill="none">
-      <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" stroke="#0F172A" strokeWidth="1.8"/>
-      <polyline points="9 22 9 12 15 12 15 22" stroke="#0F172A" strokeWidth="1.8"/>
+      <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" stroke="currentColor" strokeWidth="1.8" />
+      <polyline points="9 22 9 12 15 12 15 22" stroke="currentColor" strokeWidth="1.8" />
     </svg>
   </div>
 );
 const InsuranceIcon = () => (
   <div className="tx-icon tx-icon-red">
     <svg width="15" height="15" viewBox="0 0 24 24" fill="none">
-      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="#0F172A" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   </div>
 );
 const ConsultingIcon = () => (
   <div className="tx-icon tx-icon-indigo">
     <svg width="15" height="15" viewBox="0 0 24 24" fill="none">
-      <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke="#0F172A" strokeWidth="1.8" strokeLinecap="round"/>
-      <circle cx="9" cy="7" r="4" stroke="#0F172A" strokeWidth="1.8"/>
-      <path d="M23 21v-2a4 4 0 0 0-3-3.87" stroke="#0F172A" strokeWidth="1.8" strokeLinecap="round"/>
-      <path d="M16 3.13a4 4 0 0 1 0 7.75" stroke="#0F172A" strokeWidth="1.8" strokeLinecap="round"/>
+      <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+      <circle cx="9" cy="7" r="4" stroke="currentColor" strokeWidth="1.8" />
+      <path d="M23 21v-2a4 4 0 0 0-3-3.87" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+      <path d="M16 3.13a4 4 0 0 1 0 7.75" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
     </svg>
   </div>
 );
 const AdCampaignIcon = () => (
   <div className="tx-icon tx-icon-pink">
     <svg width="15" height="15" viewBox="0 0 24 24" fill="none">
-      <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" stroke="#0F172A" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
-      <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07" stroke="#0F172A" strokeWidth="1.8" strokeLinecap="round"/>
+      <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
     </svg>
   </div>
 );
@@ -173,15 +173,15 @@ const BudgetGauge: React.FC<{ current: number; total: number }> = ({ current, to
     <div className="budget-gauge-wrap">
       <div className="gauge-svg-container">
         <svg width="80" height="80" viewBox="0 0 100 100">
-          <circle 
-            className="gauge-bg" 
-            cx="50" cy="50" r="38" 
-            strokeWidth="9" fill="transparent" 
+          <circle
+            className="gauge-bg"
+            cx="50" cy="50" r="38"
+            strokeWidth="9" fill="transparent"
           />
-          <circle 
-            className="gauge-fill" 
-            cx="50" cy="50" r="38" 
-            strokeWidth="9" fill="transparent" 
+          <circle
+            className="gauge-fill"
+            cx="50" cy="50" r="38"
+            strokeWidth="9" fill="transparent"
             strokeDasharray={2 * Math.PI * 38}
             strokeDashoffset={(2 * Math.PI * 38) - (percentage / 100) * (2 * Math.PI * 38)}
             strokeLinecap="round"
@@ -205,7 +205,7 @@ const BudgetGauge: React.FC<{ current: number; total: number }> = ({ current, to
 
 /* ─── Smart Audit Alert ──────────────────── */
 const SmartAudit: React.FC<{ isViewer: boolean }> = ({ isViewer }) => {
-   return (
+  return (
     <div className="insight-card glassy-card smart-audit-card">
       <div className="audit-header">
         <div className="audit-notify-dot"></div>
@@ -267,7 +267,7 @@ const TransactionsPage: React.FC<TransactionsPageProps> = ({ userRole = 'admin',
   });
 
   // 3. Filtering Logic
-  const filteredTransactions = sortedTransactions.filter(tx => 
+  const filteredTransactions = sortedTransactions.filter(tx =>
     selectedCategory === 'All' || tx.category === selectedCategory
   );
 
@@ -286,10 +286,10 @@ const TransactionsPage: React.FC<TransactionsPageProps> = ({ userRole = 'admin',
           <div className="filter-left">
             <span className="tx-version-badge" onClick={onGoToLanding} style={{ cursor: 'pointer' }}>Finexis v2.0</span>
             <div className={`role-indicator-badge ${userRole}`}>
-               <span className="ri-dot"></span>
-               {userRole}
+              <span className="ri-dot"></span>
+              {userRole}
             </div>
-            <button 
+            <button
               className={`filter-chip ${selectedCategory === 'All' ? 'filter-chip-active' : ''}`}
               onClick={() => { setSelectedCategory('All'); setCurrentPage(1); }}
             >
@@ -299,18 +299,18 @@ const TransactionsPage: React.FC<TransactionsPageProps> = ({ userRole = 'admin',
               <CalendarIcon /> Last 30 days
             </button>
             <div className="category-filter-wrap">
-              <button 
+              <button
                 className={`filter-chip ${selectedCategory !== 'All' ? 'filter-chip-active' : ''}`}
                 onClick={() => setIsCategoryOpen(!isCategoryOpen)}
               >
                 {selectedCategory === 'All' ? 'Category' : selectedCategory} <ChevronDown />
               </button>
-              
+
               {isCategoryOpen && (
                 <div className="category-dropdown glassy-card">
                   {categories.map(cat => (
-                    <div 
-                      key={cat} 
+                    <div
+                      key={cat}
                       className={`dropdown-item ${selectedCategory === cat ? 'dropdown-item-active' : ''}`}
                       onClick={() => {
                         setSelectedCategory(cat);
@@ -327,7 +327,7 @@ const TransactionsPage: React.FC<TransactionsPageProps> = ({ userRole = 'admin',
           </div>
           <div className="filter-right">
             <span className="sort-label">Sort by:</span>
-            <button 
+            <button
               className="sort-btn"
               onClick={() => setSortOrder(sortOrder === 'newest' ? 'oldest' : 'newest')}
             >
@@ -388,7 +388,7 @@ const TransactionsPage: React.FC<TransactionsPageProps> = ({ userRole = 'admin',
               >
                 <ChevronLeft />
               </button>
-              
+
               {Array.from({ length: Math.min(totalPages, 3) }, (_, i) => i + 1).map(p => (
                 <button
                   key={p}

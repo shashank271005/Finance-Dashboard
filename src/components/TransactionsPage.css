@@ -250,6 +250,46 @@
   flex-shrink: 0;
 }
 
+/* ─── Transaction Icon Color Classes ─── */
+.tx-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+
+/* Default Colors */
+.tx-icon-blue    { background: rgba(59, 76, 240, 0.12); color: #3B4CF0; }
+.tx-icon-green   { background: rgba(16, 185, 129, 0.12); color: #10B981; }
+.tx-icon-purple  { background: rgba(168, 85, 247, 0.12); color: #A855F7; }
+.tx-icon-emerald { background: rgba(16, 185, 129, 0.12); color: #059669; }
+.tx-icon-orange  { background: rgba(249, 115, 22, 0.12); color: #F97316; }
+.tx-icon-red     { background: rgba(239, 68, 68, 0.12); color: #EF4444; }
+.tx-icon-indigo  { background: rgba(99, 102, 241, 0.12); color: #6366F1; }
+.tx-icon-pink    { background: rgba(236, 72, 153, 0.12); color: #EC4899; }
+.tx-icon-gray    { background: rgba(100, 116, 139, 0.12); color: #64748B; }
+
+/* Dark Mode Overrides */
+[data-theme='dark'] .tx-icon-blue    { background: rgba(59, 76, 240, 0.3); color: white; }
+[data-theme='dark'] .tx-icon-green   { background: rgba(16, 185, 129, 0.3); color: white; }
+[data-theme='dark'] .tx-icon-purple  { background: rgba(168, 85, 247, 0.3); color: white; }
+[data-theme='dark'] .tx-icon-emerald { background: rgba(16, 185, 129, 0.3); color: white; }
+[data-theme='dark'] .tx-icon-orange  { background: rgba(249, 115, 22, 0.3); color: white; }
+[data-theme='dark'] .tx-icon-red     { background: rgba(239, 68, 68, 0.3); color: white; }
+[data-theme='dark'] .tx-icon-indigo  { background: rgba(99, 102, 241, 0.3); color: white; }
+[data-theme='dark'] .tx-icon-pink    { background: rgba(236, 72, 153, 0.3); color: white; }
+[data-theme='dark'] .tx-icon-gray    { background: rgba(100, 116, 139, 0.3); color: white; }
+
+/* Force white stroke for all icon lines in dark mode */
+[data-theme='dark'] .tx-icon svg * {
+  stroke: white !important;
+}
+
+
 .tx-title {
   font-size: 14px;
   font-weight: 600;
