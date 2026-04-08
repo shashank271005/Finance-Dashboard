@@ -33,8 +33,8 @@ const SavingsGoals: React.FC = () => {
                 <span className="goal-amounts">Rs {goal.current.toLocaleString()} / Rs {goal.target.toLocaleString()}</span>
               </div>
               <div className="goal-progress-bg">
-                <div 
-                  className="goal-progress-fill" 
+                <div
+                  className="goal-progress-fill"
                   style={{ width: `${percentage}%`, backgroundColor: goal.color }}
                 ></div>
               </div>
