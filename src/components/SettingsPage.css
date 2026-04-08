@@ -12,15 +12,8 @@
   background: transparent;
   border-bottom: none;
   position: relative;
-}
-
-.header-badge {
-  font-size: 10px;
-  font-weight: 800;
-  color: var(--primary);
-  letter-spacing: 2px;
-  margin-bottom: 12px;
-  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
 }
 
 .settings-title {

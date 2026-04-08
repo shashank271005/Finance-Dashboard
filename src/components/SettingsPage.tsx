@@ -75,11 +75,6 @@ const SettingsPage: React.FC<SettingsPageProps> = ({ theme, toggleTheme, userRol
 
         {/* Content Area */}
         <div className="settings-content">
-          <div className="settings-header">
-            <div className="header-badge">CONFIGURATION</div>
-            <h1 className="settings-title">Settings</h1>
-            <p className="settings-subtitle">Customize your workspace and manage your security protocols.</p>
-          </div>
 
           {activeSection === 'general' && (
             <div className="settings-section">
