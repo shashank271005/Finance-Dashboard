@@ -392,45 +392,95 @@ const LandingPage: React.FC<LandingPageProps> = ({ onStart }) => {
                     </div>
                 </section>
 
-                {/* Section 05: Insights */}
+                {/* Section 04: Insights */}
                 <section className="feature-section">
-                    <div className="section-content">
-                        <div className="feature-block reverse animate-slide-left">
-                            <div className="feature-info">
-                                <div className="feature-index">05</div>
-                                <div className="feature-tag highlight">INSIGHTS</div>
-                                <h2 className="feature-title">Intelligent Behavioral Scoring</h2>
-                                <p className="feature-text">Understand your spending habits with a personalized score. Our intelligent clustering identifies exactly where you can optimize your lifestyle.</p>
-                            </div>
-                            <div className="feature-visual">
-                                <div className="showcase-card visual-insights-card shadow-lux">
-                                    <h3 className="visual-card-title">Spending Insights</h3>
-                                    <div className="insights-content-wrap">
-                                        <div className="score-summary-card">
-                                            <span className="score-label">SCORE</span>
-                                            <div className="score-value">81<span className="score-total">/100</span></div>
-                                            <p className="score-desc">Your spending habits are balanced but you can improve the overall spending by managing your rental and investment spending.</p>
+                    <div style={{ width: '100%', maxWidth: '1600px', margin: '0 auto', padding: '0 40px' }}>
+                        <div className="feature-info" style={{ marginBottom: '60px', maxWidth: '700px' }}>
+                            <div className="feature-index" style={{ left: '-20px', transform: 'none' }}>04</div>
+                            <div className="feature-tag highlight">INSIGHTS</div>
+                            <h2 className="feature-title">Intelligent Behavioral Scoring</h2>
+                            <p className="feature-text">Understand your spending habits with a personalized score. Our intelligent clustering identifies exactly where you can optimize your lifestyle.</p>
+                        </div>
+
+                        <div className="feature-visual" style={{ width: '100%', margin: '0 auto' }}>
+                            <div className="showcase-card visual-insights-card shadow-lux">
+                                <span className="card-dots-v">⋮</span>
+
+                                <div className="insights-content-overlay">
+                                    <h3 className="visual-card-title no-border">Spending Insights</h3>
+
+                                    <div className="score-summary-area">
+                                        <span className="score-label">SCORE</span>
+                                        <div className="score-value">81<span className="score-total">/100</span></div>
+                                        <div className="score-progress-bar">
+                                            <div className="score-progress-fill" style={{ width: '81%' }}></div>
                                         </div>
-                                        <div className="bubbles-visualization">
-                                            <div className="bubble-group-main">
-                                                <div className="insight-bubble rent">
-                                                    <span className="bubble-label">RENT & LIVING</span>
-                                                    <span className="bubble-extra top">VACATIONS</span>
-                                                    <span className="bubble-extra bottom">HEALTHCARE</span>
-                                                </div>
-                                                <div className="insight-bubble invest">
-                                                    <span className="bubble-label">INVESTMENT</span>
-                                                    <span className="bubble-extra top-left">GIFTS</span>
-                                                    <span className="bubble-extra top-center">STUDIES</span>
-                                                </div>
-                                                <div className="insight-bubble food">
-                                                    <span className="bubble-label">FOOD</span>
-                                                </div>
-                                                <div className="insight-bubble movies">
-                                                    <span className="bubble-label">MOVIES</span>
-                                                </div>
-                                            </div>
+                                        <p className="score-desc">Your spending habits are balanced but you can improve the overall spending by managing your rental and investment spending.</p>
+                                    </div>
+                                </div>
+
+                                <div className="bubbles-visualization desktop-only-flex">
+                                    <div className="bubble-group-main">
+                                        <div className="insight-bubble rent">
+                                            <span className="bubble-label">RENT & LIVING</span>
                                         </div>
+                                        <div className="insight-bubble studies">
+                                            <span className="bubble-label">STUDIES</span>
+                                        </div>
+                                        <div className="insight-bubble invest">
+                                            <span className="bubble-label">INVESTMENT</span>
+                                        </div>
+                                        <div className="insight-bubble food">
+                                            <span className="bubble-label">FOOD</span>
+                                        </div>
+                                        <div className="insight-bubble movies">
+                                            <span className="bubble-label">MOVIES</span>
+                                        </div>
+                                        <div className="insight-bubble vacations">
+                                            <span className="bubble-label">VACATIONS</span>
+                                        </div>
+                                        <div className="insight-bubble gifts">
+                                            <span className="bubble-label">GIFTS</span>
+                                        </div>
+                                        <div className="insight-bubble healthcare">
+                                            <span className="bubble-label">HEALTHCARE</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className="mobile-bar-chart">
+                                    <h4 className="mobile-bar-title">Category Breakdown</h4>
+                                    <div className="bar-item">
+                                        <div className="bar-label"><span>Rent & Living</span><span>35%</span></div>
+                                        <div className="bar-track"><div className="bar-fill" style={{ width: '35%', background: '#5C8DFF' }}></div></div>
+                                    </div>
+                                    <div className="bar-item">
+                                        <div className="bar-label"><span>Investment</span><span>20%</span></div>
+                                        <div className="bar-track"><div className="bar-fill" style={{ width: '20%', background: '#BE75FF' }}></div></div>
+                                    </div>
+                                    <div className="bar-item">
+                                        <div className="bar-label"><span>Studies</span><span>15%</span></div>
+                                        <div className="bar-track"><div className="bar-fill" style={{ width: '15%', background: '#FF66C4' }}></div></div>
+                                    </div>
+                                    <div className="bar-item">
+                                        <div className="bar-label"><span>Food</span><span>10%</span></div>
+                                        <div className="bar-track"><div className="bar-fill" style={{ width: '10%', background: '#FF7676' }}></div></div>
+                                    </div>
+                                    <div className="bar-item">
+                                        <div className="bar-label"><span>Vacations</span><span>8%</span></div>
+                                        <div className="bar-track"><div className="bar-fill" style={{ width: '8%', background: '#a0c0ff' }}></div></div>
+                                    </div>
+                                    <div className="bar-item">
+                                        <div className="bar-label"><span>Healthcare</span><span>6%</span></div>
+                                        <div className="bar-track"><div className="bar-fill" style={{ width: '6%', background: '#50e3c2' }}></div></div>
+                                    </div>
+                                    <div className="bar-item">
+                                        <div className="bar-label"><span>Movies</span><span>4%</span></div>
+                                        <div className="bar-track"><div className="bar-fill" style={{ width: '4%', background: '#FFCB2E' }}></div></div>
+                                    </div>
+                                    <div className="bar-item">
+                                        <div className="bar-label"><span>Gifts</span><span>2%</span></div>
+                                        <div className="bar-track"><div className="bar-fill" style={{ width: '2%', background: '#d1bcae' }}></div></div>
                                     </div>
                                 </div>
                             </div>
